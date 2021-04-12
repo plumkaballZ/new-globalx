@@ -6,13 +6,13 @@ import { Product } from "./Product";
 
 export interface ICheckoutBagProps {
     OrderLines: LineItem[];
-    numberOfOrderLines: number;
+    totalQuantity: number;
+    subTotal: number;
     removeOrderLineCallBack(lineItem: LineItem): void;
     allProducts: Product[];
-    hasAddresses: boolean;
 }
 export interface IHeaderProps {
-    numberOfOrderLines: number;
+    totalQuantity: number;
 }
 export interface IProductListProps {
     addOrderLineCallback(lineItem: LineItem): void;
@@ -31,7 +31,8 @@ export interface IAddressProps {
     createAddressCallBack(address: Address): void;
     addressIsLoading: boolean;
     selectAddressCallBack(address: Address): void;
-    OrderLines: LineItem[];
+    totalQuantity: number;
+    subTotal: number;
 }
 export interface IAddressListProps {
     allAddresses: Address[];
@@ -41,7 +42,8 @@ export interface IAddressListProps {
     createAddressCallBack(address: Address): void;
     setDoGoToCreatePage: any;
     selectAddressCallBack(address: Address): void;
-    OrderLines: LineItem[];
+    totalQuantity: number;
+    subTotal: number;
 }
 export interface IAdminProductsProps {
     allProducts: Product[];
@@ -58,4 +60,10 @@ export interface IProductDetailProps {
 }
 export interface ILoaderProps {
     isLoading: boolean;
+}
+export interface IPaymentProps {
+    selectedAddress: Address;
+    selectedShippingOption: ShippingOption;
+    totalQuantity: number;
+    subTotal: number;
 }

@@ -97,19 +97,17 @@ export default function App() {
     setIsLoading(false);
   }
 
+  let subTotal: number = 0;
+  let totalQuantity: number = 0;
+
   let currentOrderLines = currentOrder.line_items;
   let numberOfOrderLines = ((Object.keys(currentOrder).length === 0) ? 0 : currentOrderLines.length);
 
   if (numberOfOrderLines > 0) {
-
-    let sum: number = currentOrderLines.map(a => a.quantity).reduce(function (a, b) {
-      return a + b;
-    });
-
-    numberOfOrderLines = sum;
+    currentOrderLines.forEach(x => subTotal += x.price * x.quantity);
+    currentOrderLines.forEach(x => totalQuantity += x.quantity);
   }
 
-  let hasAddresses = allAddresses.length === 0 ? false : true;
   let hasProds = allProducts.length === 0 ? false : true;
 
   return (
@@ -118,7 +116,7 @@ export default function App() {
         <div _ngcontent-c0="" className="contentz">
           <div _ngcontent-c0="" className="default">
             <section _ngcontent-c0="">
-              {!isCheckoutFlow ? <Header numberOfOrderLines={numberOfOrderLines} /> : <CheckoutHeader />}
+              {!isCheckoutFlow ? <Header totalQuantity={totalQuantity} /> : <CheckoutHeader />}
               <main _ngcontent-c0="" className="body container content">
                 <ScrollToTop />
                 <Switch>
@@ -150,11 +148,12 @@ export default function App() {
                   <Route exact path='/auth/signup' component={SignUp} />
 
                   <Route exact path="/checkout/bag" render={(props) =>
-                    <CheckoutBag OrderLines={currentOrderLines}
-                      numberOfOrderLines={numberOfOrderLines}
+                    <CheckoutBag
+                      OrderLines={currentOrderLines}
+                      totalQuantity={totalQuantity}
+                      subTotal={subTotal}
                       removeOrderLineCallBack={removeOrderLine}
                       allProducts={allProducts}
-                      hasAddresses={hasAddresses}
                       {...props} />
                   }
                   />
@@ -168,12 +167,22 @@ export default function App() {
                       createAddressCallBack={createNewAddress}
                       addressIsLoading={isLoading}
                       selectAddressCallBack={selectAdressAndFetchShippingOptions}
-                      OrderLines={currentOrderLines}
+                      totalQuantity={totalQuantity}
+                      subTotal={subTotal}
                       {...props} />
                   } />
 
 
-                  <Route exact path='/checkout/payment' component={Payment} />
+                  <Route exact path="/checkout/payment" render={(props) =>
+                    <Payment
+                      selectedAddress={selectedAddress}
+                      selectedShippingOption={shippingOptions[0]}
+                      subTotal={subTotal}
+                      totalQuantity={totalQuantity}
+                      {...props} />
+                  } />
+                  {/* <Route exact path='/checkout/payment' component={Payment} /> */}
+
                   <Route exact path='/checkout/ordercomplete' component={OrderComplete} />
 
                   {/* admin section */}

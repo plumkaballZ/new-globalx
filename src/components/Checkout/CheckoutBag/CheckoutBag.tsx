@@ -6,21 +6,15 @@ import './checkout-bag.css';
 export default function CheckoutBag(props: ICheckoutBagProps) {
     const history = useHistory();
 
-
     let currentOrderLines = props.OrderLines;
     let hasNoOrderLines = currentOrderLines === undefined || currentOrderLines.length === 0;
 
     let allProds = props.allProducts;
     let hasNoProds = allProds === undefined || allProds.length === 0;
 
-    let totalPrice: number = 0;
-
     const renderItems: any[] = [];
 
     if (!hasNoOrderLines && !hasNoProds) {
-
-        currentOrderLines.forEach(x => totalPrice += x.price * x.quantity);
-
         currentOrderLines.map((value: LineItem, index: number) => {
             let prod = allProds.find(x => x.variants.find(x => x.id === value.id));
             renderItems.push(
@@ -98,10 +92,10 @@ export default function CheckoutBag(props: ICheckoutBagProps) {
                                     <div _ngcontent-c7="" className="checkout-header-container">
                                         <div _ngcontent-c7="" className="checkout-header">
                                             <span _ngcontent-c7="" className="text">
-                                                Antal vare i kruven ({props.numberOfOrderLines})</span>
+                                                Antal vare i kruven ({props.totalQuantity})</span>
                                         </div>
                                         <div _ngcontent-c7="" className="pull-right total-price">
-                                            Total: {totalPrice.toFixed(2)} DKK</div>
+                                            Total: {props.subTotal.toFixed(2)} DKK</div>
                                     </div>
                                     <div _ngcontent-c7="" className="prod-set">
                                         <div _ngcontent-c7="" _nghost-c8="">
@@ -120,28 +114,21 @@ export default function CheckoutBag(props: ICheckoutBagProps) {
                                                 <div _ngcontent-c9="" className="bag-total">
                                                     <span _ngcontent-c9="">
                                                         Din Order
-                                                                </span>
-
+                                                        </span>
                                                 </div>
-
 
                                             </div>
                                             <div _ngcontent-c9="" className="order-total footer">
                                                 <div _ngcontent-c9="" className="place-order">
                                                     <button _ngcontent-c9="" className="order-btn" onClick={() => {
-                                                        if (props.hasAddresses) {
-                                                            history.push('/checkout/address')
-                                                        }
-                                                        else {
-                                                            history.push('/checkout/address/add')
-                                                        }
+                                                        history.push('/checkout/address');
                                                     }}>
                                                         TIL LEVERING
                                                                 </button>
                                                 </div>
                                                 <div _ngcontent-c9="" className="total-amount">
                                                     <span _ngcontent-c9="" className="pull-left"> Total at betale</span>
-                                                    <span _ngcontent-c9="" className="total-rupees">{totalPrice.toFixed(2)} DKK</span>
+                                                    <span _ngcontent-c9="" className="total-rupees">{props.subTotal.toFixed(2)} DKK</span>
                                                 </div>
                                             </div>
                                         </div>

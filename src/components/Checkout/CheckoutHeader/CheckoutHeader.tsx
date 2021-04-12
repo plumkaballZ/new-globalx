@@ -6,8 +6,9 @@ export default function CheckoutHeader() {
     const history = useHistory();
     let location = useLocation();
 
-    let isBagLocation = location.pathname.includes('bag');
-    let isAddressLocation = location.pathname.includes('address');
+    let isOnBagPage = location.pathname.includes('bag');
+    let isOnAddressPage = location.pathname.includes('address');
+    let isOnPayment = location.pathname.includes('payment');
 
     return (
         <div _ngcontent-c0="" _nghost-c2="">
@@ -23,19 +24,21 @@ export default function CheckoutHeader() {
 
                         <ol _ngcontent-c2="" className="checkout-steps">
                             <li _ngcontent-c2="" className="step step1">
-                                <a _ngcontent-c2="" className={`${isBagLocation ? "can-click active" : ""}`} onClick={() => {
+                                <a _ngcontent-c2="" className={`${isOnBagPage ? "can-click active" : ""}`} onClick={() => {
                                     history.push('/checkout/bag');
                                 }}>KURV</a>
                             </li>
                             <li _ngcontent-c2="" className="divider"></li>
                             <li _ngcontent-c2="" className="step step2">
-                                <a _ngcontent-c2="" className={`${isAddressLocation ? "can-click active" : ""}`} onClick={() => {
+                                <a _ngcontent-c2="" className={`${isOnAddressPage ? "can-click active" : ""}`} onClick={() => {
                                     history.push('/checkout/address');
                                 }}>LEVERING</a>
                             </li>
                             <li _ngcontent-c2="" className="divider"></li>
                             <li _ngcontent-c2="" className="step step3">
-                                <a _ngcontent-c2="" href="https://shevlin.co/checkout/cart">
+                                <a _ngcontent-c2="" className={`${isOnPayment ? "can-click active" : ""}`} onClick={() => {
+                                    history.push('/checkout/payment');
+                                }}>
                                     BETALING
               </a>
                             </li>

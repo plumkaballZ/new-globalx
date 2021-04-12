@@ -66,7 +66,7 @@ export default function Header(props: IHeaderProps) {
                                             <i _ngcontent-c13="" aria-hidden="true" className="fa">
                                                 <img _ngcontent-c13="" className="iconPics" src={shopping_bag_logo} />
                                             </i>
-                                            <span _ngcontent-c13="" className="badge badge-danger">{props.numberOfOrderLines}</span></a>
+                                            <span _ngcontent-c13="" className="badge badge-danger">{props.totalQuantity}</span></a>
                                     </li>
 
                                     <AvatarDropdown />

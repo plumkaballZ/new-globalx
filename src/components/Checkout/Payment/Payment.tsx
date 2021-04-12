@@ -1,7 +1,23 @@
 import './payment.css';
 import { PayPalButton } from "react-paypal-button-v2";
+import { IPaymentProps } from '../../../models/IProps';
 
-export default function Payment() {
+export default function Payment(props: IPaymentProps) {
+
+    let totalQuantity = props.totalQuantity;
+    let subTotal = props.subTotal;
+    let shippingPrice = parseInt(props.selectedShippingOption.price);
+
+
+    let name = props.selectedAddress.firstname;
+    let lastName = props.selectedAddress.lastname;
+
+
+    let pickupPoint = props.selectedShippingOption.pickup_points[0];
+
+
+
+
     return (
         <div _nghost-c26="">
             <div _ngcontent-c26="" className="payment-section" id="asdf01">
@@ -9,30 +25,40 @@ export default function Payment() {
                     <div _ngcontent-c26="" className="col-sm-6">
                         <div _ngcontent-c26="" className="right">
                             <div _ngcontent-c26="" className="mini-bag-summary">
-                                <div _ngcontent-c26="" className="lbl">ORDER SUMMARY</div>
-                                <div _ngcontent-c26="" className="items">4 ITEMS</div>
+                                <div _ngcontent-c26="" className="lbl">ORDER OVERSIGT</div>
+                                <div _ngcontent-c26="" className="items">{totalQuantity} VARE</div>
                                 <div _ngcontent-c26="" className="order-total">
-                                    <span _ngcontent-c26="">Order Total</span>
-                                    <span _ngcontent-c26="" className="value">146.00 €</span>
+                                    <span _ngcontent-c26="">Subtotal</span>
+                                    <span _ngcontent-c26="" className="value">{subTotal.toFixed(2)} DKK</span>
                                 </div>
                                 <div _ngcontent-c26="" className="shipping">
                                     <span _ngcontent-c26="">Delivery</span>
-                                    <span _ngcontent-c26="" className="shipping-fee c-green">0.00 €</span>
+                                    <span _ngcontent-c26="" className="shipping-fee c-green">{shippingPrice.toFixed(2)} DKK</span>
                                 </div>
                             </div>
 
                             <div _ngcontent-c26="" className="pay-lbl-total">
-                                <span _ngcontent-c26="" className="pay-lbl">Total To Pay:</span>
-                                <span _ngcontent-c26="" className="pay-total">146.00 €</span>
+                                <span _ngcontent-c26="" className="pay-lbl">TOTAL</span>
+                                <span _ngcontent-c26="" className="pay-total">{(subTotal + shippingPrice).toFixed(2)} DKK</span>
                             </div>
 
                             <div _ngcontent-c26="" className="address-summary">
-                                <div _ngcontent-c26="" className="address-lbl">DELIVER TO</div>
+                                <div _ngcontent-c26="" className="address-lbl">LEVERES TIL</div>
                                 <div _ngcontent-c26="" className="name"></div>
-                                <div _ngcontent-c26="" className="add-info">Kastanjehaven</div>
-                                <div _ngcontent-c26="" className="add-info"></div>
+                                <div _ngcontent-c26="" className="add-info">{props.selectedAddress.firstname} {props.selectedAddress.lastname}</div>
+
+                                {props.selectedShippingOption.has_pickup_points &&
+                                    <div>
+                                        <div _ngcontent-c26="" className="add-info">{pickupPoint.company_name}</div>
+                                        <div _ngcontent-c26="" className="add-info">{pickupPoint.address}</div>
+                                        <div _ngcontent-c26="" className="add-info">{pickupPoint.city}{pickupPoint.zipcode}</div>
+
+                                    </div>
+                                }
+
+                                {/* <div _ngcontent-c26="" className="add-info">{add}</div>
                                 <div _ngcontent-c26="" className="add-info">Lystrup - 8520</div>
-                                <div _ngcontent-c26="" className="add-info">Mobile : 71675589</div>
+                                <div _ngcontent-c26="" className="add-info">Mobile : 71675589</div> */}
                             </div>
                         </div>
                     </div>

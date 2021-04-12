@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { Address } from '../../../../models/Address';
 import { IAddressListProps } from '../../../../models/IProps';
 import { PickupPoint } from '../../../../models/PickupPoint';
@@ -7,6 +8,7 @@ import slectedLogo from './../../../../assets/selected02.png';
 import './address-list.css';
 
 export default function AddressList(props: IAddressListProps) {
+    const history = useHistory();
     let renderAddresses: any[] = [];
     let renderShippingOptions: any[] = [];
 
@@ -14,24 +16,11 @@ export default function AddressList(props: IAddressListProps) {
     let selectedAddress = props.selectedAddress;
     let shippingOptions = props.shippingOptions;
 
-    let currentOrderLines = props.OrderLines;
-    let hasNoOrderLines = currentOrderLines === undefined || currentOrderLines.length === 0;
-
-    let subTotal: number = 0;
-    let numberOfOrderLines: number = 0;
-    let total: number = 0;
-
-    if (!hasNoOrderLines) {
-        currentOrderLines.forEach(x => subTotal += x.price * x.quantity);
-        currentOrderLines.forEach(x => numberOfOrderLines += x.quantity);
-        total = subTotal;
-    }
-
     let [selectedShippingQuote, setSelectedShippingQuote] = useState('');
     let [selectedShippingOption, setSelectedShippingOption] = useState({} as ShippingOption);
 
-    console.log(selectedShippingOption);
-
+    let subTotal = props.subTotal;
+    let shippingPrice = (Object.keys(selectedShippingOption).length === 0) ? 0 : parseInt(selectedShippingOption.price);
 
     if (allAddresses != null) {
         allAddresses.map((value: Address, index: number) => {
@@ -109,7 +98,7 @@ export default function AddressList(props: IAddressListProps) {
                         {shippingIsSelected &&
 
                             <div className="col-md-12 card-content">
-                                <hr></hr>
+                                <hr className="thickHr"></hr>
                                 <div onChange={(event: any) => {
 
                                     let arry = event.target.value.split("$");
@@ -129,7 +118,7 @@ export default function AddressList(props: IAddressListProps) {
                                         return <p key={"pickup_point" + ship.carrier_code + indexY.toString()} className="address-content">
                                             <label>
                                                 <input name="pickupPointRadioBtn" type="radio" id="gls" className="with-gap m-top-15" value={ship.product_code + "$" + pickup.name} />
-                                                <span className="pickup-point">{pickup.company_name} - {pickup.address} {pickup.city} {pickup.zipcode}</span>
+                                                <span className="pickup-point">{pickup.company_name} - {pickup.address} {pickup.zipcode} {pickup.city}</span>
                                             </label>
                                         </p>
                                     })}
@@ -201,7 +190,7 @@ export default function AddressList(props: IAddressListProps) {
                             <div _ngcontent-c23="" className="mini-bag-summary">
                                 <span _ngcontent-c23="">Antal vare</span>
                                 <div _ngcontent-c23="" className="items pull-right">
-                                    {numberOfOrderLines}
+                                    {props.totalQuantity}
                                 </div>
                                 <div _ngcontent-c23="" className="order-total">
                                     <span _ngcontent-c23="">Subtotal</span>
@@ -211,15 +200,17 @@ export default function AddressList(props: IAddressListProps) {
                                 </div>
                                 <div _ngcontent-c23="" className="shipping">
                                     <span _ngcontent-c23="">Levering</span>
-                                    <span _ngcontent-c23="" className="shipping-fee c-green">{(Object.keys(selectedShippingOption).length === 0) ? 0 : parseInt(selectedShippingOption.price).toFixed(2)} DKK</span>
+                                    <span _ngcontent-c23="" className="shipping-fee c-green">{shippingPrice.toFixed(2)} DKK</span>
                                 </div>
                             </div>
                             <div _ngcontent-c23="" className="pay-lbl-total">
                                 <span _ngcontent-c23="" className="pay-lbl">Total</span>
-                                <span _ngcontent-c23="" className="pay-total">{(Object.keys(selectedShippingOption).length === 0) ? total : (total + parseInt(selectedShippingOption.price)).toFixed(2)} DKK</span>
+                                <span _ngcontent-c23="" className="pay-total">{(subTotal + shippingPrice).toFixed(2)} DKK</span>
                             </div>
                         </div>
-                        <button _ngcontent-c21="" className="pay-btn">TIL BETALING</button>
+                        <button _ngcontent-c21="" className="pay-btn" onClick={() => {
+                            history.push('/checkout/payment');
+                        }}>TIL BETALING</button>
                     </div>
                 </div>
             </div>

@@ -53,7 +53,7 @@ export default function AddAddress(props: IAddAddressProps) {
                                 </div>
                                 <div _ngcontent-c21="" _nghost-c25="">
                                     <form onSubmit={handleSubmit(onSubmit)} _ngcontent-c25="" className="form ng-untouched ng-pristine ng-invalid" noValidate={false}>
-                                        <hr _ngcontent-c25="" />
+                                
                                         <div _ngcontent-c25="" className="row mt-3">
 
                                             <div _ngcontent-c25="" className="form-group col-sm-6">

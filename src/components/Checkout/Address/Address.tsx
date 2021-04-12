@@ -39,7 +39,8 @@ export default function AddressTsx(props: IAddressProps) {
                         createAddressCallBack={props.createAddressCallBack}
                         setDoGoToCreatePage={setDoGoToCreatePage}
                         selectAddressCallBack={props.selectAddressCallBack}
-                        OrderLines={props.OrderLines}
+                        totalQuantity={props.totalQuantity}
+                        subTotal={props.subTotal}
                     />
                 }
 
