@@ -1,0 +1,69 @@
+.smallFlag[_ngcontent-c14] {
+    width: 100%
+}
+
+input[type=checkbox][id^=cb][_ngcontent-c14] {
+    display: none
+}
+
+label[_ngcontent-c14] {
+    padding: 10px;
+    display: initial;
+    position: relative;
+    cursor: pointer
+}
+
+label[_ngcontent-c14]:before {
+    content: " ";
+    border-radius: 50%;
+    border: 1px solid #1d886d;
+    color: #1d886d;
+    position: absolute;
+    top: -5px;
+    margin-left: 20px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    -webkit-transition-duration: .4s;
+    transition-duration: .4s;
+    -webkit-transform: scale(0);
+    transform: scale(0)
+}
+
+label[_ngcontent-c14] img[_ngcontent-c14] {
+    -webkit-transition-duration: .2s;
+    transition-duration: .2s;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%
+}
+
+[_ngcontent-c14]:checked+label[_ngcontent-c14] {
+    border-color: #ddd
+}
+
+[_ngcontent-c14]:checked+label[_ngcontent-c14]:before {
+    content: "\2713";
+    -webkit-transform: scale(1);
+    transform: scale(1)
+}
+
+[_ngcontent-c14]:checked+label[_ngcontent-c14] img[_ngcontent-c14] {
+    -webkit-transform: scale(.9);
+    transform: scale(.9);
+    -webkit-box-shadow: 0 0 5px #333;
+    box-shadow: 0 0 5px #333;
+    z-index: -1
+}
+
+.hiddenCheckBox[_ngcontent-c14] {
+    display: contents
+}
+
+div[_ngcontent-c14] {
+    padding: 1em;
+    width: 55px
+}
+
+.ib[_ngcontent-c14] {
+    display: inline-block
+}

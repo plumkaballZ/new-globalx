@@ -1,0 +1,9 @@
+.pusher[_ngcontent-c16] {
+    margin-top: 90px
+}
+
+@media screen and (max-width:768px) {
+    .pusher[_ngcontent-c16] {
+        margin-top: 90px
+    }
+}

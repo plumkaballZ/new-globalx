@@ -1,0 +1,230 @@
+.heading[_ngcontent-c9] {
+    text-transform: uppercase;
+    padding: 5px 22px 5px 2px;
+    color: #000
+}
+
+.filter-box[_ngcontent-c9] {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-right: 1px solid #030303;
+    position: relative
+}
+
+.filter-box[_ngcontent-c9] ul.taxonomy[_ngcontent-c9] {
+    margin-left: -37px;
+    list-style: none
+}
+
+.filter-box[_ngcontent-c9] ul.taxonomy[_ngcontent-c9] li.filter[_ngcontent-c9] {
+    font-size: 14px;
+    margin-bottom: 7px;
+    font-size: 18px
+}
+
+.filter-box[_ngcontent-c9] ul.taxonomy[_ngcontent-c9] li.filter[_ngcontent-c9] label.vertical-filters-label[_ngcontent-c9] {
+    display: block;
+    font-size: 14px;
+    font-weight: 100;
+    width: 95%;
+    white-space: nowrap;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-height: 17px;
+    color: #020101;
+    position: relative
+}
+
+.filter-box[_ngcontent-c9] ul.taxonomy[_ngcontent-c9] li.filter[_ngcontent-c9] label.vertical-filters-label[_ngcontent-c9] input[_ngcontent-c9] {
+    margin: 5px 10px 0 0;
+    visibility: hidden
+}
+
+.filter-box[_ngcontent-c9] ul.taxonomy[_ngcontent-c9] li.filter[_ngcontent-c9] label.vertical-filters-label[_ngcontent-c9] .common-checkboxIndicator[_ngcontent-c9] {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    position: absolute;
+    top: 6px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    border: 1px solid #c3c2c9;
+    background: #fff;
+    border-radius: 2px
+}
+
+.filter-box[_ngcontent-c9] ul.taxonomy[_ngcontent-c9] li.filter[_ngcontent-c9] label.vertical-filters-label[_ngcontent-c9] .common-checkboxIndicator[_ngcontent-c9]:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    z-index: 1;
+    width: 8px;
+    height: 5px;
+    border: 2px solid #fff;
+    border-color: #fff;
+    border-top-style: none;
+    border-right-style: none;
+    -webkit-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg)
+}
+
+.filter-box[_ngcontent-c9] ul.taxonomy[_ngcontent-c9] li.filter[_ngcontent-c9] label.vertical-filters-label[_ngcontent-c9] input[_ngcontent-c9]:checked~.common-checkboxIndicator[_ngcontent-c9] {
+    border: 2px;
+    background: #526cd0
+}
+
+.filter-box[_ngcontent-c9] ul.taxonomy[_ngcontent-c9] li.filter[_ngcontent-c9] label.vertical-filters-label[_ngcontent-c9] input[type=checkbox][_ngcontent-c9]:checked {
+    content: "\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 15px;
+    color: #f3f3f3;
+    text-align: center;
+    line-height: 15px
+}
+
+.filter-box[_ngcontent-c9] ul.taxonomy[_ngcontent-c9] li.filter[_ngcontent-c9] label[_ngcontent-c9]:before {
+    border-radius: 3px
+}
+
+*[_ngcontent-c9] {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box
+}
+
+body[_ngcontent-c9] {
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto
+}
+
+.screen-reader-text[_ngcontent-c9] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px
+}
+
+.search-term[_ngcontent-c9] {
+    width: 100%;
+    margin: 0 0 5px 0
+}
+
+.search-terms[_ngcontent-c9] {
+    display: table;
+    margin: 0 0 10px 0
+}
+
+.search-filters[_ngcontent-c9] {
+    overflow: hidden;
+    padding-bottom: 15px
+}
+
+.filter-group[_ngcontent-c9],
+.search-filters[_ngcontent-c9] {
+    margin: 0 0 10px 0
+}
+
+.cloned-filters[_ngcontent-c9] {
+    display: none
+}
+
+.search-results[_ngcontent-c9] {
+    width: 65%;
+    float: right;
+    padding-bottom: 2500px
+}
+
+.result[_ngcontent-c9] {
+    float: left;
+    width: 24%;
+    height: 100px;
+    margin-right: 1.33%;
+    margin-bottom: 1.33%
+}
+
+.result[_ngcontent-c9]:nth-child(4n) {
+    margin-right: 0
+}
+
+.result[_ngcontent-c9] img[_ngcontent-c9] {
+    width: 100%;
+    height: auto;
+    display: block
+}
+
+@media (max-width:1000px) {
+    body[_ngcontent-c9] {
+        width: 90%
+    }
+}
+
+@media (max-width:600px) {
+
+    .search-form[_ngcontent-c9],
+    .search-results[_ngcontent-c9],
+    body[_ngcontent-c9] {
+        width: 100%
+    }
+
+    .search-form[_ngcontent-c9] {
+        padding: 0
+    }
+
+    .search-terms[_ngcontent-c9] {
+        display: table;
+        width: 100%;
+        margin: 0
+    }
+
+    .search-terms[_ngcontent-c9]>div[_ngcontent-c9] {
+        display: table-row
+    }
+
+    .search-terms[_ngcontent-c9]>div[_ngcontent-c9]>span[_ngcontent-c9] {
+        display: table-cell
+    }
+
+    .search-term-wrap[_ngcontent-c9] {
+        padding-right: 10px
+    }
+
+    .search-button[_ngcontent-c9] {
+        width: 100%
+    }
+
+    .search-filters-title[_ngcontent-c9] {
+        color: #1d886d;
+        text-decoration: underline;
+        cursor: pointer;
+        margin: 0
+    }
+
+    .search-filters.pinned[_ngcontent-c9] {
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: rgba(0, 0, 0, .2)
+    }
+
+    .filter-explanation[_ngcontent-c9],
+    .filter-group[_ngcontent-c9] {
+        display: none
+    }
+
+    .filters-open[_ngcontent-c9] .filter-explanation[_ngcontent-c9],
+    .filters-open[_ngcontent-c9] .filter-group[_ngcontent-c9] {
+        display: block
+    }
+
+    .filters-open[_ngcontent-c9] .search-filters-title[_ngcontent-c9] {
+        margin: 5px 0 10px 0
+    }
+
+    .filter-box[_ngcontent-c9] {
+        border-right: 0 solid #030303
+    }
+}

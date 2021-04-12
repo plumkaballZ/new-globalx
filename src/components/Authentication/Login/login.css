@@ -1,0 +1,383 @@
+.default[_ngcontent-c23] .navbar-fixed-top[_ngcontent-c23] {
+    min-height: 70px;
+    background-color: #150404
+}
+
+.default[_ngcontent-c23] .navbar-fixed-top[_ngcontent-c23] .navbar-nav[_ngcontent-c23]>li[_ngcontent-c23] .active[_ngcontent-c23]>a[_ngcontent-c23] {
+    border-bottom: 3px solid #fff4da
+}
+
+.default[_ngcontent-c23] .navbar-fixed-top[_ngcontent-c23] .navbar-nav[_ngcontent-c23]>li[_ngcontent-c23]>a[_ngcontent-c23] {
+    min-height: 50px;
+    font-size: 15px
+}
+
+.default[_ngcontent-c23] .navbar-fixed-top[_ngcontent-c23] .navbar-nav[_ngcontent-c23]>li[_ngcontent-c23]>a[_ngcontent-c23]:hover {
+    border-bottom: 3px solid #d3c2a8
+}
+
+@media screen and (max-width:360px) {
+    .default[_ngcontent-c23] .navbar-fixed-top[_ngcontent-c23] .navbar-nav[_ngcontent-c23]>li[_ngcontent-c23]>a[_ngcontent-c23] {
+        font-size: 14px
+    }
+}
+
+.default[_ngcontent-c23] .badge-danger[_ngcontent-c23] {
+    background-color: #da1414
+}
+
+.default[_ngcontent-c23] .badge-warning[_ngcontent-c23] {
+    background-color: #d58512
+}
+
+.default[_ngcontent-c23] .badge-success[_ngcontent-c23] {
+    background-color: #398439
+}
+
+.default[_ngcontent-c23] .badge-info[_ngcontent-c23] {
+    background-color: #269abc
+}
+
+@-webkit-keyframes notify-bounce-in-down {
+    0% {
+        top: -1000px
+    }
+
+    10% {
+        top: 100px
+    }
+
+    15% {
+        opacity: 1;
+        top: 80px
+    }
+
+    60% {
+        opacity: 1;
+        top: 80px
+    }
+
+    65% {
+        opacity: 1;
+        top: 100px
+    }
+
+    to {
+        opacity: 0;
+        top: -1000px
+    }
+}
+
+@keyframes notify-bounce-in-down {
+    0% {
+        top: -1000px
+    }
+
+    10% {
+        top: 100px
+    }
+
+    15% {
+        opacity: 1;
+        top: 80px
+    }
+
+    60% {
+        opacity: 1;
+        top: 80px
+    }
+
+    65% {
+        opacity: 1;
+        top: 100px
+    }
+
+    to {
+        opacity: 0;
+        top: -1000px
+    }
+}
+
+.default[_ngcontent-c23] .notify-container[_ngcontent-c23] {
+    position: fixed;
+    top: 122px;
+    color: #fff;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    min-height: 50px;
+    z-index: 8;
+    text-align: center;
+    opacity: 0
+}
+
+.default[_ngcontent-c23] .notify-container.in[_ngcontent-c23] {
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: notify-bounce-in-down;
+    animation-name: notify-bounce-in-down
+}
+
+.default[_ngcontent-c23] .notify-error[_ngcontent-c23] {
+    background-color: #ff5722
+}
+
+.default[_ngcontent-c23] .notify-content[_ngcontent-c23] {
+    max-width: 380px;
+    width: 80%;
+    padding: 10px 20px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 2px 10px rgba(40, 44, 64, .2);
+    box-shadow: 0 2px 10px rgba(40, 44, 64, .2);
+    margin: 0 auto
+}
+
+.default[_ngcontent-c23] .notify-error-message[_ngcontent-c23] {
+    font-size: 16px;
+    font-weight: 500;
+    position: relative
+}
+
+.default[_ngcontent-c23] .notify-icon[_ngcontent-c23] {
+    border: 2px solid #fff;
+    padding: 0 7px;
+    border-radius: 20px;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    margin-top: -10px;
+    width: 27px
+}
+
+.default[_ngcontent-c23] .notify-icon-text[_ngcontent-c23] {
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left
+}
+
+.default[_ngcontent-c23] button[_ngcontent-c23]:focus,
+.default[_ngcontent-c23] input[_ngcontent-c23]:focus {
+    outline: none
+}
+
+.default[_ngcontent-c23] .panel[_ngcontent-c23] {
+    -webkit-box-shadow: 0 0 4px rgba(40, 44, 63, .08);
+    box-shadow: 0 0 4px rgba(40, 44, 63, .08)
+}
+
+.default[_ngcontent-c23] .strong[_ngcontent-c23] {
+    font-family: Whitney-semi-bold;
+    font-weight: 800
+}
+
+.register-container[_ngcontent-c23] {
+    text-align: center
+}
+
+@media screen and (max-width:768px) {
+    .register-container[_ngcontent-c23] {
+        margin-top: 70px
+    }
+}
+
+.panel[_ngcontent-c23] {
+    position: absolute;
+    top: 10px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border: none
+}
+
+.panel[_ngcontent-c23] .panel-heading[_ngcontent-c23] {
+    padding: 0 0 0;
+    border-bottom: 1px solid transparent;
+    background-color: transparent
+}
+
+.panel[_ngcontent-c23] .panel-heading[_ngcontent-c23] .panel-title[_ngcontent-c23] {
+    color: #666;
+    font-family: Lucida Sans Typewriter, Lucida Console, monaco, Bitstream Vera Sans Mono, monospace
+}
+
+@media (min-width:600px) {
+    .panel-title[_ngcontent-c23] {
+        font-size: 28px
+    }
+}
+
+@media (min-height:800px) {
+    .panel[_ngcontent-c23] {
+        top: 80px
+    }
+}
+
+.register-input-container[_ngcontent-c23] {
+    margin: 20px;
+    border: 1px solid #bfc0c6;
+    border-radius: 5px;
+    padding: 0
+}
+
+.register-register-button-container[_ngcontent-c23] {
+    padding: 10px 20px
+}
+
+.register-register-button[_ngcontent-c23] {
+    letter-spacing: 2px;
+    padding: 15px;
+    width: 100%;
+    font-size: 18px;
+    border: 1px solid #1d886d;
+    background-color: #1d886d;
+    color: #f2f2f2
+}
+
+.register-register-button[_ngcontent-c23]:hover {
+    background-color: #104739
+}
+
+.register-input-container[_ngcontent-c23]:hover {
+    border: 1px solid #1d886d
+}
+
+.register-input-item[_ngcontent-c23] {
+    position: relative
+}
+
+.register-user-input-email[_ngcontent-c23] {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px
+}
+
+.register-user-input[_ngcontent-c23] {
+    width: 100%;
+    border: 0;
+    padding: 15px
+}
+
+.register-user-input-mobile[_ngcontent-c23],
+.register-user-input-password[_ngcontent-c23] {
+    border-top: 1px solid #d5d6d9
+}
+
+.register-user-input-mobile[_ngcontent-c23] {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px
+}
+
+.register-link-container[_ngcontent-c23] {
+    text-align: left;
+    padding: 20px
+}
+
+.register-login-link[_ngcontent-c23] {
+    text-align: center
+}
+
+a[_ngcontent-c23] {
+    background-color: transparent
+}
+
+@media (min-height:800px) {
+    .register-third-party-register[_ngcontent-c23] {
+        top: 30px
+    }
+}
+
+.register-button-info-text[_ngcontent-c23] {
+    margin-top: 0;
+    margin-bottom: 20px
+}
+
+.register-button-container[_ngcontent-c23] {
+    margin-bottom: 40px
+}
+
+.register-button[_ngcontent-c23] {
+    margin: 0 auto;
+    padding-left: 18%;
+    position: relative;
+    font-size: 15px;
+    font-weight: 500;
+    color: #696b79;
+    height: 50px;
+    border: 1px solid #bfc0c6;
+    background-color: #fff;
+    text-align: left;
+    width: 43%
+}
+
+@media (min-width:360px) {
+    .register-facebook[_ngcontent-c23] {
+        margin-right: 15px;
+        margin-bottom: 0
+    }
+}
+
+input[type=number][_ngcontent-c23] {
+    -moz-appearance: textfield
+}
+
+input[type=number][_ngcontent-c23]::-webkit-inner-spin-button,
+input[type=number][_ngcontent-c23]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0
+}
+
+.register-sprite[_ngcontent-c23] {
+    background: url(http://res.cloudinary.com/mally/image/upload/v1489480940/148948096411965_w5wbjb.png) no-repeat 0 0;
+    background-size: 159px 48px;
+    display: inline-block
+}
+
+.register-fb-logo[_ngcontent-c23] {
+    background-position: -93px 0;
+    width: 28px;
+    top: 10px
+}
+
+.register-gplus-logo[_ngcontent-c23] {
+    background-position: -122px 0;
+    width: 23px;
+    top: 13px
+}
+
+.register-fb-logo[_ngcontent-c23],
+.register-gplus-logo[_ngcontent-c23] {
+    height: 29px;
+    position: absolute;
+    left: 15px
+}
+
+.register-error-icon[_ngcontent-c23] {
+    padding: 0 7px;
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    font-weight: 500;
+    color: #ff527b;
+    border: 2px solid #ff527b;
+    border-radius: 21px
+}
+
+.register-error-message[_ngcontent-c23] {
+    font-size: 11px;
+    margin-left: 15px;
+    text-align: left;
+    margin-top: -9px;
+    max-height: 500px;
+    -webkit-transition-property: all;
+    transition-property: all;
+    -webkit-transition-duration: .5s;
+    transition-duration: .5s;
+    -webkit-transition-timing-function: cubic-bezier(0, 1, .5, 1);
+    transition-timing-function: cubic-bezier(0, 1, .5, 1);
+    color: #ff527b
+}

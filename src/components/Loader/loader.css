@@ -1,0 +1,317 @@
+.default[_ngcontent-c3] .navbar-fixed-top[_ngcontent-c3] {
+    min-height: 170px;
+    background-color: #150404
+}
+
+.default[_ngcontent-c3] .navbar-fixed-top[_ngcontent-c3] .navbar-nav[_ngcontent-c3]>li[_ngcontent-c3] .active[_ngcontent-c3]>a[_ngcontent-c3] {
+    border-bottom: 3px solid #fff4da
+}
+
+.default[_ngcontent-c3] .navbar-fixed-top[_ngcontent-c3] .navbar-nav[_ngcontent-c3]>li[_ngcontent-c3]>a[_ngcontent-c3] {
+    min-height: 50px;
+    font-size: 15px
+}
+
+.default[_ngcontent-c3] .navbar-fixed-top[_ngcontent-c3] .navbar-nav[_ngcontent-c3]>li[_ngcontent-c3]>a[_ngcontent-c3]:hover {
+    border-bottom: 3px solid #d3c2a8
+}
+
+@media screen and (max-width:360px) {
+    .default[_ngcontent-c3] .navbar-fixed-top[_ngcontent-c3] .navbar-nav[_ngcontent-c3]>li[_ngcontent-c3]>a[_ngcontent-c3] {
+        font-size: 14px
+    }
+}
+
+.default[_ngcontent-c3] .badge-danger[_ngcontent-c3] {
+    background-color: #da1414
+}
+
+.default[_ngcontent-c3] .badge-warning[_ngcontent-c3] {
+    background-color: #d58512
+}
+
+.default[_ngcontent-c3] .badge-success[_ngcontent-c3] {
+    background-color: #398439
+}
+
+.default[_ngcontent-c3] .badge-info[_ngcontent-c3] {
+    background-color: #269abc
+}
+
+@-webkit-keyframes notify-bounce-in-down {
+    0% {
+        top: -1000px
+    }
+
+    10% {
+        top: 100px
+    }
+
+    15% {
+        opacity: 1;
+        top: 80px
+    }
+
+    60% {
+        opacity: 1;
+        top: 80px
+    }
+
+    65% {
+        opacity: 1;
+        top: 100px
+    }
+
+    to {
+        opacity: 0;
+        top: -1000px
+    }
+}
+
+@keyframes notify-bounce-in-down {
+    0% {
+        top: -1000px
+    }
+
+    10% {
+        top: 100px
+    }
+
+    15% {
+        opacity: 1;
+        top: 80px
+    }
+
+    60% {
+        opacity: 1;
+        top: 80px
+    }
+
+    65% {
+        opacity: 1;
+        top: 100px
+    }
+
+    to {
+        opacity: 0;
+        top: -1000px
+    }
+}
+
+.default[_ngcontent-c3] .notify-container[_ngcontent-c3] {
+    position: fixed;
+    top: 122px;
+    color: #fff;
+    width: 100%;
+    max-width: 980px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    min-height: 50px;
+    z-index: 8;
+    text-align: center;
+    opacity: 0
+}
+
+.default[_ngcontent-c3] .notify-container.in[_ngcontent-c3] {
+    -webkit-animation-duration: 5s;
+    animation-duration: 5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name: notify-bounce-in-down;
+    animation-name: notify-bounce-in-down
+}
+
+.default[_ngcontent-c3] .notify-error[_ngcontent-c3] {
+    background-color: #ff5722
+}
+
+.default[_ngcontent-c3] .notify-content[_ngcontent-c3] {
+    max-width: 380px;
+    width: 80%;
+    padding: 10px 20px;
+    border-radius: 3px;
+    -webkit-box-shadow: 0 2px 10px rgba(40, 44, 64, .2);
+    box-shadow: 0 2px 10px rgba(40, 44, 64, .2);
+    margin: 0 auto
+}
+
+.default[_ngcontent-c3] .notify-error-message[_ngcontent-c3] {
+    font-size: 16px;
+    font-weight: 500;
+    position: relative
+}
+
+.default[_ngcontent-c3] .notify-icon[_ngcontent-c3] {
+    border: 2px solid #fff;
+    padding: 0 7px;
+    border-radius: 20px;
+    position: absolute;
+    top: 12px;
+    left: 0;
+    margin-top: -10px;
+    width: 27px
+}
+
+.default[_ngcontent-c3] .notify-icon-text[_ngcontent-c3] {
+    margin-left: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: left
+}
+
+.default[_ngcontent-c3] button[_ngcontent-c3]:focus,
+.default[_ngcontent-c3] input[_ngcontent-c3]:focus {
+    outline: none
+}
+
+.default[_ngcontent-c3] .panel[_ngcontent-c3] {
+    -webkit-box-shadow: 0 0 4px rgba(40, 44, 63, .08);
+    box-shadow: 0 0 4px rgba(40, 44, 63, .08)
+}
+
+.default[_ngcontent-c3] .strong[_ngcontent-c3] {
+    font-family: Whitney-semi-bold;
+    font-weight: 800
+}
+
+.loading[_ngcontent-c3] {
+    height: 100vh;
+    width: 100vw;
+    background: hsla(0, 0%, 100%, .78);
+    top: 0px;
+}
+
+.loading[_ngcontent-c3],
+.loading[_ngcontent-c3] .spinner[_ngcontent-c3] {
+    position: fixed;
+    left: 0;
+    z-index: 999
+}
+
+.loading[_ngcontent-c3] .spinner[_ngcontent-c3] {
+    height: 11px;
+    width: 43px;
+    margin: auto;
+    display: block;
+    top: 0;
+    bottom: 0;
+    right: 0
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        opacity: 1
+    }
+
+    16.666% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 1
+    }
+
+    16.666% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 0
+    }
+}
+
+body[_ngcontent-c3] {
+    background: #e4e4e5
+}
+
+.triangles[_ngcontent-c3] {
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    height: 81px;
+    width: 90px;
+    position: absolute;
+    left: 50%;
+    top: 50%
+}
+
+.tri[_ngcontent-c3] {
+    position: absolute;
+    -webkit-animation: pulse .75s ease-in infinite;
+    animation: pulse .75s ease-in infinite;
+    border-top: 27px solid #0d362c;
+    border-bottom: 0
+}
+
+.tri[_ngcontent-c3],
+.tri.invert[_ngcontent-c3] {
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent
+}
+
+.tri.invert[_ngcontent-c3] {
+    border-top: 0;
+    border-bottom: 27px solid #1d886d
+}
+
+.tri[_ngcontent-c3]:first-child {
+    left: 30px
+}
+
+.tri[_ngcontent-c3]:nth-child(2) {
+    left: 15px;
+    top: 27px;
+    -webkit-animation-delay: -125ms;
+    animation-delay: -125ms
+}
+
+.tri[_ngcontent-c3]:nth-child(3) {
+    left: 30px;
+    top: 27px
+}
+
+.tri[_ngcontent-c3]:nth-child(4) {
+    left: 45px;
+    top: 27px;
+    -webkit-animation-delay: -625ms;
+    animation-delay: -625ms
+}
+
+.tri[_ngcontent-c3]:nth-child(5),
+.tri[_ngcontent-c3]:nth-child(6) {
+    top: 54px;
+    -webkit-animation-delay: -.25s;
+    animation-delay: -.25s
+}
+
+.tri[_ngcontent-c3]:nth-child(6) {
+    left: 15px
+}
+
+.tri[_ngcontent-c3]:nth-child(7) {
+    top: 54px;
+    left: 30px;
+    -webkit-animation-delay: -375ms;
+    animation-delay: -375ms
+}
+
+.tri[_ngcontent-c3]:nth-child(8) {
+    left: 45px
+}
+
+.tri[_ngcontent-c3]:nth-child(8),
+.tri[_ngcontent-c3]:nth-child(9) {
+    top: 54px;
+    -webkit-animation-delay: -.5s;
+    animation-delay: -.5s
+}
+
+.tri[_ngcontent-c3]:nth-child(9) {
+    left: 60px
+}

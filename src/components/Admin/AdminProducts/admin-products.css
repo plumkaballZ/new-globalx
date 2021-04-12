@@ -1,0 +1,208 @@
+.prod-item[_ngcontent-c99] {
+    background: #fff;
+    border: 1px solid #eaeaec;
+    -webkit-box-shadow: 0 0 4px rgba(40, 44, 63, .08);
+    box-shadow: 0 0 4px rgba(40, 44, 63, .08);
+    margin-bottom: 30px;
+    text-transform: none;
+    padding-bottom: 0 !important
+}
+
+.prod-item[_ngcontent-c99] .col1[_ngcontent-c99] {
+    width: 45%;
+    display: inline-block;
+    vertical-align: bottom;
+}
+
+.prod-item[_ngcontent-c99] .col1[_ngcontent-c99] img[_ngcontent-c99] {
+    width: 120px;
+    height: 160px;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin-left: 5px;
+}
+
+.prod-item[_ngcontent-c99] .col2[_ngcontent-c99] {
+    vertical-align: top;
+    display: inline-block;
+    padding: 10px 10px 10px 25px;
+    min-height: 145px;
+    position: relative;
+    width: 55%
+}
+
+.prod-item[_ngcontent-c99] .col2[_ngcontent-c99] .prod-name[_ngcontent-c99] {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 400px;
+    padding: 5px 5px 5px 0
+}
+
+.prod-item[_ngcontent-c99] .col2[_ngcontent-c99] .prod-name[_ngcontent-c99] a[_ngcontent-c99] {
+    font-size: 14px;
+    font-family: Poiret One;
+    font-weight: 600;
+    color: #535766;
+    margin-right: 6px
+}
+
+.prod-item[_ngcontent-c99] .col2[_ngcontent-c99] .size-qty-wrap[_ngcontent-c99] {
+    margin: 5px 0;
+    color: #535766
+}
+
+.prod-item[_ngcontent-c99] .col2[_ngcontent-c99] .size-qty-wrap[_ngcontent-c99] .size-qty[_ngcontent-c99] {
+    margin: 0 0 4px;
+    padding-right: 10px;
+    display: inline-block
+}
+
+.prod-item[_ngcontent-c99] .col2[_ngcontent-c99] .size-qty-wrap[_ngcontent-c99] .size-qty[_ngcontent-c99] .qty[_ngcontent-c99],
+.prod-item[_ngcontent-c99] .col2[_ngcontent-c99] .size-qty-wrap[_ngcontent-c99] .size-qty[_ngcontent-c99] .size[_ngcontent-c99] {
+    cursor: pointer;
+    margin-right: 20px
+}
+
+.prod-item[_ngcontent-c99] .col2[_ngcontent-c99] .size-qty-wrap[_ngcontent-c99] .size-qty[_ngcontent-c99] .qty[_ngcontent-c99] .gray[_ngcontent-c99],
+.prod-item[_ngcontent-c99] .col2[_ngcontent-c99] .size-qty-wrap[_ngcontent-c99] .size-qty[_ngcontent-c99] .size[_ngcontent-c99] .gray[_ngcontent-c99] {
+    color: gray
+}
+
+.prod-item[_ngcontent-c99] .col2[_ngcontent-c99] .size-qty-wrap[_ngcontent-c99] .size-qty[_ngcontent-c99] .qty[_ngcontent-c99] .icon[_ngcontent-c99],
+.prod-item[_ngcontent-c99] .col2[_ngcontent-c99] .size-qty-wrap[_ngcontent-c99] .size-qty[_ngcontent-c99] .size[_ngcontent-c99] .icon[_ngcontent-c99] {
+    width: 20px;
+    height: 20px;
+    background-position: -2570px -13px;
+    display: inline-block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 4250px 153px;
+    vertical-align: middle;
+    background-image: url(./../../../assets/checkout_sprite.png);
+}
+
+.prod-item[_ngcontent-c99] .col2[_ngcontent-c99] .edit-move-delete[_ngcontent-c99] {
+    position: absolute;
+    left: 25px;
+    right: 20px;
+    bottom: 0;
+    border-top: 1px solid #eaeaec;
+    padding-top: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    padding-left: 0;
+    color: #696e79
+}
+
+.prod-item[_ngcontent-c99] .col2[_ngcontent-c99] .edit-move-delete[_ngcontent-c99] .delete-item[_ngcontent-c99],
+.prod-item[_ngcontent-c99] .col2[_ngcontent-c99] .edit-move-delete[_ngcontent-c99] .move-item[_ngcontent-c99] {
+    font-family: Whitney-semi-bold;
+    margin: 0 15px 0 0;
+    cursor: pointer
+}
+
+.prod-item[_ngcontent-c99] .col2[_ngcontent-c99] .edit-move-delete[_ngcontent-c99] .move-item[_ngcontent-c99] {
+    color: #526cd0
+}
+
+@media screen and (max-width:768px) {
+    .prod-item[_ngcontent-c99] .col2[_ngcontent-c99] {
+        width: 100%
+    }
+}
+
+.address-section[_ngcontent-c212] {
+    max-width: 980px;
+    margin-top: 100px;
+}
+
+.address-section[_ngcontent-c212] .left[_ngcontent-c212] {
+    padding-bottom: 20px;
+    position: relative;
+    vertical-align: top
+}
+
+.address-section[_ngcontent-c212] .left[_ngcontent-c212] .add-address[_ngcontent-c212] {
+    padding: 20px 10px 20px 20px;
+    border-bottom: 1px solid #d5d6d9;
+    margin-bottom: 14px
+}
+
+.address-section[_ngcontent-c212] .left[_ngcontent-c212] .add-address[_ngcontent-c212] .add-label[_ngcontent-c212] {
+    color: #535766;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Whitney-semi-bold;
+    cursor: pointer
+}
+
+.address-section[_ngcontent-c212] .left[_ngcontent-c212] .edit-address[_ngcontent-c212] {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #fff
+}
+
+.address-section[_ngcontent-c212] .left[_ngcontent-c212] .edit-address[_ngcontent-c212] .edit-label[_ngcontent-c212] {
+    font-size: 17px;
+    color: #596062;
+    font-weight: 600;
+    font-family: Whitney-semi-bold
+}
+
+.address-section[_ngcontent-c212] .right[_ngcontent-c212] .pay-btn[_ngcontent-c212] {
+    border: none;
+    border-radius: 3px;
+    height: 45px;
+    background-color: #2cd2b1 !important;
+    font-weight: 600 !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    color: #fff;
+    font-family: Whitney-semi-bold;
+    font-size: 14px;
+    margin: 10px auto
+}
+
+.addAddrBtn[_ngcontent-c212] {
+    padding: 1% 1% 1% 0;
+    font-size: 18px;
+    width: 50%;
+    border: 1px solid #1d886d;
+    background-color: #1d886d;
+    color: #f2f2f2
+}
+
+.addAddrBtn[_ngcontent-c212]:hover {
+    background-color: #104739
+}
+
+@media screen and (max-width:768px) {
+    .address-section[_ngcontent-c212] {
+        margin: 90px auto
+    }
+}
+
+.centerDiv[_ngcontent-c212] {
+    margin: 0 auto;
+    width: 70%;
+    border-radius: 3px
+}
+
+.productIsLive[_ngcontent-c99] {
+    cursor: pointer;
+    margin-left: 25px;
+    width: 20px;
+    height: 20px;
+    border: none;
+    background-position: -551px 0;
+    display: inline-block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 4250px 153px;
+    vertical-align: middle;
+    background-image: url(../../../assets/checkout_sprite.png);
+
+}

@@ -1,0 +1,127 @@
+.navbar[_ngcontent-c7] {
+    height: 168px;
+    background-color: #fff;
+    list-style: none
+}
+
+.navbar-brand[_ngcontent-c7] {
+    float: none;
+    font-family: Poiret One;
+    font-size: 58px;
+    padding-top: 25px
+}
+
+.navbar-brand[_ngcontent-c7] img[_ngcontent-c7] {
+    margin: 0 auto;
+    text-align: center;
+    margin: 50px auto
+}
+
+@media screen and (max-width:768px) {
+    .navbar-brand[_ngcontent-c7] img[_ngcontent-c7] {
+        margin: 60px auto;
+        width: 50%
+    }
+}
+
+.taxCol[_ngcontent-c7] {
+    width: 20.5%
+}
+
+@media (max-width:600px) {
+
+    .mainCol[_ngcontent-c7],
+    .taxCol[_ngcontent-c7] {
+        width: 100%
+    }
+}
+
+.ui.vertical.stripe[_ngcontent-c7] {
+    padding: 8em 0
+}
+
+.ui.vertical.stripe[_ngcontent-c7] h3[_ngcontent-c7] {
+    font-size: 2em
+}
+
+.ui.vertical.stripe[_ngcontent-c7] .button[_ngcontent-c7]+h3[_ngcontent-c7],
+.ui.vertical.stripe[_ngcontent-c7] p[_ngcontent-c7]+h3[_ngcontent-c7] {
+    margin-top: 3em
+}
+
+.ui.vertical.stripe[_ngcontent-c7] .floated.image[_ngcontent-c7] {
+    clear: both
+}
+
+.ui.vertical.stripe[_ngcontent-c7] p[_ngcontent-c7] {
+    font-size: 1.33em
+}
+
+.ui.vertical.stripe[_ngcontent-c7] .horizontal.divider[_ngcontent-c7] {
+    margin: 8em 0
+}
+
+.ui.inverted.segment[_ngcontent-c7],
+.ui.primary.inverted.segment[_ngcontent-c7] {
+    background-size: 100% 100%;
+    background-color: #fff;
+    background-image: url(https://shevlin.co/assets/api/pics/byShevlinNatureBanner001.png);
+    height: 400px;
+    margin-top: -60px;
+    margin-bottom: -30px
+}
+
+.masthead[_ngcontent-c7] h1.ui.header[_ngcontent-c7] {
+    margin-top: 2em;
+    margin-bottom: 0;
+    font-size: 4em;
+    font-weight: 400;
+    color: #f2f2f2;
+    font-family: Poiret One
+}
+
+@media screen and (max-width:768px) {
+    .masthead[_ngcontent-c7] h1.ui.header[_ngcontent-c7] {
+        font-size: 2em
+    }
+
+    .ui.inverted.segment[_ngcontent-c7] {
+        height: 200px
+    }
+}
+
+.bread_crumb[_ngcontent-c8] {
+    margin: 25px 0
+}
+
+.bread_crumb[_ngcontent-c8] li[_ngcontent-c8] {
+    float: left;
+    margin-right: 5px
+}
+
+.bread_crumb[_ngcontent-c8] li[_ngcontent-c8] a[_ngcontent-c8] {
+    color: #696b79
+}
+
+.bread_crumb[_ngcontent-c8] li[_ngcontent-c8]:after {
+    font-size: 10px;
+    content: "/";
+    margin-left: 5px
+}
+
+.bread_crumb[_ngcontent-c8] li[_ngcontent-c8]:last-child {
+    font-weight: 500;
+    margin-right: 0;
+    font-family: Whitney-semi-bold
+}
+
+.bread_crumb[_ngcontent-c8] li[_ngcontent-c8]:last-child:after {
+    content: "";
+    margin-right: 0
+}
+
+ul.bread_crumb[_ngcontent-c8]:after,
+ul.bread_crumb[_ngcontent-c8]:before {
+    content: "";
+    display: table
+}

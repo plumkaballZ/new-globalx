@@ -1,0 +1,395 @@
+.secDiv[_ngcontent-c16] {
+    text-align: center
+}
+
+.icnz[_ngcontent-c16] {
+    font-size: 50px
+}
+
+.ulz_001[_ngcontent-c16] {
+    list-style: none;
+    margin: 0 0 10px 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #1d1d1d;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 340px;
+    flex: 1 0 340px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin: 0 0 30px;
+    max-width: 100%;
+    text-align: center
+}
+
+.title_001[_ngcontent-c16] {
+    margin-bottom: 45px
+}
+
+#contact[_ngcontent-c16] {
+    padding: 10px 0 10px
+}
+
+.mail-message-area[_ngcontent-c16] {
+    width: 100%;
+    padding: 0 15px
+}
+
+.mail-message[_ngcontent-c16] {
+    width: 100%;
+    background: hsla(0, 0%, 100%, .8) !important;
+    -webkit-transition: all .7s;
+    transition: all .7s;
+    margin: 0 auto;
+    border-radius: 0
+}
+
+.not-visible-message[_ngcontent-c16] {
+    height: 0;
+    opacity: 0
+}
+
+.form[_ngcontent-c16] {
+    width: 100%;
+    padding: 15px;
+    background: #f8f8f8;
+    border: 1px solid rgba(0, 0, 0, .075);
+    margin-bottom: 25px;
+    color: #727272 !important;
+    font-size: 13px;
+    -webkit-transition: all .4s;
+    transition: all .4s
+}
+
+.form[_ngcontent-c16]:focus,
+.form[_ngcontent-c16]:hover {
+    border: 1px solid #8bc3a3
+}
+
+.form[_ngcontent-c16]:focus {
+    color: #fff;
+    outline: none
+}
+
+.textarea[_ngcontent-c16] {
+    height: 200px;
+    max-height: 200px;
+    max-width: 100%
+}
+
+.button[_ngcontent-c16] {
+    padding: 8px 12px;
+    background: #20bd99;
+    display: block;
+    width: 120px;
+    margin: 10px 0 0 0;
+    border-radius: 3px;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    text-align: center;
+    font-size: .8em;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .1)
+}
+
+.button[_ngcontent-c16]:hover {
+    background: #8bc3a3;
+    color: #fff
+}
+
+.form-btn[_ngcontent-c16] {
+    width: 180px;
+    display: block;
+    height: auto;
+    padding: 15px;
+    color: #fff;
+    background: #20bd99;
+    border: none;
+    border-radius: 3px;
+    outline: none;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    margin: auto;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, .1)
+}
+
+.form-btn[_ngcontent-c16]:hover {
+    background: #111;
+    color: #fff;
+    border: none
+}
+
+.form-btn[_ngcontent-c16]:active {
+    opacity: .9
+}
+
+input[_ngcontent-c16] {
+    position: relative
+}
+
+.contz[_ngcontent-c16] {
+    overflow: hidden;
+    zoom: 3
+}
+
+.pusher[_ngcontent-c16] {
+    margin-top: 90px
+}
+
+@media screen and (max-width:768px) {
+    .pusher[_ngcontent-c16] {
+        margin-top: 90px
+    }
+}
+
+#confirmation[_ngcontent-c16] {
+    text-align: center;
+    color: #fafdf0;
+    background-color: #1d886d
+}
+
+#confirmation[_ngcontent-c16] a[_ngcontent-c16] {
+    color: #fafdf0;
+    display: block;
+    margin: 60px 0 0 0;
+    font-size: 1.2em;
+    text-decoration: underline
+}
+
+#content[_ngcontent-c16] {
+    width: 90%;
+    margin: 0 auto;
+    padding: 5%
+}
+
+#content[_ngcontent-c16] h1[_ngcontent-c16] {
+    letter-spacing: 1px;
+    font-weight: 400;
+    font-size: 3em;
+    margin: 0 0 0 0;
+    color: #f2f2f2
+}
+
+#content[_ngcontent-c16] p[_ngcontent-c16] {
+    line-height: 28px;
+    font-size: 1em;
+    font-weight: 200
+}
+
+.mailsent[_ngcontent-c16] {
+    display: block;
+    -webkit-animation: mailsent-movement 3.5s infinite ease-in-out
+}
+
+.mailsent[_ngcontent-c16] .envelope[_ngcontent-c16] {
+    font-size: 20px;
+    margin-left: -25px;
+    width: 25px;
+    height: 20px;
+    top: 50%;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-animation: mailsent-rotation 3.5s infinite ease-in-out
+}
+
+.mailsent[_ngcontent-c16] .envelope[_ngcontent-c16] .icon[_ngcontent-c16] {
+    position: absolute;
+    left: 0
+}
+
+.mailsent[_ngcontent-c16] .envelope[_ngcontent-c16] .line[_ngcontent-c16] {
+    position: absolute;
+    width: 10px;
+    height: 2px;
+    background: #fff;
+    display: block
+}
+
+.mailsent[_ngcontent-c16] .envelope[_ngcontent-c16] .line.line1[_ngcontent-c16] {
+    width: 15px;
+    top: 4px;
+    left: -20px;
+    -webkit-animation: line-size-large 3.5s infinite ease-in-out
+}
+
+.mailsent[_ngcontent-c16] .envelope[_ngcontent-c16] .line.line2[_ngcontent-c16] {
+    width: 10px;
+    top: 9px;
+    left: -20px;
+    -webkit-animation: line-size-small 3.5s infinite ease-in-out
+}
+
+.mailsent[_ngcontent-c16] .envelope[_ngcontent-c16] .line.line3[_ngcontent-c16] {
+    width: 15px;
+    top: 14px;
+    left: -20px;
+    -webkit-animation: line-size-large 3.5s infinite ease-in-out
+}
+
+@-webkit-keyframes mailsent-movement {
+    0% {
+        -webkit-transform: translate(-50%);
+        transform: translate(-50%)
+    }
+
+    50% {
+        -webkit-transform: translate(50%);
+        transform: translate(50%)
+    }
+
+    to {
+        -webkit-transform: translate(150%);
+        transform: translate(150%)
+    }
+}
+
+@keyframes mailsent-movement {
+    0% {
+        -webkit-transform: translate(-50%);
+        transform: translate(-50%)
+    }
+
+    50% {
+        -webkit-transform: translate(50%);
+        transform: translate(50%)
+    }
+
+    to {
+        -webkit-transform: translate(150%);
+        transform: translate(150%)
+    }
+}
+
+@-webkit-keyframes mailsent-rotation {
+    0% {
+        -webkit-transform: skewX(-30deg);
+        transform: skewX(-30deg)
+    }
+
+    50% {
+        -webkit-transform: skewX(0deg);
+        transform: skewX(0deg)
+    }
+
+    to {
+        -webkit-transform: skewX(-30deg);
+        transform: skewX(-30deg)
+    }
+}
+
+@keyframes mailsent-rotation {
+    0% {
+        -webkit-transform: skewX(-30deg);
+        transform: skewX(-30deg)
+    }
+
+    50% {
+        -webkit-transform: skewX(0deg);
+        transform: skewX(0deg)
+    }
+
+    to {
+        -webkit-transform: skewX(-30deg);
+        transform: skewX(-30deg)
+    }
+}
+
+@-webkit-keyframes line-size-large {
+    0% {
+        width: 15px;
+        left: -20px
+    }
+
+    50% {
+        width: 0;
+        left: -5px
+    }
+
+    55% {
+        width: 0;
+        left: -5px
+    }
+
+    to {
+        width: 15px;
+        left: -20px
+    }
+}
+
+@keyframes line-size-large {
+    0% {
+        width: 15px;
+        left: -20px
+    }
+
+    50% {
+        width: 0;
+        left: -5px
+    }
+
+    55% {
+        width: 0;
+        left: -5px
+    }
+
+    to {
+        width: 15px;
+        left: -20px
+    }
+}
+
+@-webkit-keyframes line-size-small {
+    0% {
+        width: 10px;
+        left: -15px
+    }
+
+    50% {
+        width: 0;
+        left: -5px
+    }
+
+    55% {
+        width: 0;
+        left: -5px
+    }
+
+    to {
+        width: 10px;
+        left: -15px
+    }
+}
+
+@keyframes line-size-small {
+    0% {
+        width: 10px;
+        left: -15px
+    }
+
+    50% {
+        width: 0;
+        left: -5px
+    }
+
+    55% {
+        width: 0;
+        left: -5px
+    }
+
+    to {
+        width: 10px;
+        left: -15px
+    }
+}

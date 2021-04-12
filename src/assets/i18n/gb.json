@@ -1,0 +1,365 @@
+{
+  "prodDetails": {
+    "h002": "SUSTAINABILITY",
+    "span001": "Our products provide environmental, social and economic benefits while protecting public health and environment, throughout their life cycle, from exctraction of raw materials until final disposal",
+    "hz001": "The Global X by Shevlin",
+    "ulz001": "Eco-friendly cardholder",
+    "ulz002": "100% satisfaction",
+    "btnTxt": "Buy now",
+    "addToBag" : "ADD TO BAG",
+    "addQuant" : "Quantity"
+  },
+  "prodPrice": {
+    "prodName": "TGX Cardholder by Shevlin",
+    "pprice": "49,95 €",
+    "prodVat": "Additional VAT may apply; charged at checkout"
+  },
+  "prodDesc": {
+    "desc": "Handcrafted leather cardholder."
+  },
+  "footer": {
+    "mailTxt": "Shevlinco@gmail.com",
+    "about001": "About the company",
+    "about002": "Our company has been created with sustainability in mind. We care about the enviroment and we produce our products in the most responsible ways possible. Our mission is to make quality products without compromise",
+    "conditions" : "Conditions",
+    "cookiePolicy" : "Privacy Policy"
+  },
+  "header": {
+    "home": "Shop",
+    "facts": "Facts",
+    "contact": "Contact"
+  },
+  "profile": {
+    "bag": "Bag",
+    "ourFriend": "Become our friend",
+    "login": "Login",
+    "myProfile": "My Profile",
+    "myOrders": "My Orders",
+    "myAddrs": "MyAddresses",
+    "editProfile": "Edit Profile",
+    "logout": "Logout"
+  },
+  "login": {
+    "forgotPassword": "Forgot your password?",
+    "easilyUsing": "EASILY USING",
+    "orEmail": "- OR USING EMAIL -",
+    "recoverPassword": "Recover password",
+    "newTo": "New to Shevlin.co?",
+    "loginTo": "Login to Shevlin.co",
+    "createAccount": "Create Account",
+    "email" : "Your email address",
+    "pw" : "Password"
+  },
+  "signUp": {
+    "becomeFriend": "Become our friend",
+    "easilyUsing": "REGISTER WITH YOUR EMAIL",
+    "orUsing": "- OR USING EMAIL -",
+    "wishNotif": " Do you wish email notifications?",
+    "register": "REGISTER",
+    "login": "Login!",
+    "haveAccount": "Already have an account?",
+    "yes" : "Yes",
+    "no" : "No",
+    "mobile" : "Mobile number",
+    "email" : "Your email address",
+    "choosePw" : "Choose a password",
+    "pwMustMatch" : "Password must match"
+  },
+  "user": {
+    "activeOrders": "ORDER OVERVIEW",
+    "myAddresses": "My addresses",
+    "hello": "Hello",
+    "yourName" : "Hell and welcome!, what is your",
+    "welcome" : "welcome!",
+    "name" : "name",
+    "OrderOverview" : "Overview",
+    "OderDetails" : "Details"
+  },
+  "checkoutHeader": {
+    "bag": "BAG",
+    "delivery": "DELIVERY",
+    "payment": "PAYMENT"
+  },
+  "emptyBag": {
+    "yourBag": "Your Shopping Bag is empty"
+  },
+  "contact": {
+    "title001": "Contact us here on site or:",
+    "submitReq": "Got a question or a request? Contact us! ",
+    "span001": "We're always here to help",
+    "ulz001": "Instagram: Shevlin.co",
+    "ulz003": "Facebook: Shevlin.co",
+    "ulz002": "-",
+    "ulz004": "-",
+    "ulz005": "-",
+    "ulz006": "-",
+    "ulz007": "-",
+    "ulz008": "-",
+    "yName": "Name",
+    "yEmail": "Email",
+    "ySubject": "Subject",
+    "yDesc": "Description",
+    "submitBtn": "Submit",
+    "thankYou" : "THANK YOU!",
+    "conTxt" : " Your email has been delivered :)",
+    "continueShopping" : "Continue shopping"
+  },
+  "fact": {
+    "h001": "This page is comming soon :)"
+  },
+  "aboutUs": {
+    "h001": "This page is comming soon :)"
+  },
+  "cart": {
+    "myBag": "Bag",
+    "myShoppingBag" : "My Shopping Bag",
+    "total" : "Total",
+    "totalCurrency": "€"
+  },
+  "orderTotal": {
+    "bagTotal": "Bag Total",
+    "delivery": "Delivery",
+    "placeOrder": "PLACE ORDER",
+    "orderTotal":"Order Total",
+    "totalCurrency": "€",
+    "yourOrder" : "Your order"
+  },
+  "del": {
+    "delSpeed": "DELIVERY SPEED",
+    "stdDel": "Standard delivery",
+    "freeDel": "1 to 2 days",
+    "totalItems": "Total items",
+    "orderTotal001": "Total in bag",
+    "orderTotal002": "Total on Order",
+    "del001": "Delivery",
+    "del002": "Delivery FREE",
+    "totalPay": "Total to pay",
+    "currency" : "€"
+  },
+  "addrs": {
+    "addNew": "Create new address",
+    "continue": "CONTINUE TO PAYMENT",
+    "selectAddr": "Select delivery address",
+    "selectDelOption" : "Vælg en leveringsmetode",
+    "addrsOverview" : "Overview",
+    "createAddr" : "Create address",
+    "prop1" : "Collect parcel in a GLS ParcelShop",
+    "prop2" : "4,5 €",
+    "prop3" : "1-3 days",
+    "prop4" : 4.5,
+    "prop5" : "Parcel delivery by GLS",
+    "prop6" : "7,1 €",
+    "prop7" : "1-2 days",
+    "prop8" : 7.1
+  },
+  "breadcrumb":{
+    "home" : "Shop",
+    "categories" : "Categories"
+  },
+  "contentHeader":{
+    "availableProds" : "Displaying available products",
+    "popular" : "Popular",
+    "new" : "New",
+    "discount" : "Discount",
+    "low" : "Low",
+    "high" : "High",
+    "view" : "View",
+    "price": "Price",
+    "sort": "Sort"
+  },
+  "taxons":{
+    "clothing" : "CLOTHING",
+    "accessories" : "ACCESSORIES",
+    "socks" : "Socks",
+    "cardholders" : "Cardholders",
+    "belts" : "Belts",
+    "keyhangers" : "Key hangers",
+    "serachTerms" : "Search Terms",
+    "category" : "Categories"
+  },
+  "prodList" : {
+    "addToBag" : "ADD TO BAG"
+  },
+  "lineItem" : {
+    "amount" : "Amount",
+    "size" : "Size",
+    "qty" : "Quantity",
+    "remove" : "REMOVE",
+    "color" : "Color"
+  },
+  "deliveryAddress" : {
+    "mobile" : "Mobile",
+    "remove" : "Remove"
+  },
+  "addAddress" : {
+    "email" : "Email",
+    "zipcode" : "Zipcode",
+    "town" : "Town",
+    "firstName" : "First Name",
+    "lastName" : "Last Name",
+    "address" : "Address",
+    "mobile" : "Mobile",
+    "create" : "Create",
+    "cancel" : "Cancel",
+    "mandatory" : "This is a mandatory field",
+    "country": "Country",
+    "state": "State"
+  },
+  "payment" : {
+    "choosePaymentMode" : "Choose Payment Mode",
+    "youPay" : "You Pay",
+    "orderSummary" : "ORDER SUMMARY",
+    "items" : "ITEMS",
+    "orderTotal" : "Order Total",
+    "delivery" : "Delivery",
+    "totalPayable" : "Total To Pay:",
+    "deliverTo" : "DELIVER TO",
+    "mobile" : "Mobile",
+    "currency": "€"
+  },
+  "orderList" : {
+    "placedOn" : "Placed on",
+    "total" : "Total",
+    "state" : "State",
+    "shipment" : "Order state",
+    "details" : "Details",
+    "orderSentGls" : "Order sent with GLS",
+    "orderWating" : "Order is waiting for confirmation"
+  },
+  "facts" : {
+    "sustainability" : "Sustainability",
+    "weWish" : "We want the best for the environment!",
+    "becuaseWe" : "Because we think so much about the environment, our products are produced slower than conventional products. Our leather has to bathe basins of water and bark instead of chemical solutions.",
+    "ourTextile" : "Our fabrics are made of organic and sustainable materials such as bamboo, hemp, organic cotton, etc. We constantly strive to develop and produce the most sustainable products we can, in the most sustainable way - for you, for me and for all of us.",
+    "ourTextileShort" : "Our fabrics are made of...",
+    "inspirationAnd" : "Inspiration and Mission",
+    "weTakeOur" : "We get our inspiration from a well-balanced mix of the 1920’s classic expressions and the modern and stylish London.",
+    "ourMissionIs" : "Our mission is to create products for the fashionable man who does not compromise his appearance, but who also wants the best for the environment and the future. All our leather goods are handmade to provide the highest quality in every product",
+    "ourMissionIsShort" : "Our mission is...",
+    "codeOfConduct" : "CODE OF CONDUCT // CSR",
+    "codeOfConductAnd" : "The Code of Conduct and Corporate Social Responsibilities cover a number of different requirements that we set for ourselves and our sub-suppliers",
+    "appliesTo" : "that applies to:", 
+    "li1" : "No child labor",
+    "li2" : "No discrimination or violation of human and labor rights",
+    "li4" : "Healthy working environment and facilities for employees",
+    "li5" : "Building safety and certifications",
+    "li6" : "Fire extinguishers, emergency procedures and exercises",
+    "li7" : "Handling, gloves and masks for chemicals",
+    "li8" : "Machine safety",
+    "li9" : "Working hours and wages must comply with applicable law",
+    "li11" : "Environmental considerations, including waste water treatment, pollution etc.",
+    "productionOf" : "Manufacturing of our products",
+    "handlingOf" : "Handling chemicals is a very important element when producing products in the East. It is of course about both the environment, but also the safety of our end-consumers.",
+    "inEurope" : "In Europe, we obviously have a lot of regulations including a chemical legislation called REACH regulation. REACH is based on a around a sea of studies and has set rules and laws for handling chemicals in production and end products. This basically means that do not use any:",
+    "inEuropeShort" : "In Europe, we obviously have...",
+    "li12" : "ChromVI in leather",
+    "li13" : "Illegal Azo Dyes",
+    "li14" : "Formaldehyde",
+    "li15" : "Alkylphenol, Alkulphenol ethoxylates (APEO, environmentally harmful substances)",
+    "li16" : "Heavy metals in metal parts (zippers, studs etc.)",
+    "li17" : "PH values",
+    "aboutMe" : "ABOUT ME",
+    "toStartWith" : "Originally, I started this business in the hope that I could do something that would make a difference for our environment.",
+    "fastI" : "I quickly reached a conclusion about making accessories and clothes for the fashion-conscious man. A huge amount of time was spent on ideas and conversations with different manufacturers, but eventually I found those who shared the same visions as myself.",
+    "nowAllOur" : "Now all our products are made under sustainable conditions, with strict chemical requirements as well as working conditions for the employees in the factories.",
+    "weAreStill" : "We are still a very young company, but I believe that my idea and business are of great potential and we are constantly working on high pressure to achieve the best solutions and results for all our projects both now and in the future.",
+    "fastIShort" : "I quickly reached a conclusion...",
+    "close" : "Close"
+  },
+  "terms" : {
+    "payment" : "Payment",
+    "paymentTxt" : "Shevlin receives payment with Dankort / VISA-Dankort, VISA, VISA Electron, Mastercard and JCB. Payment will only be deducted from your account when the item is shipped. All prices are in DKK and EUR. And includes VAT/moms. Shevlin uses an authorized payment server that encrypts all your card information using the SSL (Secure Socket Layer) protocol. This means that we can not read your information.",
+    "del" : "Delivery",
+    "delTxt" : "Shevlin delivers on weekdays only. All orders placed before 16.00 will be processed the same day. 12.00 NOTE: The processing time is between 3-5 working days.",
+    "rekl" : "Warranty",
+    "reklTxt" : "A warranty of 2 years is granted in accordance with the danish Purchasing Act. Your right of complaint applies to defects in materials and / or fabrication. The complaint does not apply to errors or damage caused by improper use of the product. Shevlin will cover return costs to a reasonable extent.",
+    "return" : "Upon return",
+    "returnTxt" : "Legal notice and complaints are sent to:",
+    "refusion" : "Reimbursement",
+    "refusionTxt" : "If a refund has been agreed upon, please send your bank details so that we can transfer the agreed amount back to you. We have a 14 day full return on goods purchased in our webshop. The period is counted from the day you receive the order. Return costs must be taken care of by yourself. Cancellation must be notified to us no later than 14 days after the purchase and from the cancellation you must return within 14 days of returning the shipment. The notification shall be given per mail at Shevlinco@gmail.com In the message, please let us know clearly that you wish to exercise your right for a refund. You can also use our 'contact' page, and remember to attach your order no. You are liable for any wear and tear on the products and of the value of the item due to handling other than what is necessary to determine the nature, characteristics and manner of the item. In other words - you can try the product in the same way as if you tried it in a physical store. If the product is tested beyond what is described above, we consider it used, which means that in the case of a refund of the purchase, only a portion or none of the purchase amount will be returned, depending on the products commercial value. In order to receive the full purchase amount, the products must be unused. You may test the product, but do not take it into real use.",
+    "comp" : "Complaints - overview and links:",
+    "compTxt" : "If you have a complaint about a product purchased from our webshop, a complaint may be sent to:",
+    "compTxt2" : "The Competition and Consumer Agency's Center for Complaints",
+    "compTxt3" : "If you are a consumer living in another EU country, you can state your complaint in the EU Commission Online Complaints Platform.",
+    "compTxt4" : "The platform can be found here: ",
+    "compTxt5" : "If you submit a complaint here, please provide them with our e-mail address: "
+  },
+  "orders" : {
+    "noOrders" : "You have'nt ordered anything yet.",
+    "startShopping" : "Start Shopping",
+    "OrderOverview" : "Orderoverview",
+    "OderDetails" : "Order details"
+  },
+  "orderDetails" : {
+    "size" : "Size",
+    "color" : "Color",
+    "qty" : "Quantity",
+    "price" : "Price",
+    "currency": "€",
+    "total" : "TOTAL",
+    "state" : "STATUS",
+    "items" : "ITEMS",
+    "shipDetails" : "SHIPPING DETAILS",
+    "orderNo" : "Order Nummer: ",
+    "confirmOrder" : "CONFIRM ORDER",
+    "orderWating" : "Order is waiting for confirmation",
+    "orderSentGls" : "Order sent with GLS"
+  },
+  "app" : {
+    "cookieText" : "This website is using cookies to keep track of your settings, for more info please read or ",
+    "privatePolicy" : "Privacy Policy"
+  },
+  "cookiePolicy" : {
+    "h001" : "Privacy Policy of Shevlin",
+    "h002" : "Shevlin operates the https://shevlin.co/ website, which provides the SERVICE.",
+    "h003" : "This page is used to inform website visitors regarding our policies with the collection, use, and disclosure of Personal Information if anyone decided to use our Service, the Shevlin.co website.",
+    "h004" : "If you choose to use our Service, then you agree to the collection and use of information in relation with this policy. The Personal Information that we collect are used for providing and improving the Service. We will not use or share your information with anyone except as described in this Privacy Policy.",
+    "h005" : "The terms used in this Privacy Policy have the same meanings as in our Terms and Conditions, which is accessible at https://shevlin.co/, unless otherwise defined in this Privacy Policy.",
+    "h006" : "Information Collection and Use",
+    "h007" : "For a better experience while using our Service, we may require you to provide us with certain personally identifiable information, including but not limited to your name, phone number, and postal address. The information that we collect will be used to contact or identify you.",
+    "h008" : "Log Data",
+    "h009" : "We want to inform you that whenever you visit our Service, we collect information that your browser sends to us that is called Log Data. This Log Data may include information such as your computer’s Internet Protocol IP address, browser version, pages of our Service that you visit, the time and date of your visit, the time spent on those pages, and other statistics.",
+    "h010" : "Cookies",
+    "h011" : "Cookies are files with small amount of data that is commonly used an anonymous unique identifier. These are sent to your browser from the website that you visit and are stored on your computer’s hard drive.",
+    "h012" : "Our website uses these 'cookies' to collection information and to improve our Service. You have the option to either accept or refuse these cookies, and know when a cookie is being sent to your computer. If you choose to refuse our cookies, you may not be able to use some portions of our Service.",
+    "h013" : "Service Providers",
+    "h014" : "We may employ third-party companies and individuals due to the following reasons:</p>",
+    "li001" : "To facilitate our Service",
+    "li002" : "To provide the Service on our behalf",
+    "li003" : "To assist us in analyzing how our Service is used",
+    "li004" : "To perform Service-related services",
+    "h015" : "We want to inform our Service users that these third parties have access to your Personal Information. The reason is to perform the tasks assigned to them on our behalf. However, they are obligated not to disclose or use the information for any other purpose.",
+    "h016" : "Security",
+    "h017" : "We value your trust in providing us your Personal Information, thus we are striving to use commercially acceptable means of protecting it. But remember that no method of transmission over the internet, or method of electronic storage is 100% secure and reliable, and we cannot guarantee its absolute security.",
+    "h018" : "Links to Other Sites",
+    "h019" : "Our Service may contain links to other sites. If you click on a third-party link, you will be directed to that site. Note that these external sites are not operated by us. Therefore, we strongly advise you to review the Privacy Policy of these websites. We have no control over, and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.",
+    "h020" : "Children’s Privacy",
+    "h021" : "Our Services do not address anyone under the age of 13. We do not knowingly collect personal identifiable information from children under 13. In the case we discover that a child under 13 has provided us with personal information, we immediately delete this from our servers. If you are a parent or guardian and you are aware that your child has provided us with personal information, please contact us so that we will be able to do necessary actions.",
+    "h022" : "Changes to This Privacy Policy",
+    "h023" : "We may update our Privacy Policy from time to time. Thus, we advise you to review this page periodically for any changes. We will notify you of any changes by posting the new Privacy Policy on this page. These changes are effective immediately, after they are posted on this page. <a href='https://gdprprivacypolicy.net'>This privacy policy was created with the GDPR Generator</a>.",
+    "h024" : "Contact Us",
+    "h025" : "If you have any questions or suggestions about our Privacy Policy, do not hesitate to contact us."
+  },
+  "orderSucc" : {
+    "thankYou" :"Thank you for your order",
+    "orderTxt" : "      Your order has been placed and is being processed. When the item(s) are shipped, you will receive an email with the details.",
+    "shippingInfo" : "Shipping Info",
+    "orderInfo" : "Order Info",
+    "shippedTo" : "Shipped to: ",
+    "name" : "Name: ",
+    "orderId" : "Order Id: ",
+    "totalItems" : "Total Items: ",
+    "totalAmount" : "Total Amount: ",
+    "isAuth" : "You can view your orders here",
+    "isNotAuth" : "You can registere here and view your orders",
+    "continueShopping" : "Continue Shopping",
+    "currency": "€"
+  },
+  "payPal" : {
+    "currency" : "EUR"
+  },
+  "cashOnDel" : {
+    "payWithPayPal" : "Pay with PayPal",
+    "noteMore" : "NOTE: more paymenttypes are being impmented :)" 
+   }
+}

@@ -1,0 +1,262 @@
+.showHide[_ngcontent-c10] {
+    display: none
+}
+
+@media screen and (min-width:768px) {
+    .showHide[_ngcontent-c10] {
+        display: block
+    }
+
+    #leftside[_ngcontent-c10]>button[_ngcontent-c10] {
+        display: none
+    }
+}
+
+@media screen and (min-height:670px) {
+    .content[_ngcontent-c10] {
+        width: 100%
+    }
+}
+
+.content[_ngcontent-c10] .queried-for[_ngcontent-c10] {
+    display: inline;
+    overflow: hidden;
+    font-size: 18px;
+    font-weight: 500
+}
+
+.content[_ngcontent-c10] .queried-for[_ngcontent-c10] .q[_ngcontent-c10] {
+    font-weight: 900;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 67%
+}
+
+.content[_ngcontent-c10] .queried-for[_ngcontent-c10] span[_ngcontent-c10] {
+    line-height: 39px;
+    color: #282c3f;
+    font-weight: 400;
+    font-size: 18px;
+    font-style: normal
+}
+
+.content[_ngcontent-c10] .options[_ngcontent-c10] {
+    position: relative;
+    text-align: right;
+    margin: 12px 0 0 5px;
+    display: inline-block;
+    float: right
+}
+
+.content[_ngcontent-c10] .options[_ngcontent-c10] ul.img-size[_ngcontent-c10] {
+    display: inline-block;
+    margin-right: 10px
+}
+
+.content[_ngcontent-c10] .options[_ngcontent-c10] ul.img-size[_ngcontent-c10] label[_ngcontent-c10] {
+    font-weight: 400
+}
+
+.content[_ngcontent-c10] .options[_ngcontent-c10] ul.img-size[_ngcontent-c10] li[_ngcontent-c10] {
+    list-style: none;
+    display: inline-block;
+    cursor: pointer;
+    margin: 0 4px -2px;
+    width: 19px;
+    height: 13px;
+    background: url(https://shevlin.co/search-sprite.d5ab50f1b815dfaf3976c6ce2e19d24670e5ba0b.306b025b18bf226581d1.png) no-repeat transparent
+}
+
+.content[_ngcontent-c10] .options[_ngcontent-c10] ul.img-size[_ngcontent-c10] li.big[_ngcontent-c10] {
+    background-position: -284px -160px
+}
+
+.content[_ngcontent-c10] .options[_ngcontent-c10] ul.img-size[_ngcontent-c10] li.big.selected[_ngcontent-c10] {
+    cursor: default;
+    background-position: -284px -180px
+}
+
+.content[_ngcontent-c10] .options[_ngcontent-c10] ul.img-size[_ngcontent-c10] li.small[_ngcontent-c10] {
+    background-position: -311px -160px
+}
+
+.content[_ngcontent-c10] .options[_ngcontent-c10] ul.img-size[_ngcontent-c10] li.small.selected[_ngcontent-c10] {
+    background-position: -311px -180px;
+    cursor: default
+}
+
+.content[_ngcontent-c10] .options[_ngcontent-c10] ul.sort[_ngcontent-c10] {
+    display: inline-block;
+    position: relative
+}
+
+.content[_ngcontent-c10] .options[_ngcontent-c10] ul.sort[_ngcontent-c10] li[_ngcontent-c10] {
+    display: inline-block;
+    margin-left: 5px;
+    text-decoration: none;
+    cursor: pointer
+}
+
+.content[_ngcontent-c10] .options[_ngcontent-c10] ul.sort[_ngcontent-c10] li[_ngcontent-c10]:after {
+    content: " ";
+    display: inline-block;
+    height: 11px;
+    width: 1px;
+    border-left: 1px solid #3e4152;
+    margin-left: 5px;
+    margin-bottom: -1px
+}
+
+.content[_ngcontent-c10] .options[_ngcontent-c10] ul.sort[_ngcontent-c10] label[_ngcontent-c10] {
+    font-weight: 400;
+    margin-left: 5px
+}
+
+.content[_ngcontent-c10] .options[_ngcontent-c10] ul.sort[_ngcontent-c10] label[_ngcontent-c10] li[_ngcontent-c10]:first-child {
+    margin-left: 0
+}
+
+.content[_ngcontent-c10] .options[_ngcontent-c10] ul.sort[_ngcontent-c10] label[_ngcontent-c10] li[_ngcontent-c10]:after {
+    content: none
+}
+
+.content[_ngcontent-c10] .options[_ngcontent-c10]:after,
+.content[_ngcontent-c10] .options[_ngcontent-c10]:before,
+.content[_ngcontent-c10] .options[_ngcontent-c10] ul.sort[_ngcontent-c10]:after,
+.content[_ngcontent-c10] .options[_ngcontent-c10] ul.sort[_ngcontent-c10]:before {
+    content: "";
+    display: table
+}
+
+.customize[_ngcontent-c11] ul.properties[_ngcontent-c11] {
+    margin-left: -40px;
+    display: block;
+    position: relative
+}
+
+.customize[_ngcontent-c11] ul.properties[_ngcontent-c11] li[_ngcontent-c11] {
+    position: relative;
+    cursor: pointer;
+    font-size: 14px;
+    float: left;
+    margin-right: 32px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid #fff;
+    display: inline-block;
+    color: #696b79;
+    list-style: none
+}
+
+.customize[_ngcontent-c11] ul.properties[_ngcontent-c11] li.selected[_ngcontent-c11]:after {
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    background-color: #20bd99;
+    content: " ";
+    top: 108%;
+    left: 0
+}
+
+.customize[_ngcontent-c11] ul.properties[_ngcontent-c11] li[_ngcontent-c11]:not(.selected):hover:after {
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    background-color: #696b79;
+    content: " ";
+    top: 108%;
+    left: 0
+}
+
+.customize[_ngcontent-c11] ul.properties[_ngcontent-c11]:after,
+.customize[_ngcontent-c11] ul.properties[_ngcontent-c11]:before {
+    content: "";
+    display: table;
+    clear: both
+}
+
+.customize[_ngcontent-c11] .allOptions[_ngcontent-c11] {
+    display: block;
+    margin-top: 12px;
+    position: relative;
+    padding-top: 10px;
+    border-top: 1px double #010207
+}
+
+.customize[_ngcontent-c11] .allOptions[_ngcontent-c11] ul.options[_ngcontent-c11] {
+    padding-left: 0;
+    text-align: right;
+    margin: 5px 0 0 5px;
+    text-transform: capitalize;
+    display: block;
+    border-bottom: 1px dotted #02030a;
+    max-height: 76px;
+    position: relative;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    float: none
+}
+
+.customize[_ngcontent-c11] .allOptions[_ngcontent-c11] ul.options[_ngcontent-c11] li[_ngcontent-c11] {
+    margin: 0 2px 2px 0;
+    display: inline-block;
+    width: 120px;
+    font-size: 14px;
+    text-align: left;
+    color: #3e4152;
+    float: left;
+    list-style: none
+}
+
+.customize[_ngcontent-c11] .allOptions[_ngcontent-c11] ul.options[_ngcontent-c11] li[_ngcontent-c11] label[_ngcontent-c11] {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    position: relative;
+    cursor: pointer;
+    display: block;
+    font-weight: 400;
+    height: 19px;
+    line-height: 19px;
+    vertical-align: top
+}
+
+.customize[_ngcontent-c11] .allOptions[_ngcontent-c11] ul.options[_ngcontent-c11] li[_ngcontent-c11] label.selected[_ngcontent-c11]:before {
+    background-position: -237px -138px
+}
+
+.customize[_ngcontent-c11] .allOptions[_ngcontent-c11] ul.options[_ngcontent-c11] li[_ngcontent-c11] label[_ngcontent-c11] input.checkbox[_ngcontent-c11],
+.customize[_ngcontent-c11] .allOptions[_ngcontent-c11] ul.options[_ngcontent-c11] li[_ngcontent-c11] label[_ngcontent-c11] input.radio[_ngcontent-c11] {
+    display: inline-block !important;
+    visibility: hidden;
+    margin: 0 12px 0 0;
+    width: 8px;
+    height: 8px
+}
+
+.customize[_ngcontent-c11] .allOptions[_ngcontent-c11] ul.options[_ngcontent-c11] li[_ngcontent-c11] label[_ngcontent-c11] .num[_ngcontent-c11] {
+    display: none
+}
+
+.customize[_ngcontent-c11] .allOptions[_ngcontent-c11] ul.options[_ngcontent-c11] li[_ngcontent-c11] label[_ngcontent-c11]:before {
+    background: url(https://shevlin.co/search-sprite.d5ab50f1b815dfaf3976c6ce2e19d24670e5ba0b.306b025b18bf226581d1.png) no-repeat -237px -110px transparent;
+    content: " ";
+    height: 13px;
+    width: 13px;
+    display: block;
+    visibility: visible;
+    top: 4px;
+    position: absolute
+}
+
+.customize[_ngcontent-c11] .allOptions[_ngcontent-c11] ul.options[_ngcontent-c11] li[_ngcontent-c11] label[_ngcontent-c11]:not(.selected):hover:before {
+    background-position: -237px -124px
+}
+
+.customize[_ngcontent-c11] .allOptions[_ngcontent-c11] ul.options[_ngcontent-c11]:after,
+.customize[_ngcontent-c11] .allOptions[_ngcontent-c11] ul.options[_ngcontent-c11]:before {
+    content: "";
+    display: table
+}

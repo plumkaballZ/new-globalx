@@ -1,0 +1,176 @@
+.prodName[_ngcontent-c12] {
+    font-size: 11px
+}
+
+ul[_ngcontent-c12] {
+    margin-left: -36px
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] {
+    width: 250px;
+    height: 400px;
+    text-align: center;
+    position: relative;
+    vertical-align: top;
+    overflow: hidden;
+    display: inline-block;
+    -webkit-transition: all .5s;
+    transition: all .5s
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] a[_ngcontent-c12] {
+    text-decoration: none;
+    background-color: transparent;
+    color: #282c3f
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] a[_ngcontent-c12] .product-thumb[_ngcontent-c12] {
+    height: 309px;
+    display: block;
+    background-color: transparent;
+    opacity: 1;
+    width: 100%;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] a[_ngcontent-c12] .product-productMetaInfo[_ngcontent-c12] {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    height: 100%;
+    padding: 0 5px
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] a[_ngcontent-c12] .product-productMetaInfo[_ngcontent-c12] .product-brand[_ngcontent-c12],
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] a[_ngcontent-c12] .product-productMetaInfo[_ngcontent-c12] .product-product[_ngcontent-c12] {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #282c3f;
+    text-transform: capitalize;
+    margin-top: 10px
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] a[_ngcontent-c12] .product-productMetaInfo[_ngcontent-c12] .product-price[_ngcontent-c12] {
+    font-size: 13px;
+    line-height: 15px;
+    color: #282c3f;
+    margin: 10px 0 0;
+    white-space: nowrap;
+    font-weight: 500
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] a[_ngcontent-c12] .product-productMetaInfo[_ngcontent-c12] .product-sizes[_ngcontent-c12] {
+    font-size: 11px;
+    display: none;
+    color: #3e4152;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-top: 6px
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] .product-sizeDisplayDiv[_ngcontent-c12] {
+    z-index: 1;
+    width: 100%;
+    max-width: 100%;
+    position: absolute;
+    bottom: 91px;
+    background: #fff;
+    margin-bottom: -161px;
+    -webkit-transition: all .2s ease-out;
+    transition: all .2s ease-out
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] .product-sizeDisplayDiv[_ngcontent-c12] .product-sizeDisplayHeader[_ngcontent-c12] {
+    border-bottom: 1px solid #eaeaec;
+    border-top: 1px solid #eaeaec;
+    padding: 8px;
+    text-align: left;
+    font-size: 14px;
+    color: #535766
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] .product-sizeButtonsContaier[_ngcontent-c12] {
+    text-align: center;
+    padding: 10px;
+    overflow-y: scroll;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    max-height: 108px
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] .product-sizeButtonsContaier[_ngcontent-c12] .product-sizeButton[_ngcontent-c12] {
+    border-radius: 20px;
+    margin: 5px;
+    min-width: 34px;
+    height: 34px;
+    background-color: #fff;
+    border: 1px solid #696e79;
+    outline: none;
+    font-size: 12px;
+    color: #696e79;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 5px
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] .product-actions[_ngcontent-c12] {
+    position: absolute;
+    left: 0;
+    bottom: 35px;
+    border-bottom: 1px solid #eaeaec;
+    border-top: 1px solid #eaeaec;
+    background: #fff;
+    width: 100%
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] .product-actions[_ngcontent-c12] .product-actionsButton[_ngcontent-c12] {
+    line-height: 20px;
+    margin: 10px 0;
+    font-weight: 800;
+    font-size: 11px;
+    color: #526cd0;
+    text-transform: uppercase;
+    display: inline-block;
+    cursor: pointer
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] .product-actions[_ngcontent-c12] .product-actionsButton.product-wishlist[_ngcontent-c12] {
+    float: left;
+    width: 40%
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] .product-actions[_ngcontent-c12] .product-actionsButton.product-addToBag[_ngcontent-c12] {
+    width: 60%;
+    float: left
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12] .product-actions[_ngcontent-c12] .product-actionsButton.product-addToBag[_ngcontent-c12] span[_ngcontent-c12] {
+    border-left: 1px dotted #d4d5d9;
+    display: block
+}
+
+ul[_ngcontent-c12] li[_ngcontent-c12] .product-thumbShim[_ngcontent-c12] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 101%;
+    height: 100%;
+    background-color: #282c3f;
+    -webkit-transition: visibility 0s, opacity .5s linear;
+    transition: visibility 0s, opacity .5s linear;
+    visibility: hidden;
+    opacity: 0
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12]:hover {
+    outline: 1px solid #eaeaec;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .05);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .05)
+}
+
+ul[_ngcontent-c12] li.product-base[_ngcontent-c12]:hover .product-actions[_ngcontent-c12] {
+    z-index: 10
+}

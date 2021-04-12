@@ -1,0 +1,248 @@
+.address-section[_ngcontent-c21] {
+    max-width: 980px;
+    margin: 0 auto
+}
+
+.address-section[_ngcontent-c21] .left[_ngcontent-c21] {
+    padding-bottom: 20px;
+    position: relative;
+    vertical-align: top
+}
+
+.address-section[_ngcontent-c21] .left[_ngcontent-c21] .add-address[_ngcontent-c21] {
+    padding: 20px 10px 20px 20px;
+    border-bottom: 1px solid #d5d6d9;
+    margin-bottom: 14px
+}
+
+.address-section[_ngcontent-c21] .left[_ngcontent-c21] .add-address[_ngcontent-c21] .add-label[_ngcontent-c21] {
+    color: #535766;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Whitney-semi-bold;
+    cursor: pointer
+}
+
+.address-section[_ngcontent-c21] .left[_ngcontent-c21] .edit-address[_ngcontent-c21] {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background: #fff
+}
+
+.address-section[_ngcontent-c21] .left[_ngcontent-c21] .edit-address[_ngcontent-c21] .edit-label[_ngcontent-c21] {
+    font-size: 17px;
+    color: #596062;
+    font-weight: 600;
+    font-family: Whitney-semi-bold
+}
+
+.address-section[_ngcontent-c21] .right[_ngcontent-c21] .pay-btn[_ngcontent-c21] {
+    border: none;
+    border-radius: 3px;
+    height: 45px;
+    background-color: #2cd2b1 !important;
+    font-weight: 600 !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    color: #fff;
+    font-family: Whitney-semi-bold;
+    font-size: 14px;
+    margin: 10px auto
+}
+
+.addAddrBtn[_ngcontent-c21] {
+    padding: 1% 1% 1% 0;
+    font-size: 18px;
+    width: 50%;
+    border: 1px solid #1d886d;
+    background-color: #1d886d;
+    color: #f2f2f2
+}
+
+.addAddrBtn[_ngcontent-c21]:hover {
+    background-color: #104739
+}
+
+@media screen and (max-width:768px) {
+    .address-section[_ngcontent-c21] {
+        margin: 90px auto
+    }
+}
+
+.centerDiv[_ngcontent-c21] {
+    margin: 0 auto;
+    width: 70%;
+    border-radius: 3px
+}
+
+.bread_crumb[_ngcontent-c24] {
+    margin: 30px 0
+}
+
+.bread_crumb[_ngcontent-c24] li[_ngcontent-c24] {
+    display: inline-block;
+    float: left;
+    margin-right: 5px
+}
+
+.bread_crumb[_ngcontent-c24] li[_ngcontent-c24] a[_ngcontent-c24] {
+    color: #696b79
+}
+
+.bread_crumb[_ngcontent-c24] li[_ngcontent-c24]:after {
+    font-size: 10px;
+    content: "/";
+    margin-left: 5px
+}
+
+.bread_crumb[_ngcontent-c24] li[_ngcontent-c24]:last-child {
+    font-weight: 500;
+    margin-right: 0;
+    font-family: Whitney-semi-bold
+}
+
+.bread_crumb[_ngcontent-c24] li[_ngcontent-c24]:last-child:after {
+    content: "";
+    margin-right: 0
+}
+
+ul.bread_crumb[_ngcontent-c24]:after,
+ul.bread_crumb[_ngcontent-c24]:before {
+    content: "";
+    display: table
+}
+
+.status[_ngcontent-c25] {
+    color: #20bd99
+}
+
+.line_item_image[_ngcontent-c25] {
+    border: 1px solid #eee
+}
+
+.form[_ngcontent-c25] .full-width[_ngcontent-c25],
+.form[_ngcontent-c25] .half-width[_ngcontent-c25] {
+    width: 100%
+}
+
+.form[_ngcontent-c25] .value-err[_ngcontent-c25] {
+    height: 18px;
+    padding-top: 2px;
+    color: #ea6c6c
+}
+
+.form[_ngcontent-c25] .address[_ngcontent-c25],
+.form[_ngcontent-c25] .city[_ngcontent-c25],
+.form[_ngcontent-c25] .email[_ngcontent-c25],
+.form[_ngcontent-c25] .first-name[_ngcontent-c25],
+.form[_ngcontent-c25] .last-name[_ngcontent-c25],
+.form[_ngcontent-c25] .locality[_ngcontent-c25],
+.form[_ngcontent-c25] .mobile[_ngcontent-c25],
+.form[_ngcontent-c25] .pincode[_ngcontent-c25],
+.form[_ngcontent-c25] .state[_ngcontent-c25] {
+    padding-left: 20px;
+    padding-right: 10px;
+    padding-bottom: 25px;
+    position: relative
+}
+
+.form[_ngcontent-c25] .address[_ngcontent-c25] label[_ngcontent-c25],
+.form[_ngcontent-c25] .city[_ngcontent-c25] label[_ngcontent-c25],
+.form[_ngcontent-c25] .email[_ngcontent-c25] label[_ngcontent-c25],
+.form[_ngcontent-c25] .first-name[_ngcontent-c25] label[_ngcontent-c25],
+.form[_ngcontent-c25] .last-name[_ngcontent-c25] label[_ngcontent-c25],
+.form[_ngcontent-c25] .locality[_ngcontent-c25] label[_ngcontent-c25],
+.form[_ngcontent-c25] .mobile[_ngcontent-c25] label[_ngcontent-c25],
+.form[_ngcontent-c25] .pincode[_ngcontent-c25] label[_ngcontent-c25],
+.form[_ngcontent-c25] .state[_ngcontent-c25] label[_ngcontent-c25] {
+    cursor: text;
+    position: absolute;
+    padding: 2px;
+    font-weight: 500;
+    background: #fff;
+    left: 30px;
+    top: -11px;
+    font-size: 13px
+}
+
+.form[_ngcontent-c25] .address[_ngcontent-c25] input[_ngcontent-c25],
+.form[_ngcontent-c25] .city[_ngcontent-c25] input[_ngcontent-c25],
+.form[_ngcontent-c25] .email[_ngcontent-c25] input[_ngcontent-c25],
+.form[_ngcontent-c25] .first-name[_ngcontent-c25] input[_ngcontent-c25],
+.form[_ngcontent-c25] .last-name[_ngcontent-c25] input[_ngcontent-c25],
+.form[_ngcontent-c25] .locality[_ngcontent-c25] input[_ngcontent-c25],
+.form[_ngcontent-c25] .mobile[_ngcontent-c25] input[_ngcontent-c25],
+.form[_ngcontent-c25] .pincode[_ngcontent-c25] input[_ngcontent-c25],
+.form[_ngcontent-c25] .state[_ngcontent-c25] input[_ngcontent-c25] {
+    height: 40px;
+    padding: 0 10px !important;
+    border: 1px solid #949c9d
+}
+
+.form[_ngcontent-c25] .address[_ngcontent-c25] .readonly[_ngcontent-c25],
+.form[_ngcontent-c25] .city[_ngcontent-c25] .readonly[_ngcontent-c25],
+.form[_ngcontent-c25] .email[_ngcontent-c25] .readonly[_ngcontent-c25],
+.form[_ngcontent-c25] .first-name[_ngcontent-c25] .readonly[_ngcontent-c25],
+.form[_ngcontent-c25] .last-name[_ngcontent-c25] .readonly[_ngcontent-c25],
+.form[_ngcontent-c25] .locality[_ngcontent-c25] .readonly[_ngcontent-c25],
+.form[_ngcontent-c25] .mobile[_ngcontent-c25] .readonly[_ngcontent-c25],
+.form[_ngcontent-c25] .pincode[_ngcontent-c25] .readonly[_ngcontent-c25],
+.form[_ngcontent-c25] .state[_ngcontent-c25] .readonly[_ngcontent-c25] {
+    border: 1px solid #d5d6d9 !important
+}
+
+.form[_ngcontent-c25] .email[_ngcontent-c25] {
+    padding-bottom: 10px;
+    padding-top: 15px
+}
+
+.form[_ngcontent-c25] .email[_ngcontent-c25] label[_ngcontent-c25] {
+    top: 4px
+}
+
+.form[_ngcontent-c25] .pincode[_ngcontent-c25] {
+    padding-top: 15px
+}
+
+.form[_ngcontent-c25] .pincode[_ngcontent-c25] label[_ngcontent-c25] {
+    top: 4px
+}
+
+.form[_ngcontent-c25] .city[_ngcontent-c25],
+.form[_ngcontent-c25] .first-name[_ngcontent-c25],
+.form[_ngcontent-c25] .last-name[_ngcontent-c25],
+.form[_ngcontent-c25] .state[_ngcontent-c25] {
+    display: inline-block;
+    vertical-align: top
+}
+
+.form[_ngcontent-c25] .last-name[_ngcontent-c25],
+.form[_ngcontent-c25] .state[_ngcontent-c25] {
+    padding-left: 7px
+}
+
+.form[_ngcontent-c25] .address[_ngcontent-c25] textarea[_ngcontent-c25] {
+    height: 70px;
+    padding: 10px
+}
+
+.form[_ngcontent-c25] .save-button[_ngcontent-c25] {
+    padding: 10px;
+    height: 68px
+}
+
+.form[_ngcontent-c25] .save-button[_ngcontent-c25] button[_ngcontent-c25] {
+    margin-left: 10px;
+    width: 190px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    height: 48px;
+    background: #0bc6a0;
+    font-weight: 600;
+    font-family: Whitney-semi-bold;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none
+}

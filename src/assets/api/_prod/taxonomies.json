@@ -1,0 +1,40 @@
+{  
+  "taxonomies":[  
+     {  
+        "id":1,
+        "name":"CLOTHING",
+        "root":{  
+           "taxons":[  
+              {  
+                 "id":1,
+                 "name":"Socks"
+              }
+           ]
+        }
+     },
+     
+     {  
+       "id":2,
+        "name":"ACCESSORIES",
+        "root":{  
+           "taxons":[
+              {  
+                 "id":4,
+                 "name":"Cardholders"
+              },
+              {  
+                 "id":5,
+                 "name":"Belts"
+              },
+              {  
+                 "id":6,
+                 "name":"Keyhangers"
+              }
+           ]
+        }
+     }
+  ],
+  "count":5,
+  "current_page":1,
+  "pages":2
+}

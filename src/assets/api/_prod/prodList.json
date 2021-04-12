@@ -1,0 +1,581 @@
+{  
+  "products":[  
+     {  
+        "id":1,
+        "name":"The Global X cardholder",
+        "description":"By Shevlin",
+        "price":"359,95",
+        "price_GB":"49,00",
+        "display_price":"359,95 DKK",
+        "available_on":"2012-10-17T03:43:57Z",
+        "slug":"theglobalx",
+        "meta_description":null,
+        "meta_keywords":null,
+        "shipping_category_id":1,
+        "taxon_ids":[  
+           4
+        ],
+        "master":{  
+           "id":1,
+           "name":"1",
+           "sku":"1",
+           "price":"15.99",
+           "weight":null,
+           "height":null,
+           "width":null,
+           "depth":null,
+           "is_master":true,
+           "slug":"ruby-on-rails-tote",
+           "description":"A text description of the product.",
+           "track_inventory":true,
+           "cost_price":null,
+           "option_values":[  
+              {  
+                "id":1,
+                "name":"Antique",
+                "presentation":"Antique",
+                "option_type_name":"Color",
+                "option_type_id":1,
+                "option_type_presentation":"Color"
+              }
+           ],
+           "images":[  
+              {  
+                 "id":1,
+                 "position":1,
+                 "attachment_content_type":"image/jpg",
+                 "large_url":"assets/api/_prod/theglobalx/small.png",
+                 "small_url":"assets/api/_prod/theglobalx/small.png",
+                 "type":"Spree::Image",
+                 "attachment_updated_at":null,
+                 "attachment_width":360,
+                 "attachment_height":360,
+                 "alt":null,
+                 "viewable_type":"Spree::Variant",
+                 "viewable_id":1
+              }
+           ],
+           "display_price":"49,95 €",
+           "options_text":"(Size: small, Colour: red)",
+           "in_stock":true,
+           "is_backorderable":true,
+           "is_orderable":true,
+           "total_on_hand":10,
+           "is_destroyed":false
+        },
+        "variants":[  
+           {  
+              "id":1,
+              "name":"Ruby on Rails Tote",
+              "sku":"ROR-00011",
+              "price":"15.99",
+              "weight":null,
+              "height":null,
+              "width":null,
+              "depth":null,
+              "is_master":false,
+              "slug":"ruby-on-rails-tote",
+              "description":"A text description of the product.",
+              "track_inventory":true,
+              "cost_price":null,
+              "option_values":[  
+                 {  
+                    "id":1,
+                    "name":"Small",
+                    "presentation":"S",
+                    "option_type_name":"tshirt-size",
+                    "option_type_id":1,
+                    "option_type_presentation":"S"
+                 }
+              ],
+              "images":[  
+                 {  
+                    "id":1,
+                    "position":1,
+                    "attachment_content_type":"image/jpg",
+                    "large_url":"assets/api/_prod/theglobalx/1.jpg",
+                    "type":"Spree::Image",
+                    "attachment_updated_at":null,
+                    "attachment_width":360,
+                    "attachment_height":360,
+                    "alt":null,
+                    "viewable_type":"Spree::Variant",
+                    "viewable_id":1
+                 }
+              ],
+              "display_price":"$15.99",
+              "options_text":"(Size: small, Colour: red)",
+              "in_stock":true,
+              "is_backorderable":true,
+              "is_orderable":true,
+              "total_on_hand":10,
+              "is_destroyed":false
+           }
+        ],
+        "has_variants":true
+     },
+
+     {  
+        "id":2,
+        "name":"Belt",
+        "description":"By Shevlin",
+        "price":"349,95",
+        "price_GB":"47,00",
+        "display_price":"349,95 DKK",
+        "available_on":"2012-10-17T03:43:57Z",
+        "slug":"xbelt",
+        "meta_description":null,
+        "meta_keywords":null,
+        "shipping_category_id":1,
+        "taxon_ids":[  
+           5
+        ],
+        "master":{  
+           "id":1,
+           "name":"Ruby on Rails Tote",
+           "sku":"ROR-00011",
+           "price":"15.99",
+           "weight":null,
+           "height":null,
+           "width":null,
+           "depth":null,
+           "is_master":true,
+           "slug":"ruby-on-rails-tote",
+           "description":"A text description of the product.",
+           "track_inventory":true,
+           "cost_price":null,
+           "option_values":[  
+              {  
+                "id": 1,
+                "name": "80CM",
+                "presentation": "80CM",
+                "option_type_name": "Size",
+                "option_type_id": 1,
+                "option_type_presentation": "Size"
+              }
+           ],
+           "images":[  
+              {  
+                 "id":1,
+                 "position":1,
+                 "attachment_content_type":"image/jpg",
+                 "large_url":"assets/api/_prod/xbelt/small.png",
+                 "small_url":"assets/api/_prod/xbelt/small.png",
+                 "type":"Spree::Image",
+                 "attachment_updated_at":null,
+                 "attachment_width":360,
+                 "attachment_height":360,
+                 "alt":null,
+                 "viewable_type":"Spree::Variant",
+                 "viewable_id":1
+              }
+           ],
+           "display_price":"49,95 €",
+           "options_text":"(Size: small, Colour: red)",
+           "in_stock":true,
+           "is_backorderable":true,
+           "is_orderable":true,
+           "total_on_hand":10,
+           "is_destroyed":false
+        },
+        "variants":[  
+           {  
+              "id":1,
+              "name":"Ruby on Rails Tote",
+              "sku":"ROR-00011",
+              "price":"15.99",
+              "weight":null,
+              "height":null,
+              "width":null,
+              "depth":null,
+              "is_master":false,
+              "slug":"ruby-on-rails-tote",
+              "description":"A text description of the product.",
+              "track_inventory":true,
+              "cost_price":null,
+              "option_values":[  
+                 {  
+                    "id":1,
+                    "name":"Small",
+                    "presentation":"S",
+                    "option_type_name":"tshirt-size",
+                    "option_type_id":1,
+                    "option_type_presentation":"S"
+                 }
+              ],
+              "images":[  
+                 {  
+                    "id":1,
+                    "position":1,
+                    "attachment_content_type":"image/jpg",
+                    "large_url":"assets/api/prods/imgs/dark_front.jpg",
+                    "small_url":"assets/api/prods/imgs/dark_front.jpg",
+                    "type":"Spree::Image",
+                    "attachment_updated_at":null,
+                    "attachment_width":360,
+                    "attachment_height":360,
+                    "alt":null,
+                    "viewable_type":"Spree::Variant",
+                    "viewable_id":1
+                 }
+              ],
+              "display_price":"$15.99",
+              "options_text":"(Size: small, Colour: red)",
+              "in_stock":true,
+              "is_backorderable":true,
+              "is_orderable":true,
+              "total_on_hand":10,
+              "is_destroyed":false
+           }
+        ],
+        "has_variants":true
+     },
+
+     {  
+        "id":3,
+        "name":"Keyhanger",
+        "description":"By Shevlin",
+        "price":"129,95",
+        "price_GB":"18,00",
+        "display_price":"129,95 DKK",
+        "available_on":"2012-10-17T03:43:57Z",
+        "slug":"keyhangerx",
+        "meta_description":null,
+        "meta_keywords":null,
+        "shipping_category_id":1,
+        "taxon_ids":[  
+           6
+        ],
+        "master":{  
+           "id":1,
+           "name":"Ruby on Rails Tote",
+           "sku":"ROR-00011",
+           "price":"15.99",
+           "weight":null,
+           "height":null,
+           "width":null,
+           "depth":null,
+           "is_master":true,
+           "slug":"ruby-on-rails-tote",
+           "description":"A text description of the product.",
+           "track_inventory":true,
+           "cost_price":null,
+           "option_values":[  
+              {  
+                 "id":1,
+                 "name":"Small",
+                 "presentation":"S",
+                 "option_type_name":"tshirt-size",
+                 "option_type_id":1,
+                 "option_type_presentation":"S"
+              }
+           ],
+           "images":[  
+              {  
+                 "id":1,
+                 "position":1,
+                 "attachment_content_type":"image/jpg",
+                 "large_url":"assets/api/_prod/keyhangerx/small.png",
+                 "small_url":"assets/api/_prod/keyhangerx/small.png",
+                 "type":"Spree::Image",
+                 "attachment_updated_at":null,
+                 "attachment_width":360,
+                 "attachment_height":360,
+                 "alt":null,
+                 "viewable_type":"Spree::Variant",
+                 "viewable_id":1
+              }
+           ],
+           "display_price":"49,95 €",
+           "options_text":"(Size: small, Colour: red)",
+           "in_stock":true,
+           "is_backorderable":true,
+           "is_orderable":true,
+           "total_on_hand":10,
+           "is_destroyed":false
+        },
+        "variants":[  
+           {  
+              "id":1,
+              "name":"Ruby on Rails Tote",
+              "sku":"ROR-00011",
+              "price":"15.99",
+              "weight":null,
+              "height":null,
+              "width":null,
+              "depth":null,
+              "is_master":false,
+              "slug":"ruby-on-rails-tote",
+              "description":"A text description of the product.",
+              "track_inventory":true,
+              "cost_price":null,
+              "option_values":[  
+                 {  
+                    "id":1,
+                    "name":"Small",
+                    "presentation":"S",
+                    "option_type_name":"tshirt-size",
+                    "option_type_id":1,
+                    "option_type_presentation":"S"
+                 }
+              ],
+              "images":[  
+                 {  
+                    "id":1,
+                    "position":1,
+                    "attachment_content_type":"image/jpg",
+                    "large_url":"assets/api/prods/imgs/dark_front.jpg",
+                    "type":"Spree::Image",
+                    "attachment_updated_at":null,
+                    "attachment_width":360,
+                    "attachment_height":360,
+                    "alt":null,
+                    "viewable_type":"Spree::Variant",
+                    "viewable_id":1
+                 }
+              ],
+              "display_price":"$15.99",
+              "options_text":"(Size: small, Colour: red)",
+              "in_stock":true,
+              "is_backorderable":true,
+              "is_orderable":true,
+              "total_on_hand":10,
+              "is_destroyed":false
+           }
+        ],
+        "has_variants":true
+     },
+
+     {  
+      "id":4,
+      "name":"Bamboo socks",
+      "description":"By Shevlin",
+      "price":"129,95",
+      "price_GB":"18,00",
+      "display_price":"129,95 DKK",
+      "available_on":"2012-10-17T03:43:57Z",
+      "slug":"xsocks",
+      "meta_description":null,
+      "meta_keywords":null,
+      "shipping_category_id":1,
+      "taxon_ids":[  
+         1
+      ],
+      "master":{  
+         "id":1,
+         "name":"Ruby on Rails Tote",
+         "sku":"ROR-00011",
+         "price":"15.99",
+         "weight":null,
+         "height":null,
+         "width":null,
+         "depth":null,
+         "is_master":true,
+         "slug":"ruby-on-rails-tote",
+         "description":"A text description of the product.",
+         "track_inventory":true,
+         "cost_price":null,
+         "option_values":[  
+            {  
+              "id": 1,
+              "name": "35-40 EU",
+              "presentation": "35-40 EU",
+              "option_type_name": "Size",
+              "option_type_id": 1,
+              "option_type_presentation": "Size"
+            }
+         ],
+         "images":[  
+            {  
+               "id":1,
+               "position":1,
+               "attachment_content_type":"image/jpg",
+               "large_url":"assets/api/_prod/xsocks/small.png",
+               "small_url":"assets/api/_prod/xsocks/small.png",
+               "type":"Spree::Image",
+               "attachment_updated_at":null,
+               "attachment_width":360,
+               "attachment_height":360,
+               "alt":null,
+               "viewable_type":"Spree::Variant",
+               "viewable_id":1
+            }
+         ],
+         "display_price":"49,95 €",
+         "options_text":"(Size: small, Colour: red)",
+         "in_stock":true,
+         "is_backorderable":true,
+         "is_orderable":true,
+         "total_on_hand":10,
+         "is_destroyed":false
+      },
+      "variants":[  
+         {  
+            "id":1,
+            "name":"Ruby on Rails Tote",
+            "sku":"ROR-00011",
+            "price":"15.99",
+            "weight":null,
+            "height":null,
+            "width":null,
+            "depth":null,
+            "is_master":false,
+            "slug":"ruby-on-rails-tote",
+            "description":"A text description of the product.",
+            "track_inventory":true,
+            "cost_price":null,
+            "option_values":[  
+               {  
+                  "id":1,
+                  "name":"Small",
+                  "presentation":"S",
+                  "option_type_name":"tshirt-size",
+                  "option_type_id":1,
+                  "option_type_presentation":"S"
+               }
+            ],
+            "images":[  
+               {  
+                  "id":1,
+                  "position":1,
+                  "attachment_content_type":"image/jpg",
+                  "large_url":"assets/api/prods/imgs/dark_front.jpg",
+                  "type":"Spree::Image",
+                  "attachment_updated_at":null,
+                  "attachment_width":360,
+                  "attachment_height":360,
+                  "alt":null,
+                  "viewable_type":"Spree::Variant",
+                  "viewable_id":1
+               }
+            ],
+            "display_price":"$15.99",
+            "options_text":"(Size: small, Colour: red)",
+            "in_stock":true,
+            "is_backorderable":true,
+            "is_orderable":true,
+            "total_on_hand":10,
+            "is_destroyed":false
+         }
+      ],
+      "has_variants":true
+   },
+   {  
+      "id":5,
+      "name":"Card Holder",
+      "description":"By Shevlin",
+      "price":"249,95",
+      "price_GB":"34,00",
+      "display_price":"249,95 DKK",
+      "available_on":"2012-10-17T03:43:57Z",
+      "slug":"cardholder",
+      "meta_description":null,
+      "meta_keywords":null,
+      "shipping_category_id":1,
+      "taxon_ids":[  
+         4
+      ],
+      "master":{  
+         "id":1,
+         "name":"Ruby on Rails Tote",
+         "sku":"ROR-00011",
+         "price":"15.99",
+         "weight":null,
+         "height":null,
+         "width":null,
+         "depth":null,
+         "is_master":true,
+         "slug":"ruby-on-rails-tote",
+         "description":"A text description of the product.",
+         "track_inventory":true,
+         "cost_price":null,
+         "option_values":[  
+            {  
+              "id": 1,
+              "name": "35-40 EU",
+              "presentation": "35-40 EU",
+              "option_type_name": "Size",
+              "option_type_id": 1,
+              "option_type_presentation": "Size"
+            }
+         ],
+         "images":[  
+            {  
+               "id":1,
+               "position":1,
+               "attachment_content_type":"image/jpg",
+               "large_url":"assets/api/_prod/cardholder/small.png",
+               "small_url":"assets/api/_prod/cardholder/small.png",
+               "type":"Spree::Image",
+               "attachment_updated_at":null,
+               "attachment_width":360,
+               "attachment_height":360,
+               "alt":null,
+               "viewable_type":"Spree::Variant",
+               "viewable_id":1
+            }
+         ],
+         "display_price":"49,95 €",
+         "options_text":"(Size: small, Colour: red)",
+         "in_stock":true,
+         "is_backorderable":true,
+         "is_orderable":true,
+         "total_on_hand":10,
+         "is_destroyed":false
+      },
+      "variants":[  
+         {  
+            "id":1,
+            "name":"Ruby on Rails Tote",
+            "sku":"ROR-00011",
+            "price":"15.99",
+            "weight":null,
+            "height":null,
+            "width":null,
+            "depth":null,
+            "is_master":false,
+            "slug":"ruby-on-rails-tote",
+            "description":"A text description of the product.",
+            "track_inventory":true,
+            "cost_price":null,
+            "option_values":[  
+               {  
+                  "id":1,
+                  "name":"Small",
+                  "presentation":"S",
+                  "option_type_name":"tshirt-size",
+                  "option_type_id":1,
+                  "option_type_presentation":"S"
+               }
+            ],
+            "images":[  
+               {  
+                  "id":1,
+                  "position":1,
+                  "attachment_content_type":"image/jpg",
+                  "large_url":"assets/api/prods/imgs/dark_front.jpg",
+                  "type":"Spree::Image",
+                  "attachment_updated_at":null,
+                  "attachment_width":360,
+                  "attachment_height":360,
+                  "alt":null,
+                  "viewable_type":"Spree::Variant",
+                  "viewable_id":1
+               }
+            ],
+            "display_price":"$15.99",
+            "options_text":"(Size: small, Colour: red)",
+            "in_stock":true,
+            "is_backorderable":true,
+            "is_orderable":true,
+            "total_on_hand":10,
+            "is_destroyed":false
+         }
+      ],
+      "has_variants":true
+   }
+  ],
+  "count":4,
+  "pages":1,
+  "current_page":1
+}

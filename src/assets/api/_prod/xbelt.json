@@ -1,0 +1,192 @@
+    {
+      "id": 2,
+      "name": "Belt By Shevlin",
+      "description": "Det første produkt i vores kommende kollektion “pure cognac”. Dette unikke bælte er chrom garvet under bæredygtige forhold og overholder alle EU regulationer.",
+      "description_GB" : "This is the first products in a new collection we’re working on called “pure cognac”. This unique belt has been chrome tanned to make it as tough as we can. The belt isn’t only sustainable and eco-friendly, it’s also beautiful, timeless and classic.",
+      "price": "349,95",
+      "price_GB": "47,00",
+      "display_price": "349,95 DKK",
+      "available_on": "2012-10-17T03:43:57Z",
+      "slug": "prod_01",
+      "meta_description": "Vi har udviklet et bælte, der ikke bare er bæredygtigt, men samtidig er enkelt og klassisk i sit design.",
+      "meta_description_GB": "",
+      "meta_keywords": null,
+      "shipping_category_id": 1,
+      "taxon_ids": [
+        1
+      ],
+      "total_on_hand": 300,
+      "master": {
+        "id": 1,
+        "name": "CardHolderX",
+        "sku": "ROR-00011",
+        "price": "299,99",
+        "weight": null,
+        "height": null,
+        "width": null,
+        "depth": null,
+        "is_master": true,
+        "slug": "CardHolderX",
+        "description": "CardHolderX",
+        "track_inventory": true,
+        "cost_price": null,
+        "option_values": [
+          {
+            "id": 1,
+            "name": "80CM",
+            "presentation": "80CM",
+            "option_type_name": "Size",
+            "option_type_id": 1,
+            "option_type_presentation": "Size"
+          }
+        ],
+        "images": [
+          {
+            "id": 1,
+            "position": 1,
+            "attachment_content_type": "image/jpg",
+            "attachment_file_name": "ror_tote.jpeg",
+            "type": "Spree::Image",
+            "attachment_updated_at": null,
+            "attachment_width": 360,
+            "attachment_height": 360,
+            "alt": null,
+            "viewable_type": "Spree::Variant",
+            "viewable_id": 1,
+            "small_url": "assets/api/_prod/xbelt/3.jpg",
+            "large_url": "assets/api/_prod/xbelt/3.jpg"
+          },
+          {
+            "id": 2,
+            "position": 2,
+            "attachment_content_type": "image/jpg",
+            "attachment_file_name": "ror_tote.jpeg",
+            "type": "Spree::Image",
+            "attachment_updated_at": null,
+            "attachment_width": 360,
+            "attachment_height": 360,
+            "alt": null,
+            "viewable_type": "Spree::Variant",
+            "viewable_id": 1,
+		        "small_url": "assets/api/_prod/xbelt/2.jpg",
+            	"large_url": "assets/api/_prod/xbelt/2.jpg"
+          },
+          {
+            "id": 3,
+            "position": 3,
+            "attachment_content_type": "image/jpg",
+            "attachment_file_name": "ror_tote.jpeg",
+            "type": "Spree::Image",
+            "attachment_updated_at": null,
+            "attachment_width": 360,
+            "attachment_height": 360,
+            "alt": null,
+            "viewable_type": "Spree::Variant",
+            "viewable_id": 1,
+           	"small_url": "assets/api/_prod/xbelt/1.jpg",
+            	"large_url": "assets/api/_prod/xbelt/1.jpg"
+          }
+        ],
+        "display_price": "$15.99",
+        "options_text": "(Size: small, Colour: red)",
+        "in_stock": true,
+        "is_backorderable": true,
+        "is_orderable": true,
+        "total_on_hand": 10,
+        "is_destroyed": false
+      },
+      "variants": [
+        {
+          "option_values":[  
+            {  
+               "id":1,
+               "name":"80CM",
+               "presentation":"80CM",
+               "option_type_name":"Size",
+               "option_type_id":1,
+               "option_type_presentation":"Size"
+            },
+            {  
+              "id":2,
+              "name":"85CM",
+              "presentation":"85CM",
+              "option_type_name":"Size",
+              "option_type_id":1,
+              "option_type_presentation":"Size"
+           },
+           {  
+            "id":3,
+            "name":"90CM",
+            "presentation":"90CM",
+            "option_type_name":"Size",
+            "option_type_id":1,
+            "option_type_presentation":"Size"
+         },
+         {  
+          "id":4,
+          "name":"95CM",
+          "presentation":"95CM",
+          "option_type_name":"Size",
+          "option_type_id":1,
+          "option_type_presentation":"Size"
+       },
+       {  
+        "id":5,
+        "name":"100CM",
+        "presentation":"100CM",
+        "option_type_name":"Size",
+        "option_type_id":1,
+        "option_type_presentation":"Size"
+      }
+         ]
+        }
+      ],
+      "option_types": [
+        {  
+          "id":1,
+          "name":"Size",
+          "presentation":"Size",
+          "position":1
+       }
+      ],
+      "product_properties": [
+        {
+          "id": 1,
+          "product_id": 1,
+          "property_id": 1,
+          "value": "porp1",
+          "property_name": "bag_type"
+        }
+      ],
+      "classifications": [
+        {
+          "taxon_id": 1,
+          "position": 1,
+          "taxon": {
+            "id": 1,
+            "name": "prod_01",
+            "pretty_name": "CardHolder",
+            "permalink": "what",
+            "parent_id": 1,
+            "taxonomy_id": 1,
+            "meta_title": "CardHolder",
+            "meta_description": "CardHolder",
+            "taxons": [
+
+            ]
+          }
+        }
+      ],
+      "has_variants": false,
+      "liArray":[
+    {"li": "Bæredygtig chrom-garvet læder "},
+    {"li": "Håndlavet"},
+    {"li": "Enkelt og klassisk design"}
+  ],
+  "liArray_GB":
+  [
+    {"li": " Eco-friendly chrome tanned leather"},
+    {"li": "Handmade "},
+    {"li": "Responsible"}
+  ]
+    }
