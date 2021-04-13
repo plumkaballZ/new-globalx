@@ -186,7 +186,7 @@
 .loading[_ngcontent-c3] .spinner[_ngcontent-c3] {
     position: fixed;
     left: 0;
-    z-index: 999
+    z-index: 9999
 }
 
 .loading[_ngcontent-c3] .spinner[_ngcontent-c3] {

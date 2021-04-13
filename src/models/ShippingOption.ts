@@ -9,4 +9,6 @@ export class ShippingOption {
     price_before_vat: string;
     pickup_points: PickupPoint[];
     has_pickup_points: boolean;
+    
+    selected_pickup_point: PickupPoint;
 }

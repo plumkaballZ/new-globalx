@@ -1,22 +1,45 @@
 import './payment.css';
 import { PayPalButton } from "react-paypal-button-v2";
 import { IPaymentProps } from '../../../models/IProps';
+import { PickupPoint } from '../../../models/PickupPoint';
+import { PureComponent } from 'react';
+
+const credentials = {
+    "sandbox": "AWi18rxt26-hrueMoPZ0tpGEOJnNT4QkiMQst9pYgaQNAfS1FLFxkxQuiaqRBj1vV5PmgHX_jA_c1ncL",
+    "production": "Ae5kKArd7iUNkdxJRr6uGU9v7H0Q0BSKn6V5uaiGgv1j-Np3k4OAD3TvxNXZU1WnuZEHZrzd7xjV6gDk"
+}
 
 export default function Payment(props: IPaymentProps) {
+    let completeOrder = props.completedOrder;
+    let totalQuantity = props.completedOrder.totalQuantity;
+    let hasPickupPoints = completeOrder.isPickup;
 
-    let totalQuantity = props.totalQuantity;
-    let subTotal = props.subTotal;
-    let shippingPrice = parseInt(props.selectedShippingOption.price);
+    const createPayPalOrder = (data: any, actions: any) => {
+        let order = actions.order.create({
+            purchase_units: [{
+                amount: {
+                    currency_code: "DKK",
+                    value: completeOrder.totalPrice
+                }
+            }],
+            application_context: {
+                shipping_preference: "NO_SHIPPING"
+            }
+        });
 
-
-    let name = props.selectedAddress.firstname;
-    let lastName = props.selectedAddress.lastname;
-
-
-    let pickupPoint = props.selectedShippingOption.pickup_points[0];
-
-
-
+        return order;
+    }
+    const onSuccessPayPal = (details: any, data: any) => {
+        if (details.status === "COMPLETED") {
+            props.setPaymentIsCompletedCallback();
+            return fetch("/paypal-transaction-complete", {
+                method: "post",
+                body: JSON.stringify({
+                    orderId: data.orderID
+                })
+            });
+        }
+    }
 
     return (
         <div _nghost-c26="">
@@ -29,50 +52,51 @@ export default function Payment(props: IPaymentProps) {
                                 <div _ngcontent-c26="" className="items">{totalQuantity} VARE</div>
                                 <div _ngcontent-c26="" className="order-total">
                                     <span _ngcontent-c26="">Subtotal</span>
-                                    <span _ngcontent-c26="" className="value">{subTotal.toFixed(2)} DKK</span>
+                                    <span _ngcontent-c26="" className="value">{completeOrder.subTotal.toFixed(2)} DKK</span>
                                 </div>
                                 <div _ngcontent-c26="" className="shipping">
-                                    <span _ngcontent-c26="">Delivery</span>
-                                    <span _ngcontent-c26="" className="shipping-fee c-green">{shippingPrice.toFixed(2)} DKK</span>
+                                    <span _ngcontent-c26="">Levering</span>
+                                    <span _ngcontent-c26="" className="shipping-fee c-green">{completeOrder.shippingPrice.toFixed(2)} DKK</span>
                                 </div>
                             </div>
 
                             <div _ngcontent-c26="" className="pay-lbl-total">
                                 <span _ngcontent-c26="" className="pay-lbl">TOTAL</span>
-                                <span _ngcontent-c26="" className="pay-total">{(subTotal + shippingPrice).toFixed(2)} DKK</span>
+                                <span _ngcontent-c26="" className="pay-total">{completeOrder.totalPrice} DKK</span>
                             </div>
 
                             <div _ngcontent-c26="" className="address-summary">
-                                <div _ngcontent-c26="" className="address-lbl">LEVERES TIL</div>
-                                <div _ngcontent-c26="" className="name"></div>
-                                <div _ngcontent-c26="" className="add-info">{props.selectedAddress.firstname} {props.selectedAddress.lastname}</div>
 
-                                {props.selectedShippingOption.has_pickup_points &&
+                                {hasPickupPoints &&
+                                    <div _ngcontent-c26="" className="address-lbl">LEVERES TIL UDLEVERINGSSTED</div>
+                                }
+                                {!hasPickupPoints &&
+                                    <div _ngcontent-c26="" className="address-lbl">LEVERES TIL PRIVAT ADRESSE</div>
+                                }
+                                <div _ngcontent-c26="" className="name"></div>
+
+                                {hasPickupPoints &&
                                     <div>
-                                        <div _ngcontent-c26="" className="add-info">{pickupPoint.company_name}</div>
-                                        <div _ngcontent-c26="" className="add-info">{pickupPoint.address}</div>
-                                        <div _ngcontent-c26="" className="add-info">{pickupPoint.city}{pickupPoint.zipcode}</div>
+                                        <div _ngcontent-c26="" className="add-info">{completeOrder.companyName}</div>
 
                                     </div>
                                 }
+                                <div>
 
-                                {/* <div _ngcontent-c26="" className="add-info">{add}</div>
-                                <div _ngcontent-c26="" className="add-info">Lystrup - 8520</div>
-                                <div _ngcontent-c26="" className="add-info">Mobile : 71675589</div> */}
+                                    <div _ngcontent-c26="" className="add-info">{completeOrder.address}</div>
+                                    <div _ngcontent-c26="" className="add-info">{completeOrder.zipcode} {completeOrder.city}</div>
+                                </div>
+
+
+                                <div _ngcontent-c26="" className="address-lbl">KONTAKT INFO</div>
+                                <div _ngcontent-c26="" className="add-info">{completeOrder.firstName} {completeOrder.lastName}</div>
+                                <div _ngcontent-c26="" className="add-info">{completeOrder.phone}</div>
+                                <div _ngcontent-c26="" className="add-info">{completeOrder.email}</div>
                             </div>
                         </div>
                     </div>
                     <div _ngcontent-c26="" className="col-sm-6">
                         <div _ngcontent-c26="" className="left">
-                            <div _ngcontent-c26="" className="payment-header">
-
-                                <span _ngcontent-c26="" className="lbl">You Pay: </span>
-                                <span _ngcontent-c26="" className="amt you-pay">
-
-                                    <span _ngcontent-c26="" className="you-pay">146.00 €</span>
-                                </span>
-
-                            </div>
                             <div _ngcontent-c26="" className="pay-body">
                                 <div _ngcontent-c26="" _nghost-c27="">
                                     <div _ngcontent-c27="" className="selected-mode">
@@ -83,34 +107,23 @@ export default function Payment(props: IPaymentProps) {
                                                         PayPal
                             </span>
                                                     <span _ngcontent-c29="" className="sub-lbl">
-                                                        Pay with PayPal
+                                                        Betal med PayPal
                             </span>
                                                 </div>
                                                 <div _ngcontent-c29="" className="cod-info">
-                                                    NOTE: more paymenttypes are being impmented :)
+                                                    NOTE: Flere betalingsmetoder er på vej :)
                           </div>
                                             </div>
-
 
                                             <div _ngcontent-c29="" className="pay-btn-wrap">
                                                 <div _ngcontent-c29="" _nghost-c30="">
 
                                                     <PayPalButton
-                                                        amount="0.01"
-                                                        // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
-                                                        onSuccess={(details: any, data: any) => {
-                                                            alert("Transaction completed by " + details.payer.name.given_name);
-
-                                                            // OPTIONAL: Call your server to save the transaction
-                                                            return fetch("/paypal-transaction-complete", {
-                                                                method: "post",
-                                                                body: JSON.stringify({
-                                                                    orderID: data.orderID
-                                                                })
-                                                            });
-                                                        }}
+                                                        createOrder={createPayPalOrder}
+                                                        onSuccess={onSuccessPayPal}
                                                         options={{
-                                                            clientId: "AWi18rxt26-hrueMoPZ0tpGEOJnNT4QkiMQst9pYgaQNAfS1FLFxkxQuiaqRBj1vV5PmgHX_jA_c1ncL"
+                                                            clientId: "sb",
+                                                            currency: "DKK"
                                                         }}
                                                     />
                                                 </div>

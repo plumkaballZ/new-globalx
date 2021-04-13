@@ -25,6 +25,8 @@ import { Address } from './models/Address';
 import { addressService } from './services/AddressService';
 import { ShippingOption } from './models/ShippingOption';
 import AddressTsx from './components/Checkout/Address/Address';
+import Loader from './components/Loader/Loader';
+import { CompleteOrder } from './models/CompleteOrder';
 
 export default function App() {
   const history = useHistory();
@@ -33,10 +35,16 @@ export default function App() {
 
   let [currentOrder, setCurrentOrder] = useState({} as Order);
   let [allProducts, setAllProducts] = useState([] as Product[]);
+
   let [allAddresses, setAllAddresses] = useState([] as Address[]);
   let [selectedAddress, setSelectedAddress] = useState({} as Address);
 
   let [shippingOptions, setShippingOptions] = useState([] as ShippingOption[]);
+  let [selectedShippingOption, setSelectedShippingOption] = useState({} as ShippingOption);
+
+  let [completeOrder, setCompleteOrder] = useState({} as CompleteOrder);
+
+  let [paymentIscompleted, setPaymentIsCompleted] = useState(false);
 
   let [isLoading, setIsLoading] = useState(false);
 
@@ -79,6 +87,7 @@ export default function App() {
       setAllAddresses,
       setShippingOptions);
 
+    setSelectedShippingOption({} as ShippingOption);
     setIsLoading(false);
   };
 
@@ -94,7 +103,14 @@ export default function App() {
     setIsLoading(true);
     await addressService.fetchAllShippingOptions(address, setShippingOptions);
     setSelectedAddress(address);
+    setSelectedShippingOption({} as ShippingOption);
     setIsLoading(false);
+  }
+
+
+  const setPaymentIsCompletedAndGoToOrderCompleted = () => {
+    setPaymentIsCompleted(true);
+    history.push("/ordercomplete");
   }
 
   let subTotal: number = 0;
@@ -110,14 +126,22 @@ export default function App() {
 
   let hasProds = allProducts.length === 0 ? false : true;
 
+
+
   return (
     <div className="App">
+
       <div _nghost-c0="" ng-version="4.4.6">
         <div _ngcontent-c0="" className="contentz">
           <div _ngcontent-c0="" className="default">
+
             <section _ngcontent-c0="">
+
+              <Loader isLoading={isLoading} />
+
               {!isCheckoutFlow ? <Header totalQuantity={totalQuantity} /> : <CheckoutHeader />}
               <main _ngcontent-c0="" className="body container content">
+
                 <ScrollToTop />
                 <Switch>
 
@@ -165,25 +189,33 @@ export default function App() {
                       shippingOptions={shippingOptions}
                       deleteAddress={deleteAddress}
                       createAddressCallBack={createNewAddress}
-                      addressIsLoading={isLoading}
                       selectAddressCallBack={selectAdressAndFetchShippingOptions}
                       totalQuantity={totalQuantity}
                       subTotal={subTotal}
+                      setSelectedShippingOption={setSelectedShippingOption}
+                      selectedShippingOption={selectedShippingOption}
+                      setCompleteOrderCallBack={(completeOrder: CompleteOrder) => {
+                        completeOrder.orderId = currentOrder.id;
+                        setCompleteOrder(completeOrder);
+                      }}
                       {...props} />
                   } />
 
 
                   <Route exact path="/checkout/payment" render={(props) =>
                     <Payment
-                      selectedAddress={selectedAddress}
-                      selectedShippingOption={shippingOptions[0]}
-                      subTotal={subTotal}
-                      totalQuantity={totalQuantity}
+                      completedOrder={completeOrder}
+                      setPaymentIsCompletedCallback={setPaymentIsCompletedAndGoToOrderCompleted}
                       {...props} />
                   } />
-                  {/* <Route exact path='/checkout/payment' component={Payment} /> */}
 
-                  <Route exact path='/checkout/ordercomplete' component={OrderComplete} />
+                  {paymentIscompleted &&
+                    <Route exact path="/ordercomplete" render={(props) =>
+                      <OrderComplete
+                        completedOrder={completeOrder}
+                        {...props} />
+                    } />
+                  }
 
                   {/* admin section */}
 

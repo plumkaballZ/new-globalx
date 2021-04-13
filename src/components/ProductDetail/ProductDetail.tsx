@@ -24,6 +24,7 @@ export default function ProductDetail(props: IProductDetailProps) {
         });
 
         prod.variants.map((val: Variant, index: number) => {
+            if (val.type === "none") return;
             renderVariantItems.push(
                 <button key={"variantButton" + index.toString()} _ngcontent-c15="" className={`option-buttons ${index === selectedVariantIndex ? "selected" : ""}`}
                     onClick={() => {

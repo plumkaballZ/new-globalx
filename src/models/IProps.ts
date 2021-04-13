@@ -2,6 +2,7 @@ import { Address } from "./Address";
 import { LineItem } from "./LineItem";
 import { ShippingOption } from "./ShippingOption";
 import { Product } from "./Product";
+import { CompleteOrder } from "./CompleteOrder";
 
 
 export interface ICheckoutBagProps {
@@ -29,21 +30,12 @@ export interface IAddressProps {
     shippingOptions: ShippingOption[];
     deleteAddress(address: Address): void;
     createAddressCallBack(address: Address): void;
-    addressIsLoading: boolean;
     selectAddressCallBack(address: Address): void;
     totalQuantity: number;
     subTotal: number;
-}
-export interface IAddressListProps {
-    allAddresses: Address[];
-    selectedAddress: Address;
-    shippingOptions: ShippingOption[];
-    deleteAddress(address: Address): void;
-    createAddressCallBack(address: Address): void;
-    setDoGoToCreatePage: any;
-    selectAddressCallBack(address: Address): void;
-    totalQuantity: number;
-    subTotal: number;
+    setSelectedShippingOption: any;
+    selectedShippingOption: ShippingOption;
+    setCompleteOrderCallBack(completedOrder: CompleteOrder): void;
 }
 export interface IAdminProductsProps {
     allProducts: Product[];
@@ -62,8 +54,9 @@ export interface ILoaderProps {
     isLoading: boolean;
 }
 export interface IPaymentProps {
-    selectedAddress: Address;
-    selectedShippingOption: ShippingOption;
-    totalQuantity: number;
-    subTotal: number;
+    completedOrder: CompleteOrder;
+    setPaymentIsCompletedCallback(): void;
+}
+export interface IOrderCompletedProps {
+    completedOrder: CompleteOrder;
 }

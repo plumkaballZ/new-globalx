@@ -1,67 +1,79 @@
 
+import { IOrderCompletedProps } from '../../../models/IProps';
 import './order-complete.css';
 
-export default function OrderComplete() {
+export default function OrderComplete(props: IOrderCompletedProps) {
+
+    let completedOrder = props.completedOrder;
+
     return (
         <div id="confirmation">
             <div id="content">
                 <div id="top-image"></div>
-                <h1>Thank you</h1>
+                <h1 style={{ paddingTop: "15px" }}>TAK FOR DIT KØB</h1>
                 <p>
-                    bla bla
+                    Din order bliver nu behandlet og afsendt hurtigst muligt
           </p>
                 <div id="summary">
                     <div>
-                        <h2>Shipping info</h2>
-                        <p><span className="info-title">shipped to</span>
+                        <h2>Leverings Detaljer</h2>
+                        {/* <p><span className="info-title">shipped to</span>
                             <span className="pull-right">
                                 ship_address.address1
                       </span>
+                        </p> */}
+                        <p><span className="info-title">Navn</span>
+                            <span className="pull-right">
+                                {completedOrder.firstName} {completedOrder.lastName}
+                            </span>
+
                         </p>
-
-
-                        <p><span className="info-title"></span>
-                            <span className="pull-right">ship_address.city, ship_address.zipcode
-                      </span>
+                        {completedOrder.isPickup &&
+                            <p>
+                                <span className="info-title">Udleveringssted</span>
+                                <span className="pull-right">{completedOrder.companyName}
+                                </span>
+                            </p>}
+                        <p>
+                            <span className="info-title">Adresse</span>
+                            <span className="pull-right">{completedOrder.address}
+                            </span>
+                        </p>
+                        <p>
+                            <span className="pull-right">{completedOrder.zipcode}  {completedOrder.city}
+                            </span>
                         </p>
                         <br />
-                        <p><span className="info-title">name</span>
-                            <span className="pull-right">
-                                ship_address.firstname ship_address.lastname
-                      </span>
 
-                        </p>
                     </div>
                     <div>
-                        <h2>orderInfo</h2>
+                        <h2>Order Detaljer</h2>
                         <p>
-                            <span className="info-title">orderId</span>
+                            <span className="info-title">Order nummer</span>
 
                             <span className="pull-right">
-                                orderDetails.id
-                        </span>
+                                {completedOrder.orderId}
+                            </span>
 
 
                         </p>
-                        <p><span className="info-title">totalItems</span>
+                        <p><span className="info-title">Antal af vare</span>
 
                             <span className="pull-right">
-                                item_total
-                        </span>
+                                {completedOrder.totalQuantity}
+                            </span>
 
                         </p>
-                        <p><span className="info-title">totalAmount</span>
+                        <p><span className="info-title">Total beløb</span>
                             <span className="pull-right">
-                                total currency
+                                {completedOrder.totalPrice} DKK
                         </span>
                         </p>
                     </div>
                 </div>
 
                 <div>
-                    {/* <a *ngIf="isAuthenticated" href="/user/orders">{{tranz.isAuth}}</a> */}
-                    {/* <a *ngIf="!isAuthenticated" href="/auth/signup">{{tranz.isNotAuth}}</a> */}
-                    <a href="/">Continue Shopping</a>
+                    <a href="/">GÅ TIL FORSIDE</a>
                 </div>
 
             </div>

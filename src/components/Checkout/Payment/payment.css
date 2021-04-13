@@ -37,7 +37,6 @@
 }
 
 .payment-section[_ngcontent-c26] .left[_ngcontent-c26] .pay-body[_ngcontent-c26] {
-    border-top: 2px solid #94969f;
     position: relative
 }
 
@@ -48,7 +47,7 @@
 .payment-section[_ngcontent-c26] .right[_ngcontent-c26] .mini-bag-summary[_ngcontent-c26] {
     position: relative;
     padding: none;
-    border-bottom: 1px solid #eaeaec
+    border-bottom: 2px solid #94969f;
 }
 
 .payment-section[_ngcontent-c26] .right[_ngcontent-c26] .mini-bag-summary[_ngcontent-c26] .lbl[_ngcontent-c26] {
@@ -116,7 +115,7 @@
     font-weight: 600;
     /* font-size: 12px; */
     color: #94969f;
-    padding-top: 30px;
+    padding-top: 15px;
     padding-bottom: 5px;
     font-family: Whitney-semi-bold
 }
@@ -141,10 +140,10 @@
 }
 
 .cod-block[_ngcontent-c29] .section-help[_ngcontent-c29] {
-    padding: 23px 0 36px !important;
+    padding: 10px 0 36px !important;
     text-transform: uppercase;
     width: 100% !important;
-    border-bottom: 1px solid #f5f5f6 !important;
+    border-bottom: 2px solid #94969f;
     height: 66px
 }
 
@@ -246,4 +245,8 @@
 #zoid-paypal-button-def4a5a4f9>.zoid-outlet>iframe.zoid-invisible {
     opacity: 0;
     pointer-events: none;
+}
+
+.invisHr {
+    border: none;
 }
