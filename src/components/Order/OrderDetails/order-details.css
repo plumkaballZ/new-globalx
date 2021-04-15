@@ -1,0 +1,153 @@
+.status[_ngcontent-c15] {
+    color: #20bd99
+}
+
+.line_item_image[_ngcontent-c15] {
+    border: 1px solid #eee
+}
+
+.pdp-button[_ngcontent-c15] {
+    padding: 1% 1% 1% 0;
+    font-size: 18px;
+    width: 50%;
+    border: 1px solid #1d886d;
+    background-color: #1d886d;
+    color: #f2f2f2
+}
+
+.col1[_ngcontent-c15] {
+    width: 20%;
+    display: inline-block;
+    vertical-align: bottom
+}
+
+.col1[_ngcontent-c15] img[_ngcontent-c15] {
+    width: 120px;
+    height: 160px;
+    -o-object-fit: contain;
+    object-fit: contain
+}
+
+.prod-item[_ngcontent-c15] {
+    background: #fff;
+    border: 1px solid #eaeaec;
+    -webkit-box-shadow: 0 0 4px rgba(40, 44, 63, .08);
+    box-shadow: 0 0 4px rgba(40, 44, 63, .08);
+    margin-bottom: 30px;
+    text-transform: none;
+    padding-bottom: 0 !important
+}
+
+.prod-item[_ngcontent-c15] .col1[_ngcontent-c15] {
+    width: 20%;
+    display: inline-block;
+    vertical-align: bottom
+}
+
+.prod-item[_ngcontent-c15] .col1[_ngcontent-c15] img[_ngcontent-c15] {
+    width: 120px;
+    height: 160px;
+    -o-object-fit: cover;
+    object-fit: cover
+}
+
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] {
+    vertical-align: top;
+    display: inline-block;
+    padding: 10px 10px 10px 25px;
+    min-height: 145px;
+    position: relative;
+    width: 79%
+}
+
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] .prod-name[_ngcontent-c15] {
+    display: inline-block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 400px;
+    padding: 5px 5px 5px 0
+}
+
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] .prod-name[_ngcontent-c15] a[_ngcontent-c15] {
+    font-size: 14px;
+    font-family: Poiret One;
+    font-weight: 600;
+    color: #535766;
+    margin-right: 6px
+}
+
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] .prod-amount[_ngcontent-c15] {
+    float: right;
+    padding: 5px 5px 5px 0;
+    display: inline-block;
+    vertical-align: top;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: Whitney-semi-bold;
+    color: #535766;
+    margin-left: 20px
+}
+
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] .size-qty-wrap[_ngcontent-c15] {
+    margin: 5px 0;
+    color: #535766
+}
+
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] .size-qty-wrap[_ngcontent-c15] .size-qty[_ngcontent-c15] {
+    margin: 0 0 4px;
+    padding-right: 10px;
+    display: inline-block
+}
+
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] .size-qty-wrap[_ngcontent-c15] .size-qty[_ngcontent-c15] .qty[_ngcontent-c15],
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] .size-qty-wrap[_ngcontent-c15] .size-qty[_ngcontent-c15] .size[_ngcontent-c15] {
+    margin-right: 20px
+}
+
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] .size-qty-wrap[_ngcontent-c15] .size-qty[_ngcontent-c15] .qty[_ngcontent-c15] .gray[_ngcontent-c15],
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] .size-qty-wrap[_ngcontent-c15] .size-qty[_ngcontent-c15] .size[_ngcontent-c15] .gray[_ngcontent-c15] {
+    color: gray
+}
+
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] .size-qty-wrap[_ngcontent-c15] .size-qty[_ngcontent-c15] .qty[_ngcontent-c15] .icon[_ngcontent-c15],
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] .size-qty-wrap[_ngcontent-c15] .size-qty[_ngcontent-c15] .size[_ngcontent-c15] .icon[_ngcontent-c15] {
+    width: 20px;
+    height: 20px;
+    background-position: -2570px -13px;
+    display: inline-block;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 4250px 153px;
+    vertical-align: middle;
+    background-image: url(../../../assets/checkout_sprite.png)
+}
+
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] .edit-move-delete[_ngcontent-c15] {
+    position: absolute;
+    left: 25px;
+    right: 20px;
+    bottom: 0;
+    border-top: 1px solid #eaeaec;
+    padding-top: 9px;
+    font-size: 13px;
+    font-weight: 600;
+    padding-left: 0;
+    color: #696e79
+}
+
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] .edit-move-delete[_ngcontent-c15] .delete-item[_ngcontent-c15],
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] .edit-move-delete[_ngcontent-c15] .move-item[_ngcontent-c15] {
+    font-family: Whitney-semi-bold;
+    margin: 0 15px 0 0
+}
+
+.prod-item[_ngcontent-c15] .col2[_ngcontent-c15] .edit-move-delete[_ngcontent-c15] .move-item[_ngcontent-c15] {
+    color: #526cd0
+}
+
+@media screen and (max-width:768px) {
+    .prod-item[_ngcontent-c15] .col2[_ngcontent-c15] {
+        width: 100%
+    }
+}

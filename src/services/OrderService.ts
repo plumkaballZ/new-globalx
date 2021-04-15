@@ -135,6 +135,57 @@ class OrderService {
 
         return newOrderLine;
     }
+    public fetchAllOrders = async (email: string, ip: string, setOrders: any) => {
+
+        let res = await this.getRequest(`${this.apiUrl}/getall/${email}/${ip}`)
+            .catch((err: any) => {
+                console.log(err);
+            });
+
+        if (res) setOrders(res);
+    }
+    public fetchOrderDetails = async (email: string, orderId: string) => {
+
+        let res = await this.getRequest(`${this.apiUrl}/getdetails/${email}/${orderId}`)
+            .catch((err: any) => {
+                console.log(err);
+            });
+
+        console.log(res);
+    }
+
+    public fetchAllOrders99 = async (setOrders: any) => {
+        let res = await this.getRequest(`${this.apiUrl}/getalllvl99`)
+            .catch((err: any) => {
+                console.log(err);
+            });
+
+        if (res) setOrders(res);
+    }
+
+    public getCurrentOrderTotals(currentOrder: Order, currentOrderLines: LineItem[]): any {
+        let numberOfOrderLines = ((Object.keys(currentOrder).length === 0) ? 0 : currentOrderLines.length);
+
+        let subTotal: number = 0;
+        let totalQuantity: number = 0;
+
+        if (numberOfOrderLines > 0) {
+            currentOrderLines.forEach(x => subTotal += x.price * x.quantity);
+            currentOrderLines.forEach(x => totalQuantity += x.quantity);
+        }
+        return {
+            subTotal,
+            totalQuantity
+        };
+    }
+
+    private getRequest(url: string): Promise<any> {
+        return httpRequestService
+            .get<any[]>(url)
+            .then(res => {
+                return res;
+            });
+    }
 }
 
 export const orderService = new OrderService();

@@ -22,5 +22,6 @@ export class Product {
     //variant handling
     defaultVariant: Variant;
     variants: Variant[];
+    hasVariants: boolean;
 
 }

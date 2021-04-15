@@ -3,7 +3,6 @@ import shevlin_logo from './../../../assets/logo/shevlin_logo.png';
 import shopping_bag_logo from './../../../assets/shopping-bag.png';
 import { Link, useHistory, useLocation } from "react-router-dom";
 import AvatarDropdown from './AvatarDropdown/AvatarDropdown';
-import FlagDropdown from './FlagDropdown/FlagDropdown';
 import { IHeaderProps } from '../../../models/IProps';
 import { useEffect, useState } from 'react';
 
@@ -69,7 +68,7 @@ export default function Header(props: IHeaderProps) {
                                             <span _ngcontent-c13="" className="badge badge-danger">{props.totalQuantity}</span></a>
                                     </li>
 
-                                    <AvatarDropdown />
+                                    <AvatarDropdown userIsLoggedIn={props.userIsLoggedIn} setUser={props.setUser} />
                                 </ul>
                             </div>
                         </div>
@@ -82,7 +81,7 @@ export default function Header(props: IHeaderProps) {
                                     </a>
                                 </li>
 
-                                <FlagDropdown />
+                                {/* <FlagDropdown /> */}
                             </ul>
                         </div>
 

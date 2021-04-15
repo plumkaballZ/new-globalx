@@ -1,6 +1,6 @@
 import './styles/bundle.css'
 import './app.css';
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Switch, Route, useLocation, useHistory } from 'react-router-dom';
 import ScrollToTop from './functions/ScrollToTop';
 import Header from './components/Static/Header/Header';
@@ -25,13 +25,25 @@ import { Address } from './models/Address';
 import { addressService } from './services/AddressService';
 import { ShippingOption } from './models/ShippingOption';
 import AddressTsx from './components/Checkout/Address/Address';
-import Loader from './components/Loader/Loader';
 import { CompleteOrder } from './models/CompleteOrder';
+import { User } from './models/User';
+import { userService } from './services/UserService';
+import UserOrders from './components/Order/UserOrders/UserOrders';
+import OrderDetails from './components/Order/OrderDetails/OrderDetails';
+
+
+const addOrderLine = (orderLine: LineItem, currentOrder: Order, setCurrentOrder: any) => {
+  let newCurrentOrder = orderService.addOrderLine(orderLine, currentOrder);
+  setCurrentOrder(newCurrentOrder);
+};
 
 export default function App() {
   const history = useHistory();
   let location = useLocation();
+
   let isCheckoutFlow = location.pathname.includes('checkout');
+
+  let [user, setUser] = useState({} as User);
 
   let [currentOrder, setCurrentOrder] = useState({} as Order);
   let [allProducts, setAllProducts] = useState([] as Product[]);
@@ -47,8 +59,22 @@ export default function App() {
   let [paymentIscompleted, setPaymentIsCompleted] = useState(false);
 
   let [isLoading, setIsLoading] = useState(false);
+  let [serverIsBusy, setServerIsBusy] = useState(false);
+
+
+  let [userOrders, setUserOrders] = useState([] as Order[]);
+  let [selectedUserOrder, setSelectedUserOrder] = useState({} as Order);
+
+  let userIsLoggedIn = (Object.keys(user).length !== 0);
 
   useEffect(() => {
+    if (!userIsLoggedIn) {
+      userService.tryLoginForLocalUser(serverIsBusy, setServerIsBusy, setUser, setUserOrders);
+    }
+
+    productService.fetchAllProducts(setAllProducts);
+    orderService.fetchCurrentOrder(setCurrentOrder);
+
     const awaitAndGetAddresses = async () => {
       setIsLoading(true);
       await addressService.fetchAllAddresses(setAllAddresses, setSelectedAddress, setShippingOptions);
@@ -58,19 +84,6 @@ export default function App() {
     awaitAndGetAddresses();
 
   }, []);
-
-  useEffect(() => {
-    productService.fetchAllProducts(setAllProducts);
-  }, []);
-
-  useEffect(() => {
-    orderService.fetchCurrentOrder(setCurrentOrder);
-  }, []);
-
-  const addOrderLine = (orderLine: LineItem) => {
-    let newCurrentOrder = orderService.addOrderLine(orderLine, currentOrder);
-    setCurrentOrder(newCurrentOrder);
-  };
 
   const removeOrderLine = (orderLine: LineItem) => {
     let newCurrentOrder = orderService.removeOrderLine(orderLine, currentOrder);
@@ -107,26 +120,17 @@ export default function App() {
     setIsLoading(false);
   }
 
-
   const setPaymentIsCompletedAndGoToOrderCompleted = () => {
     setPaymentIsCompleted(true);
     history.push("/ordercomplete");
   }
 
-  let subTotal: number = 0;
-  let totalQuantity: number = 0;
-
   let currentOrderLines = currentOrder.line_items;
-  let numberOfOrderLines = ((Object.keys(currentOrder).length === 0) ? 0 : currentOrderLines.length);
-
-  if (numberOfOrderLines > 0) {
-    currentOrderLines.forEach(x => subTotal += x.price * x.quantity);
-    currentOrderLines.forEach(x => totalQuantity += x.quantity);
-  }
+  let orderTotals = orderService.getCurrentOrderTotals(currentOrder, currentOrderLines);
+  let subTotal: number = orderTotals.subTotal;
+  let totalQuantity: number = orderTotals.totalQuantity;
 
   let hasProds = allProducts.length === 0 ? false : true;
-
-
 
   return (
     <div className="App">
@@ -134,12 +138,9 @@ export default function App() {
       <div _nghost-c0="" ng-version="4.4.6">
         <div _ngcontent-c0="" className="contentz">
           <div _ngcontent-c0="" className="default">
-
             <section _ngcontent-c0="">
 
-              <Loader isLoading={isLoading} />
-
-              {!isCheckoutFlow ? <Header totalQuantity={totalQuantity} /> : <CheckoutHeader />}
+              {!isCheckoutFlow ? <Header totalQuantity={totalQuantity} userIsLoggedIn={userIsLoggedIn} setUser={setUser} /> : <CheckoutHeader />}
               <main _ngcontent-c0="" className="body container content">
 
                 <ScrollToTop />
@@ -147,7 +148,9 @@ export default function App() {
 
                   <Route exact path="/" render={(props) =>
                     <Home
-                      addOrderLineCallback={addOrderLine}
+                      addOrderLineCallback={(orderLine: LineItem) => {
+                        addOrderLine(orderLine, currentOrder, setCurrentOrder);
+                      }}
                       allProducts={allProducts}
                       goToIndex={(index: number) => {
                         history.push(`/productdetail/${index}`);
@@ -163,13 +166,21 @@ export default function App() {
                     <Route exact path="/productdetail/:index" render={(props) =>
                       <ProductDetail
                         allProducts={allProducts}
-                        addOrderLineCallback={addOrderLine}
+                        addOrderLineCallback={(orderLine: LineItem) => {
+                          addOrderLine(orderLine, currentOrder, setCurrentOrder);
+                        }}
                         {...props} />} />
                   }
 
-
-                  <Route exact path='/auth/login' component={Login} />
-                  <Route exact path='/auth/signup' component={SignUp} />
+                  {
+                    (!userIsLoggedIn) &&
+                    <Route exact path='/auth/login' component={Login} />
+                  }
+                  {
+                    (!userIsLoggedIn) &&
+                    <Route exact path='/auth/signup' component={SignUp}
+                    />
+                  }
 
                   <Route exact path="/checkout/bag" render={(props) =>
                     <CheckoutBag
@@ -198,6 +209,7 @@ export default function App() {
                         completeOrder.orderId = currentOrder.id;
                         setCompleteOrder(completeOrder);
                       }}
+                      addressIsLoading={isLoading}
                       {...props} />
                   } />
 
@@ -215,6 +227,21 @@ export default function App() {
                         completedOrder={completeOrder}
                         {...props} />
                     } />
+                  }
+
+                  {userIsLoggedIn &&
+                    <Route exact path="/orders" render={(props) =>
+                      <UserOrders
+                        userOrders={userOrders}
+                        setUserOrder={setSelectedUserOrder}
+                        {...props} />} />
+                  }
+
+                  {userIsLoggedIn &&
+                    <Route exact path="/orders/details" render={(props) =>
+                      <OrderDetails
+                        selectedUserOrder={selectedUserOrder}
+                        {...props} />} />
                   }
 
                   {/* admin section */}

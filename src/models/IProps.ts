@@ -3,6 +3,8 @@ import { LineItem } from "./LineItem";
 import { ShippingOption } from "./ShippingOption";
 import { Product } from "./Product";
 import { CompleteOrder } from "./CompleteOrder";
+import { User } from "./User";
+import { Order } from "./Order";
 
 
 export interface ICheckoutBagProps {
@@ -14,6 +16,8 @@ export interface ICheckoutBagProps {
 }
 export interface IHeaderProps {
     totalQuantity: number;
+    userIsLoggedIn: boolean;
+    setUser: any;
 }
 export interface IProductListProps {
     addOrderLineCallback(lineItem: LineItem): void;
@@ -36,6 +40,7 @@ export interface IAddressProps {
     setSelectedShippingOption: any;
     selectedShippingOption: ShippingOption;
     setCompleteOrderCallBack(completedOrder: CompleteOrder): void;
+    addressIsLoading: boolean;
 }
 export interface IAdminProductsProps {
     allProducts: Product[];
@@ -59,4 +64,18 @@ export interface IPaymentProps {
 }
 export interface IOrderCompletedProps {
     completedOrder: CompleteOrder;
+}
+export interface ILoginProps {
+    // loginUserCallBack(email: string, pw: string): void;
+}
+export interface IAvatarDropDownProps {
+    userIsLoggedIn: boolean;
+    setUser: any;
+}
+export interface IUserOrderProps {
+    userOrders: Order[];
+    setUserOrder: any;
+}
+export interface IOrderDetailsProps {
+    selectedUserOrder: Order;
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { IAddressProps } from "../../../models/IProps";
 import AddAddress from "./AddAddress/AddAddress";
 import { Address } from '../../../models/Address';
@@ -8,6 +8,7 @@ import { ShippingOption } from "../../../models/ShippingOption";
 import { PickupPoint } from "../../../models/PickupPoint";
 import './address.css';
 import { CompleteOrder } from "../../../models/CompleteOrder";
+import Loader from "../../Loader/Loader";
 
 
 export default function AddressTsx(props: IAddressProps) {
@@ -154,6 +155,7 @@ export default function AddressTsx(props: IAddressProps) {
 
     return (
         <div _nghost-c21="">
+            <Loader isLoading={props.addressIsLoading} />
             <div _ngcontent-c21="" className="address-section">
 
 
@@ -270,7 +272,7 @@ export default function AddressTsx(props: IAddressProps) {
                                         completeOrder.countryId = selectedAddrs.countryId;
                                         completeOrder.firstName = selectedAddrs.firstname;
                                         completeOrder.lastName = selectedAddrs.firstname;
-                                        
+
                                         props.setCompleteOrderCallBack(completeOrder);
 
                                         history.push('/checkout/payment');

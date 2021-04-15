@@ -1,9 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
+import { useHistory } from 'react-router-dom';
+import { IAvatarDropDownProps } from '../../../../models/IProps';
+import { LocalUser } from '../../../../models/LocalUser';
+import { User } from '../../../../models/User';
 import avatar_logo from './../../../../assets/avatar.png';
 
-export default function AvatarDropdown() {
+export default function AvatarDropdown(props: IAvatarDropDownProps) {
+    const history = useHistory();
     const [dropdownClass, setDropdownClass] = useState("dropdown");
     const wrapperRef = useRef<HTMLLIElement>(null);
+
+    let isLoggedIn = props.userIsLoggedIn;
 
     useEffect(() => {
         function handleClickOutside(event: any) {
@@ -39,17 +46,40 @@ export default function AvatarDropdown() {
                 <span _ngcontent-c13="" className="caret"></span>
             </a>
 
-            <ul _ngcontent-c13="" className="dropdown-menu">
-                <li _ngcontent-c13="" className="divider" role="separator"></li>
-                <li _ngcontent-c13=""><a _ngcontent-c13="" href="https://shevlin.co/auth">
-                    Bliv vores ven
-                    </a>
-                </li>
-                <li _ngcontent-c13="" className="divider" role="separator"></li>
-                <li _ngcontent-c13=""><a _ngcontent-c13="" href="https://shevlin.co/auth/login">
-                    Log på
-                    </a></li>
-            </ul>
+            {!isLoggedIn &&
+                <ul _ngcontent-c13="" className="dropdown-menu">
+                    <li _ngcontent-c13="" className="divider" role="separator"></li>
+                    <li _ngcontent-c13=""><a _ngcontent-c13="" style={{ cursor: "pointer" }} onClick={() => {
+                        history.push('/auth/signup');
+                    }}>
+                        Bliv vores ven
+                </a>
+                    </li>
+                    <li _ngcontent-c13="" className="divider" role="separator"></li>
+                    <li _ngcontent-c13=""><a _ngcontent-c13="" style={{ cursor: "pointer" }} onClick={() => {
+                        history.push('/auth/login');
+                    }}>Log på</a>
+                    </li>
+                </ul>
+            }
+            {isLoggedIn &&
+                <ul _ngcontent-c13="" className="dropdown-menu">
+                    <li _ngcontent-c13="" className="divider" role="separator"></li>
+                    <li _ngcontent-c13=""><a _ngcontent-c13="" style={{ cursor: "pointer" }} onClick={() => {
+                        history.push('/orders');
+                    }}>
+                        Mine Ordre
+                </a>
+                    </li>
+                    <li _ngcontent-c13="" className="divider" role="separator"></li>
+                    <li _ngcontent-c13=""><a _ngcontent-c13="" style={{ cursor: "pointer" }} onClick={() => {
+                        LocalUser.logOff();
+                        history.push('/');
+                        history.go(0);
+                    }}>Log af</a>
+                    </li>
+                </ul>
+            }
         </li>
     )
 }

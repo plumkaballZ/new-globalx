@@ -10,6 +10,18 @@ export class LocalUser {
         return userIp;
     }
 
+    static logOff() {
+        localStorage.removeItem("userEmail");
+        localStorage.removeItem("userPw");
+    }
+
+    static setEmail(email: string) {
+        localStorage.setItem('userEmail', email);
+    }
+    static setPw(userPw: string) {
+        localStorage.setItem('userPw', userPw);
+    }
+
     static getEmail(): string {
         let userEmail = localStorage.getItem('userEmail') as string;
         return userEmail;

@@ -1,6 +1,3 @@
-import { Address } from "./Address";
-import { ShippingOption } from "./ShippingOption";
-
 export class CompleteOrder {
     public orderId: number;
 

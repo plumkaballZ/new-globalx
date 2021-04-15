@@ -24,23 +24,25 @@ export default function CheckoutHeader() {
 
                         <ol _ngcontent-c2="" className="checkout-steps">
                             <li _ngcontent-c2="" className="step step1">
-                                <a _ngcontent-c2="" className={`${isOnBagPage ? "can-click active" : ""}`} onClick={() => {
-                                    history.push('/checkout/bag');
+                                <a _ngcontent-c2="" className={`${isOnBagPage ? "active" : "can-click"}`} onClick={() => {
+                                    if (isOnAddressPage || isOnPayment) {
+                                        history.push('/checkout/bag');
+                                    }
                                 }}>KURV</a>
                             </li>
                             <li _ngcontent-c2="" className="divider"></li>
                             <li _ngcontent-c2="" className="step step2">
-                                <a _ngcontent-c2="" className={`${isOnAddressPage ? "can-click active" : ""}`} onClick={() => {
-                                    history.push('/checkout/address');
+                                <a _ngcontent-c2="" className={`${isOnAddressPage ? "active" : "can-click"}`} onClick={() => {
+                                    if (isOnPayment) {
+                                        history.push('/checkout/address');
+                                    }
+
                                 }}>LEVERING</a>
                             </li>
                             <li _ngcontent-c2="" className="divider"></li>
                             <li _ngcontent-c2="" className="step step3">
-                                <a _ngcontent-c2="" className={`${isOnPayment ? "can-click active" : ""}`} onClick={() => {
-                                    history.push('/checkout/payment');
-                                }}>
-                                    BETALING
-              </a>
+                                <a _ngcontent-c2="" className={`${isOnPayment ? "active" : "can-click"}`}>
+                                    BETALING</a>
                             </li>
                         </ol>
                     </div>

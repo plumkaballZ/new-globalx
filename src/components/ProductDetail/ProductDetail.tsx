@@ -135,14 +135,15 @@ export default function ProductDetail(props: IProductDetailProps) {
                                         </div>
 
                                         <div _ngcontent-c8="" className="" _nghost-c15="">
+                                            {prod.hasVariants &&
+                                                <div _ngcontent-c15="">
 
-                                            <div _ngcontent-c15="">
-
-                                                <div _ngcontent-c15="" className="size-buttons-size-header">
-                                                    <h6 _ngcontent-c15="">{prod.defaultVariant.type}</h6>
+                                                    <div _ngcontent-c15="" className="size-buttons-size-header">
+                                                        <h6 _ngcontent-c15="">{prod.defaultVariant.type}</h6>
+                                                    </div>
+                                                    {renderVariantItems}
                                                 </div>
-                                                {renderVariantItems}
-                                            </div>
+                                            }
                                         </div>
 
                                         <div _ngcontent-c8="" id="app" style={{ "marginTop": "20px" }}>

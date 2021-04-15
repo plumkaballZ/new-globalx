@@ -33,18 +33,20 @@ export default function CheckoutBag(props: ICheckoutBagProps) {
 
                                 <div _ngcontent-c12="" className="size-qty-wrap">
                                     <div _ngcontent-c12="" className="size-qty">
-                                        <span _ngcontent-c12="" className="size">
+                                        {prod?.hasVariants &&
+                                            <span _ngcontent-c12="" className="size">
 
-                                            {/* todo find better solution regarding variant */}
-                                            {
-                                                value.size ?
-                                                    <span _ngcontent-c12="" className="gray">Størrelse:</span>
-                                                    :
-                                                    <span _ngcontent-c12="" className="gray">Farve:</span>
-                                            }
-                                            <span _ngcontent-c12="" className="value">{value.size ? value.size : value.color}</span>
 
-                                        </span>
+                                                {
+                                                    value.size ?
+                                                        <span _ngcontent-c12="" className="gray">Størrelse:</span>
+                                                        :
+                                                        <span _ngcontent-c12="" className="gray">Farve:</span>
+                                                }
+                                                <span _ngcontent-c12="" className="value">{value.size ? value.size : value.color}</span>
+
+                                            </span>
+                                        }
                                         <span _ngcontent-c12="" className="qty">
                                             <span _ngcontent-c12="" className="gray">Antal:</span>
                                             <span _ngcontent-c12="" className="value">{value.quantity}</span>
@@ -58,7 +60,7 @@ export default function CheckoutBag(props: ICheckoutBagProps) {
                                     <div _ngcontent-c12="" className="seller"></div>
                                 </div>
                                 <div _ngcontent-c12="" className="prod-amount">
-                                    Samlet beløb: {value.price * value.quantity} DKK
+                                    Samlet beløb: {(value.price * value.quantity).toFixed(2)} DKK
                                 </div>
                                 <div _ngcontent-c12="" className="edit-move-delete">
                                     <div _ngcontent-c12="" className="actions">

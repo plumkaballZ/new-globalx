@@ -10,11 +10,11 @@ export class Order {
     state: string;
     adjustment_total: string;
     user_id: string;
-    created_at: string;
+    created_At: string;
     updated_at: string;
     completed_at: string;
     payment_total: string;
-    shipment_state: string;
+    shipment_State: string;
     payment_state: string;
     email: string;
     special_instructions: string;
@@ -30,7 +30,7 @@ export class Order {
     total_quantity: string;
     token: string;
     bill_address: Address;
-    ship_address: Address;
+    ship_Address: Address;
     public line_items: LineItem[];
     // payments: [Payment];
 
