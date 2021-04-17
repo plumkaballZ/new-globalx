@@ -1,14 +1,72 @@
-import { useEffect, useState } from "react";
+import { render } from "react-dom";
 import { useHistory } from "react-router-dom";
 import { IOrderDetailsProps } from "../../../models/IProps";
-import { Order } from "../../../models/Order";
+import { LineItem } from "../../../models/LineItem";
 import './order-details.css';
 
 export default function OrderDetails(props: IOrderDetailsProps) {
     const history = useHistory();
-    
+    console.log('order details');
+
     let order = props.selectedUserOrder;
     let addrs = order.ship_Address;
+
+    let totalQuantity: number = 0;
+    order.line_items.forEach(x => totalQuantity += x.quantity);
+    const renderLineItems: any[] = [];
+
+    order.line_items.map((value: LineItem) => {
+        renderLineItems.push(
+            <div _ngcontent-c8="" _nghost-c12="">
+                <div _ngcontent-c12="" className="prod-item">
+                    <div _ngcontent-c12="" className="col1">
+                        <img _ngcontent-c12="" alt="" src={value.prod.smallImage} />
+                    </div>
+                    <div _ngcontent-c12="" className="col2">
+                        <div _ngcontent-c12="" className="prod-name">
+                            <a _ngcontent-c12="" className="c-gray">
+                                {value.prod.name}
+                            </a>
+                        </div>
+
+                        <div _ngcontent-c12="" className="size-qty-wrap">
+                            <div _ngcontent-c12="" className="size-qty">
+                                {value.prod.hasVariants &&
+                                    <span _ngcontent-c12="" className="size">
+
+
+                                        {
+                                            value.size ?
+                                                <span _ngcontent-c12="" className="gray">Størrelse:</span>
+                                                :
+                                                <span _ngcontent-c12="" className="gray">Farve:</span>
+                                        }
+                                        <span _ngcontent-c12="" className="value">{value.size ? value.size : value.color}</span>
+
+                                    </span>
+                                }
+                                <span _ngcontent-c12="" className="qty">
+                                    <span _ngcontent-c12="" className="gray">Antal:</span>
+                                    <span _ngcontent-c12="" className="value">{value.quantity}</span>
+                                </span>
+                                <span _ngcontent-c12="" className="qty">
+                                    <span _ngcontent-c12="" className="gray">Pris:</span>
+                                    <span _ngcontent-c12="" className="value">{value.price} DKK</span>
+                                </span>
+
+                            </div>
+                            <div _ngcontent-c12="" className="seller"></div>
+                        </div>
+                        <div _ngcontent-c12="" className="prod-amount">
+                            Samlet beløb: {(value.price * value.quantity).toFixed(2)} DKK
+                    </div>
+                    </div>
+                </div>
+
+            </div>
+
+        )
+    })
 
     return (
         <div _nghost-c15="">
@@ -41,7 +99,7 @@ export default function OrderDetails(props: IOrderDetailsProps) {
                                     <div _ngcontent-c15="" className="col-md-4" style={{ marginTop: "10px" }}>
                                         <small _ngcontent-c15="">ANTAL VARE</small>
                                         <p _ngcontent-c15="">
-                                            {order.shipment_State}
+                                            {totalQuantity}
                                         </p>
                                     </div>
 
@@ -49,47 +107,7 @@ export default function OrderDetails(props: IOrderDetailsProps) {
                             </div>
                         </div>
                         <hr _ngcontent-c15="" />
-
-
-
-                        <div _ngcontent-c15="" className="prod-item">
-
-                            <div _ngcontent-c15="" className="col1">
-                                <img _ngcontent-c15="" alt="" src="./Shevlin.co.orderdetail_files/small.png" />
-                            </div>
-                            <div _ngcontent-c15="" className="col2">
-                                <div _ngcontent-c15="" className="prod-name">
-                                    <a _ngcontent-c15="" className="c-gray">
-                                        Belt By Shevlin
-              </a>
-                                </div>
-
-                                <div _ngcontent-c15="" className="prod-amount">
-                                    Pris: 349,95 DKK
-            </div>
-                                <div _ngcontent-c15="" className="size-qty-wrap">
-                                    <div _ngcontent-c15="" className="size-qty">
-
-                                        <span _ngcontent-c15="" className="size">
-                                            <span _ngcontent-c15="" className="gray">Størrelse:</span>
-                                            <span _ngcontent-c15="" className="value">80CM</span>
-                                        </span>
-
-
-
-
-                                        <span _ngcontent-c15="" className="qty">
-                                            <span _ngcontent-c15="" className="gray">Antal:</span>
-                                            <span _ngcontent-c15="" className="value">1</span>
-                                        </span>
-
-
-                                    </div>
-                                    <div _ngcontent-c15="" className="seller"></div>
-                                </div>
-                            </div>
-                        </div>
-
+                        {renderLineItems}
                     </div>
 
                 </div>

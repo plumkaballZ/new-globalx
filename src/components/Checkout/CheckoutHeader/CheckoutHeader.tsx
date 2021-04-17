@@ -8,7 +8,8 @@ export default function CheckoutHeader() {
 
     let isOnBagPage = location.pathname.includes('bag');
     let isOnAddressPage = location.pathname.includes('address');
-    let isOnPayment = location.pathname.includes('payment');
+    let isOnPaymentPage = location.pathname.includes('payment');
+    let IsOnOrderCompletePage = location.pathname.includes('ordercomplete');
 
     return (
         <div _ngcontent-c0="" _nghost-c2="">
@@ -25,7 +26,7 @@ export default function CheckoutHeader() {
                         <ol _ngcontent-c2="" className="checkout-steps">
                             <li _ngcontent-c2="" className="step step1">
                                 <a _ngcontent-c2="" className={`${isOnBagPage ? "active" : "can-click"}`} onClick={() => {
-                                    if (isOnAddressPage || isOnPayment) {
+                                    if (isOnAddressPage || isOnPaymentPage) {
                                         history.push('/checkout/bag');
                                     }
                                 }}>KURV</a>
@@ -33,17 +34,24 @@ export default function CheckoutHeader() {
                             <li _ngcontent-c2="" className="divider"></li>
                             <li _ngcontent-c2="" className="step step2">
                                 <a _ngcontent-c2="" className={`${isOnAddressPage ? "active" : "can-click"}`} onClick={() => {
-                                    if (isOnPayment) {
+                                    if (isOnPaymentPage) {
                                         history.push('/checkout/address');
                                     }
 
                                 }}>LEVERING</a>
                             </li>
+
                             <li _ngcontent-c2="" className="divider"></li>
                             <li _ngcontent-c2="" className="step step3">
-                                <a _ngcontent-c2="" className={`${isOnPayment ? "active" : "can-click"}`}>
+                                <a _ngcontent-c2="" className={`${isOnPaymentPage ? "active" : "can-click"}`}>
                                     BETALING</a>
                             </li>
+                            <li _ngcontent-c2="" className="divider"></li>
+                            <li _ngcontent-c2="" className="step step3">
+                                <a _ngcontent-c2="" className={`${IsOnOrderCompletePage ? "active" : "can-click"}`}>
+                                    GENNEMFØRT</a>
+                            </li>
+
                         </ol>
                     </div>
                 </div>

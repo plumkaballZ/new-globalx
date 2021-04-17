@@ -1,14 +1,16 @@
-export class CompleteOrder {
-    public orderId: number;
+export class OrderOverview {
+    public orderId: string;
 
+    public addressUid: string;
     public subTotal: number;
     public shippingPrice: number;
     public totalQuantity: number;
 
     public totalPrice: string;
 
-    public companyName: string;
-    public isPickup: boolean;
+    public servicePointId: number;
+    public servicePointName: string;
+    public hasServicePoint: boolean;
 
     public firstName: string;
     public lastName: string;
@@ -19,4 +21,6 @@ export class CompleteOrder {
     public zipcode: string;
     public city: string;
     public countryId: string;
+
+    public product_code: string;
 }

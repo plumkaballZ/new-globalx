@@ -112,6 +112,12 @@ class OrderService {
 
         return { ...currentOrder };
     }
+    public setPaymentDone(currentOrder: Order, addressUid: string): Order {
+        currentOrder.addressUid = addressUid;
+        currentOrder.special_instructions = 'updatePayment';
+        currentOrder.canBeUpdated = true;
+        return { ...currentOrder };
+    }
 
     public createNewOrderLine(prod: Product, quantity: number, variant: Variant): LineItem {
         var newOrderLine = new LineItem();
@@ -143,15 +149,6 @@ class OrderService {
             });
 
         if (res) setOrders(res);
-    }
-    public fetchOrderDetails = async (email: string, orderId: string) => {
-
-        let res = await this.getRequest(`${this.apiUrl}/getdetails/${email}/${orderId}`)
-            .catch((err: any) => {
-                console.log(err);
-            });
-
-        console.log(res);
     }
 
     public fetchAllOrders99 = async (setOrders: any) => {

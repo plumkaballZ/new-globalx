@@ -31,7 +31,8 @@ ul[_ngcontent-c12] li.product-base[_ngcontent-c12] a[_ngcontent-c12] .product-th
     opacity: 1;
     width: 100%;
     -o-object-fit: cover;
-    object-fit: cover
+    object-fit: cover;
+    cursor: pointer;
 }
 
 ul[_ngcontent-c12] li.product-base[_ngcontent-c12] a[_ngcontent-c12] .product-productMetaInfo[_ngcontent-c12] {

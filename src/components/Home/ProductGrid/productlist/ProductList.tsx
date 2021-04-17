@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { IProductListProps } from '../../../../models/IProps';
-import { LineItem } from '../../../../models/LineItem';
 import { Product } from '../../../../models/Product';
 import { orderService } from '../../../../services/OrderService';
 import './product-list.css'

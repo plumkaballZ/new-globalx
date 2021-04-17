@@ -2,9 +2,9 @@ import { Address } from "./Address";
 import { LineItem } from "./LineItem";
 import { ShippingOption } from "./ShippingOption";
 import { Product } from "./Product";
-import { CompleteOrder } from "./CompleteOrder";
-import { User } from "./User";
+import { OrderOverview } from "./OrderOverview";
 import { Order } from "./Order";
+import { User } from "./User";
 
 
 export interface ICheckoutBagProps {
@@ -27,6 +27,7 @@ export interface IProductListProps {
 export interface IAddAddressProps {
     createNewAddress(address: Address): void;
     setDoGoToCreatePage: any;
+    loggedInUser: User;
 }
 export interface IAddressProps {
     allAddresses: Address[];
@@ -39,8 +40,9 @@ export interface IAddressProps {
     subTotal: number;
     setSelectedShippingOption: any;
     selectedShippingOption: ShippingOption;
-    setCompleteOrderCallBack(completedOrder: CompleteOrder): void;
+    setCompleteOrderCallBack(orderOverview: OrderOverview): void;
     addressIsLoading: boolean;
+    loggedInUser: User;
 }
 export interface IAdminProductsProps {
     allProducts: Product[];
@@ -59,14 +61,13 @@ export interface ILoaderProps {
     isLoading: boolean;
 }
 export interface IPaymentProps {
-    completedOrder: CompleteOrder;
-    setPaymentIsCompletedCallback(): void;
+    orderOverview: OrderOverview;
+    setPaymentDoneCallback(orderOverview: OrderOverview): void;
 }
 export interface IOrderCompletedProps {
-    completedOrder: CompleteOrder;
+    orderOverview: OrderOverview;
 }
 export interface ILoginProps {
-    // loginUserCallBack(email: string, pw: string): void;
 }
 export interface IAvatarDropDownProps {
     userIsLoggedIn: boolean;
@@ -74,8 +75,13 @@ export interface IAvatarDropDownProps {
 }
 export interface IUserOrderProps {
     userOrders: Order[];
-    setUserOrder: any;
+    loggedInUser: User;
+    allProds: Product[];
 }
 export interface IOrderDetailsProps {
     selectedUserOrder: Order;
+}
+export interface IProductFilterProps {
+    prodFilterArray: string[];
+    setProdFilterArray: any;
 }

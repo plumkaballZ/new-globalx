@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { IAddressProps } from "../../../models/IProps";
 import AddAddress from "./AddAddress/AddAddress";
 import { Address } from '../../../models/Address';
 import { useHistory } from "react-router-dom";
 import slectedLogo from './../../../assets/selected02.png';
 import { ShippingOption } from "../../../models/ShippingOption";
-import { PickupPoint } from "../../../models/PickupPoint";
+import { ServicePoint } from "../../../models/ServicePoint";
 import './address.css';
-import { CompleteOrder } from "../../../models/CompleteOrder";
+import { OrderOverview } from "../../../models/OrderOverview";
 import Loader from "../../Loader/Loader";
 
 
@@ -71,9 +71,9 @@ export default function AddressTsx(props: IAddressProps) {
 
                     <div _ngcontent-c22="" className="remove-edit">
                         <span _ngcontent-c22="" className="remove">
-                            <strong _ngcontent-c22="" onClick={() => {
+                            {/* <strong _ngcontent-c22="" onClick={() => {
                                 props.deleteAddress(value);
-                            }}>Fjern</strong>
+                            }}>Fjern</strong> */}
                         </span>
                     </div>
 
@@ -119,24 +119,24 @@ export default function AddressTsx(props: IAddressProps) {
                                     let newSelectedShippingOpt = { ...shippingOption };
 
                                     if (arry.length === 2) {
-                                        let pickup = shippingOption.pickup_points.filter(x => x.name === arry[1])[0];
-                                        newSelectedShippingOpt.selected_pickup_point = pickup;
+                                        let pickup = shippingOption.service_points.filter(x => x.name === arry[1])[0];
+                                        newSelectedShippingOpt.selected_service_point = pickup;
                                     }
 
                                     props.setSelectedShippingOption(newSelectedShippingOpt);
 
                                 }}>
-                                    {ship.has_pickup_points && ship.pickup_points.map((pickup: PickupPoint, indexY: number) => {
-                                        let isCheckedPickup = selectedShippingOpt.selected_pickup_point === pickup;
+                                    {ship.has_service_points && ship.service_points.map((servicePoint: ServicePoint, indexY: number) => {
+                                        let isCheckedPickup = selectedShippingOpt.selected_service_point === servicePoint;
                                         return <p key={"pickup_point" + ship.carrier_code + indexY.toString()} className="address-content">
                                             <label>
-                                                <input defaultChecked={isCheckedPickup} name="pickupPointRadioBtn" type="radio" id="gls" className="with-gap m-top-15" value={ship.product_code + "$" + pickup.name} />
-                                                <span className="pickup-point">{pickup.company_name} - {pickup.address} {pickup.zipcode} {pickup.city}</span>
+                                                <input defaultChecked={isCheckedPickup} name="pickupPointRadioBtn" type="radio" id="gls" className="with-gap m-top-15" value={ship.product_code + "$" + servicePoint.name} />
+                                                <span className="pickup-point">{servicePoint.company_name} - {servicePoint.address} {servicePoint.zipcode} {servicePoint.city}</span>
                                             </label>
                                         </p>
                                     })}
 
-                                    {ship.has_pickup_points == false &&
+                                    {ship.has_service_points == false &&
                                         <p className="p-top-10">
                                             <label>
                                                 <input defaultChecked={selectedShippingOpt.product_code === selectedShippingOpt.product_code} name="pickupPointRadioBtn" type="radio" id="gls" className="with-gap m-top-15" value={ship.product_code} />
@@ -242,38 +242,44 @@ export default function AddressTsx(props: IAddressProps) {
                                             alert("Du skal vælge en leveringsmetode");
                                             return;
                                         }
-                                        if (selectedShippingOpt.has_pickup_points &&
-                                            !selectedShippingOpt.selected_pickup_point) {
+                                        if (selectedShippingOpt.has_service_points &&
+                                            !selectedShippingOpt.selected_service_point) {
                                             alert("Du skal vælge en udleveringssted");
                                             return;
                                         }
 
-                                        let completeOrder = new CompleteOrder();
+                                        let orderOverview = new OrderOverview();
 
-                                        completeOrder.subTotal = subTotal;
-                                        completeOrder.shippingPrice = shippingPrice;
-                                        completeOrder.totalQuantity = props.totalQuantity;
-                                        completeOrder.totalPrice = (subTotal + shippingPrice).toFixed(2);
+                                        orderOverview.addressUid = selectedAddrs.uid;
+                                        orderOverview.subTotal = subTotal;
+                                        orderOverview.shippingPrice = shippingPrice;
+                                        orderOverview.totalQuantity = props.totalQuantity;
+                                        orderOverview.totalPrice = (subTotal + shippingPrice).toFixed(2);
 
-                                        if (selectedShippingOpt.has_pickup_points && selectedShippingOpt.selected_pickup_point) {
-                                            let pickup = selectedShippingOpt.selected_pickup_point;
-                                            completeOrder.address = pickup.address;
-                                            completeOrder.city = pickup.city;
-                                            completeOrder.zipcode = pickup.zipcode;
-                                            completeOrder.isPickup = true;
-                                            completeOrder.companyName = pickup.company_name;
+                                        if (selectedShippingOpt.has_service_points && selectedShippingOpt.selected_service_point) {
+                                            let servicePoint = selectedShippingOpt.selected_service_point;
+
+                                            orderOverview.address = servicePoint.address;
+                                            orderOverview.city = servicePoint.city;
+                                            orderOverview.zipcode = servicePoint.zipcode;
+                                            orderOverview.hasServicePoint = true;
+                                            orderOverview.servicePointName = servicePoint.company_name;
+                                            orderOverview.servicePointId = servicePoint.id;
                                         }
                                         else {
-                                            completeOrder.address = selectedAddrs.address1;
-                                            completeOrder.city = selectedAddrs.city;
-                                            completeOrder.zipcode = selectedAddrs.zipcode;
+                                            orderOverview.address = selectedAddrs.address1;
+                                            orderOverview.city = selectedAddrs.city;
+                                            orderOverview.zipcode = selectedAddrs.zipcode;
                                         }
 
-                                        completeOrder.countryId = selectedAddrs.countryId;
-                                        completeOrder.firstName = selectedAddrs.firstname;
-                                        completeOrder.lastName = selectedAddrs.firstname;
+                                        orderOverview.countryId = selectedAddrs.countryId;
+                                        orderOverview.firstName = selectedAddrs.firstname;
+                                        orderOverview.lastName = selectedAddrs.lastname;
+                                        orderOverview.phone = selectedAddrs.phone;
+                                        orderOverview.email = selectedAddrs.email;
+                                        orderOverview.product_code = selectedShippingOpt.product_code;
 
-                                        props.setCompleteOrderCallBack(completeOrder);
+                                        props.setCompleteOrderCallBack(orderOverview);
 
                                         history.push('/checkout/payment');
 

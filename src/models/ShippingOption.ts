@@ -1,4 +1,4 @@
-import { PickupPoint } from "./PickupPoint";
+import { ServicePoint } from "./ServicePoint";
 
 export class ShippingOption {
     dispaly_string: string;
@@ -7,8 +7,8 @@ export class ShippingOption {
     product_code: string;
     price: string;
     price_before_vat: string;
-    pickup_points: PickupPoint[];
-    has_pickup_points: boolean;
+    service_points: ServicePoint[];
+    has_service_points: boolean;
     
-    selected_pickup_point: PickupPoint;
+    selected_service_point: ServicePoint;
 }

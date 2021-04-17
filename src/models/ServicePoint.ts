@@ -1,4 +1,5 @@
-export class PickupPoint {
+export class ServicePoint {
+    id: number;
     number: string;
     company_name: string;
     name: string;

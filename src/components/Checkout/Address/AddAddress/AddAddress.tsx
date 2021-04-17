@@ -37,6 +37,8 @@ export default function AddAddress(props: IAddAddressProps) {
         props.setDoGoToCreatePage(false);
     };
 
+    let userIsLoggedIn = (Object.keys(props.loggedInUser).length !== 0);
+
     return (
         <div _nghost-c21="">
             <div _ngcontent-c21="" className="address-section">
@@ -53,14 +55,14 @@ export default function AddAddress(props: IAddAddressProps) {
                                 </div>
                                 <div _ngcontent-c21="" _nghost-c25="">
                                     <form onSubmit={handleSubmit(onSubmit)} _ngcontent-c25="" className="form ng-untouched ng-pristine ng-invalid" noValidate={false}>
-                                
+
                                         <div _ngcontent-c25="" className="row mt-3">
 
                                             <div _ngcontent-c25="" className="form-group col-sm-6">
                                                 <label _ngcontent-c25=""> Email
                                                 <span _ngcontent-c25="" className="required">*</span>
                                                 </label>
-                                                <input required={true} name="email" type="email" ref={register}
+                                                <input required={true} name="email" type="email" ref={register} defaultValue={userIsLoggedIn ? props.loggedInUser.email : ''}
                                                     _ngcontent-c25="" className="form-control ng-untouched ng-pristine ng-invalid"
                                                 />
                                             </div>

@@ -93,7 +93,7 @@
 }
 
 .payment-section[_ngcontent-c26] .right[_ngcontent-c26] .mini-bag-summary[_ngcontent-c26] .shipping[_ngcontent-c26]>.c-green[_ngcontent-c26] {
-    color: #20bd99
+    color: #1d886d;
 }
 
 .payment-section[_ngcontent-c26] .right[_ngcontent-c26] .pay-lbl-total[_ngcontent-c26] {
@@ -128,9 +128,12 @@
 }
 
 .payment-section[_ngcontent-c26] .right[_ngcontent-c26] .address-summary[_ngcontent-c26] .add-info[_ngcontent-c26] {
-    color: #858e8f;
-    font-size: 13px;
-    line-height: 17px
+   
+    font-size: 14px;
+    padding-top: 6px;
+    padding-bottom: 20px;
+    height: 22px;
+    position: relative;
 }
 
 @media screen and (max-width:768px) {

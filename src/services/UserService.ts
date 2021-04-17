@@ -12,19 +12,15 @@ class UserService {
 
         let res = await httpRequestService.get<any>(`${this.apiUrl}/${email}/${pw}`);
 
-        if (res.resString === "not found") {
-            alert("user not found");
-            return;
-        }
-        if (res.resString === "wrong password") {
-            alert("wrong password :( please try again with a different");
-            return;
-        }
         if (res.resString === "ok") {
-
-            // LocalUser.setEmail(email);
-            // LocalUser.setPw(pw);
-
+            return {
+                resString: "ok",
+                email,
+                password: pw,
+                user: res.user
+            };
+        }
+        else {
             return res;
         }
     }
@@ -40,20 +36,10 @@ class UserService {
                 newsletter: signUpUserData.newsLetter
             });
 
-        if (res.resString === "user already exists") {
-            alert("bruger findes allerede");
-            return;
-        }
 
-        if (res.resString === "ok") {
+        return res;
 
-            let user = res.user;
 
-            LocalUser.setEmail(user.email)
-            LocalUser.setPw(user.password);
-
-            return res;
-        }
     }
     tryLoginForLocalUser = async (serverIsBusy: boolean, setServerIsBusy: any, setUser: any, setUserOrders: any) => {
         let email = LocalUser.getEmail();
@@ -64,7 +50,7 @@ class UserService {
             setServerIsBusy(true);
             let res = await userService.loginUser(email, pw);
 
-            if (res.resString === "ok") {
+            if (res != null && res.resString === "ok") {
                 let user = res.user as User;
 
                 if (user.lvl === 99) {

@@ -2,7 +2,8 @@ import { Address } from "./Address";
 import { LineItem } from "./LineItem";
 
 export class Order {
-    id: number;
+    addressUid: string;
+    id: string;
     number: string;
     item_total: string;
     total: string;
@@ -26,23 +27,15 @@ export class Order {
     tax_total: string;
     currency: string;
     considered_risky: boolean;
-    canceler_id: string;
     total_quantity: string;
-    token: string;
     bill_address: Address;
     ship_Address: Address;
     public line_items: LineItem[];
-    // payments: [Payment];
+
 
     deliveryCode: string;
     shippingId: string;
 
-    /**
-     *
-     */
-    /**
-     *
-     */
     constructor() {
         this.canBeUpdated = false;
     }

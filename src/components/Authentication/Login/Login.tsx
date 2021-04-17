@@ -2,6 +2,7 @@ import { propTypes } from 'react-bootstrap/esm/Image';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import { ILoginProps } from '../../../models/IProps';
+import { LocalUser } from '../../../models/LocalUser';
 import { userService } from '../../../services/UserService';
 import './login.css';
 
@@ -33,9 +34,24 @@ export default function Login() {
                                 <form onSubmit={handleSubmit(async (data: ILoginFromData, event: any) => {
                                     event.preventDefault();
                                     let res = await userService.loginUser(data.email, data.password);
+
                                     if (res) {
-                                        history.push('/');
-                                        history.go(0);
+
+                                        if (res.resString === "not found") {
+                                            alert("Brugerne kunne ikke findes");
+                                            return;
+                                        }
+                                        if (res.resString === "wrong password") {
+                                            alert("Forkert password");
+                                            return;
+                                        }
+                                        if (res.resString === "ok") {
+                                            LocalUser.setEmail(res.email)
+                                            LocalUser.setPw(res.password);
+                                            history.push('/');
+                                            history.go(0);
+                                        }
+
                                     }
 
                                 })} _ngcontent-c23="" className="register-register-form ng-untouched ng-pristine ng-invalid"

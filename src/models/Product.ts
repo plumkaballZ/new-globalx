@@ -23,5 +23,6 @@ export class Product {
     defaultVariant: Variant;
     variants: Variant[];
     hasVariants: boolean;
+    filterCategory: string;
 
 }

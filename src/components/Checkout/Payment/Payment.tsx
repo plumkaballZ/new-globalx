@@ -1,8 +1,6 @@
 import './payment.css';
 import { PayPalButton } from "react-paypal-button-v2";
 import { IPaymentProps } from '../../../models/IProps';
-import { PickupPoint } from '../../../models/PickupPoint';
-import { PureComponent } from 'react';
 
 const credentials = {
     "sandbox": "AWi18rxt26-hrueMoPZ0tpGEOJnNT4QkiMQst9pYgaQNAfS1FLFxkxQuiaqRBj1vV5PmgHX_jA_c1ncL",
@@ -10,16 +8,18 @@ const credentials = {
 }
 
 export default function Payment(props: IPaymentProps) {
-    let completeOrder = props.completedOrder;
-    let totalQuantity = props.completedOrder.totalQuantity;
-    let hasPickupPoints = completeOrder.isPickup;
+    let orderOverview = props.orderOverview;
+
+    let totalPrice = orderOverview.totalPrice;
+    let totalQuantity = orderOverview.totalQuantity
+    let hasServicePoints = orderOverview.hasServicePoint;
 
     const createPayPalOrder = (data: any, actions: any) => {
         let order = actions.order.create({
             purchase_units: [{
                 amount: {
                     currency_code: "DKK",
-                    value: completeOrder.totalPrice
+                    value: totalPrice
                 }
             }],
             application_context: {
@@ -31,7 +31,7 @@ export default function Payment(props: IPaymentProps) {
     }
     const onSuccessPayPal = (details: any, data: any) => {
         if (details.status === "COMPLETED") {
-            props.setPaymentIsCompletedCallback();
+            props.setPaymentDoneCallback(orderOverview);
             return fetch("/paypal-transaction-complete", {
                 method: "post",
                 body: JSON.stringify({
@@ -52,46 +52,46 @@ export default function Payment(props: IPaymentProps) {
                                 <div _ngcontent-c26="" className="items">{totalQuantity} VARE</div>
                                 <div _ngcontent-c26="" className="order-total">
                                     <span _ngcontent-c26="">Subtotal</span>
-                                    <span _ngcontent-c26="" className="value">{completeOrder.subTotal.toFixed(2)} DKK</span>
+                                    <span _ngcontent-c26="" className="value">{orderOverview.subTotal.toFixed(2)} DKK</span>
                                 </div>
                                 <div _ngcontent-c26="" className="shipping">
                                     <span _ngcontent-c26="">Levering</span>
-                                    <span _ngcontent-c26="" className="shipping-fee c-green">{completeOrder.shippingPrice.toFixed(2)} DKK</span>
+                                    <span _ngcontent-c26="" className="shipping-fee c-green">{orderOverview.shippingPrice.toFixed(2)} DKK</span>
                                 </div>
                             </div>
 
                             <div _ngcontent-c26="" className="pay-lbl-total">
                                 <span _ngcontent-c26="" className="pay-lbl">TOTAL</span>
-                                <span _ngcontent-c26="" className="pay-total">{completeOrder.totalPrice} DKK</span>
+                                <span _ngcontent-c26="" className="pay-total">{orderOverview.totalPrice} DKK</span>
                             </div>
 
                             <div _ngcontent-c26="" className="address-summary">
 
-                                {hasPickupPoints &&
+                                {hasServicePoints &&
                                     <div _ngcontent-c26="" className="address-lbl">LEVERES TIL UDLEVERINGSSTED</div>
                                 }
-                                {!hasPickupPoints &&
+                                {!hasServicePoints &&
                                     <div _ngcontent-c26="" className="address-lbl">LEVERES TIL PRIVAT ADRESSE</div>
                                 }
                                 <div _ngcontent-c26="" className="name"></div>
 
-                                {hasPickupPoints &&
+                                {hasServicePoints &&
                                     <div>
-                                        <div _ngcontent-c26="" className="add-info">{completeOrder.companyName}</div>
+                                        <div _ngcontent-c26="" className="add-info">{orderOverview.servicePointName}</div>
 
                                     </div>
                                 }
                                 <div>
 
-                                    <div _ngcontent-c26="" className="add-info">{completeOrder.address}</div>
-                                    <div _ngcontent-c26="" className="add-info">{completeOrder.zipcode} {completeOrder.city}</div>
+                                    <div _ngcontent-c26="" className="add-info">{orderOverview.address}</div>
+                                    <div _ngcontent-c26="" className="add-info">{orderOverview.zipcode} {orderOverview.city}</div>
                                 </div>
 
 
                                 <div _ngcontent-c26="" className="address-lbl">KONTAKT INFO</div>
-                                <div _ngcontent-c26="" className="add-info">{completeOrder.firstName} {completeOrder.lastName}</div>
-                                <div _ngcontent-c26="" className="add-info">{completeOrder.phone}</div>
-                                <div _ngcontent-c26="" className="add-info">{completeOrder.email}</div>
+                                <div _ngcontent-c26="" className="add-info">{orderOverview.firstName} {orderOverview.lastName}</div>
+                                <div _ngcontent-c26="" className="add-info">{orderOverview.phone}</div>
+                                <div _ngcontent-c26="" className="add-info">{orderOverview.email}</div>
                             </div>
                         </div>
                     </div>
@@ -121,6 +121,8 @@ export default function Payment(props: IPaymentProps) {
                                                     <PayPalButton
                                                         createOrder={createPayPalOrder}
                                                         onSuccess={onSuccessPayPal}
+                                                        onApprove={() => {
+                                                        }}
                                                         options={{
                                                             clientId: "sb",
                                                             currency: "DKK"

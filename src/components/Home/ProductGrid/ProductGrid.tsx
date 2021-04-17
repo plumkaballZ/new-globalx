@@ -8,15 +8,10 @@ export default function ProductGrid(props: IProductListProps) {
             <div _nghost-c10="">
                 <div _ngcontent-c10="" className="content showHide">
                     <div _ngcontent-c10="" className="queried-for">
-                        <h4 _ngcontent-c10="" className="q" title="men casual shirts">Displaying available products</h4>
+                        <h4 _ngcontent-c10="" className="q" title="men casual shirts">Viser tilgængelige produkter</h4>
                         <span _ngcontent-c10="">&nbsp;</span>
                     </div>
                     <div _ngcontent-c10="" className="options">
-                        <ul _ngcontent-c10="" className="img-size">
-                            <label _ngcontent-c10="">View:</label>
-                            <li _ngcontent-c10="" className="big"></li>
-                            <li _ngcontent-c10="" className="small selected"></li>
-                        </ul>
                     </div>
                 </div>
             </div>

@@ -3,8 +3,22 @@ import ProductGrid from './ProductGrid/ProductGrid';
 import sticky_logo_2 from './../../assets/logo/shevlin_logo.png';
 import './home.css'
 import { IProductListProps } from '../../models/IProps';
+import { useState } from 'react';
+import { Product } from '../../models/Product';
 
 export default function Home(props: IProductListProps) {
+    let [prodFilterArray, setProdFilterArray] = useState([] as string[]);
+
+    let filteredProds: Product[] = [];
+
+    props.allProducts.map((prod: Product) => {
+        if (prodFilterArray.includes(prod.filterCategory)) {
+            filteredProds.push(prod);
+        }
+    });
+
+    let hasFilteredProds = prodFilterArray !== undefined && prodFilterArray.length != 0;
+
     return (
         <div _nghost-c7="">
             <a _ngcontent-c7="" className="navbar-brand">
@@ -19,24 +33,20 @@ export default function Home(props: IProductListProps) {
 
             <div _ngcontent-c7="" _nghost-c8="">
                 <ul _ngcontent-c8="" className="bread_crumb">
-                    {/* <li _ngcontent-c8="">
-                            <a _ngcontent-c8="" className="crumb" href="https://shevlin.co/#">
-                                <span _ngcontent-c8="">Shop</span>
-                            </a>
-                        </li>
-                        <li _ngcontent-c8="">Categories</li> */}
                 </ul>
             </div>
 
 
             <div _ngcontent-c7="" className="col-xs-12">
                 <div _ngcontent-c7="" className="col-xs-3 taxCol">
-                    <ProductFilter />
+                    <ProductFilter
+                        prodFilterArray={prodFilterArray}
+                        setProdFilterArray={setProdFilterArray} />
                 </div>
                 <div _ngcontent-c7="" className="col-xs-9 mainCol">
                     <ProductGrid
                         addOrderLineCallback={props.addOrderLineCallback}
-                        allProducts={props.allProducts}
+                        allProducts={hasFilteredProds ? filteredProds : props.allProducts}
                         goToIndex={props.goToIndex} />
                 </div>
             </div>

@@ -21,6 +21,9 @@ export class LocalUser {
     static setPw(userPw: string) {
         localStorage.setItem('userPw', userPw);
     }
+    static setIp(userIp: string) {
+        localStorage.setItem('userIp', userIp);
+    }
 
     static getEmail(): string {
         let userEmail = localStorage.getItem('userEmail') as string;

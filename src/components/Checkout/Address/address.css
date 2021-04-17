@@ -91,6 +91,8 @@
     border-radius: 4px;
     position: relative;
     cursor: pointer;
+    
+    
 }
 
 /* .sticky{
@@ -248,12 +250,9 @@
 }
 
 .mini-bag-summary[_ngcontent-c23] .items[_ngcontent-c23] {
-    font-size: 12px;
     font-weight: 600;
     font-family: Whitney-semi-bold;
-    padding-top: 5px;
-    border-bottom: 1px dotted #d4d5d9;
-    padding-bottom: 5px
+    padding-top: 5px
 }
 
 .mini-bag-summary[_ngcontent-c23] .order-total[_ngcontent-c23],
@@ -283,7 +282,7 @@
 }
 
 .mini-bag-summary[_ngcontent-c23] .shipping[_ngcontent-c23]>.c-green[_ngcontent-c23] {
-    color: #20bd99
+    color: #1d886d
 }
 
 .pay-lbl-total[_ngcontent-c23] {

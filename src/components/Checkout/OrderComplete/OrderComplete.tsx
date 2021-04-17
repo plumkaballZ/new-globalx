@@ -4,7 +4,7 @@ import './order-complete.css';
 
 export default function OrderComplete(props: IOrderCompletedProps) {
 
-    let completedOrder = props.completedOrder;
+    let completedOrder = props.orderOverview;
 
     return (
         <div id="confirmation">
@@ -22,25 +22,26 @@ export default function OrderComplete(props: IOrderCompletedProps) {
                                 ship_address.address1
                       </span>
                         </p> */}
-                        <p><span className="info-title">Navn</span>
-                            <span className="pull-right">
+                        <p><span className="info-title">Navn:</span>
+                            <span className="pull-right info-title">
                                 {completedOrder.firstName} {completedOrder.lastName}
                             </span>
 
                         </p>
-                        {completedOrder.isPickup &&
+                        {completedOrder.hasServicePoint &&
                             <p>
-                                <span className="info-title">Udleveringssted</span>
-                                <span className="pull-right">{completedOrder.companyName}
+                                <span className="info-title">Udleveringssted:</span>
+                                <span className="pull-right info-title">{completedOrder.servicePointName}
                                 </span>
                             </p>}
                         <p>
                             <span className="info-title">Adresse</span>
-                            <span className="pull-right">{completedOrder.address}
+                            <span className="pull-right info-title">{completedOrder.address}, {completedOrder.zipcode}  {completedOrder.city}
                             </span>
                         </p>
                         <p>
-                            <span className="pull-right">{completedOrder.zipcode}  {completedOrder.city}
+                            <span className="pull-right"> 
+                            
                             </span>
                         </p>
                         <br />
@@ -51,21 +52,22 @@ export default function OrderComplete(props: IOrderCompletedProps) {
                         <p>
                             <span className="info-title">Order nummer</span>
 
-                            <span className="pull-right">
+                            <span className="pull-right info-title">
                                 {completedOrder.orderId}
                             </span>
 
 
                         </p>
+
                         <p><span className="info-title">Antal af vare</span>
 
-                            <span className="pull-right">
+                            <span className="pull-right info-title">
                                 {completedOrder.totalQuantity}
                             </span>
 
                         </p>
                         <p><span className="info-title">Total beløb</span>
-                            <span className="pull-right">
+                            <span className="pull-right info-title">
                                 {completedOrder.totalPrice} DKK
                         </span>
                         </p>
@@ -73,7 +75,7 @@ export default function OrderComplete(props: IOrderCompletedProps) {
                 </div>
 
                 <div>
-                    <a href="/">GÅ TIL FORSIDE</a>
+                    <a className="goToFrontPage" href="/">GÅ TIL FORSIDE</a>
                 </div>
 
             </div>

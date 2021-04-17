@@ -19,6 +19,8 @@ export class LineItem {
   public newLine: boolean;
   public updated: boolean;
 
+  public smallImage: string;
+
   constructor() {
   }
 }

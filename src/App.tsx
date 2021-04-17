@@ -25,11 +25,11 @@ import { Address } from './models/Address';
 import { addressService } from './services/AddressService';
 import { ShippingOption } from './models/ShippingOption';
 import AddressTsx from './components/Checkout/Address/Address';
-import { CompleteOrder } from './models/CompleteOrder';
+import { OrderOverview } from './models/OrderOverview';
 import { User } from './models/User';
 import { userService } from './services/UserService';
 import UserOrders from './components/Order/UserOrders/UserOrders';
-import OrderDetails from './components/Order/OrderDetails/OrderDetails';
+import { pakkeLabelsService } from './services/PakkeLabelsService';
 
 
 const addOrderLine = (orderLine: LineItem, currentOrder: Order, setCurrentOrder: any) => {
@@ -54,17 +54,15 @@ export default function App() {
   let [shippingOptions, setShippingOptions] = useState([] as ShippingOption[]);
   let [selectedShippingOption, setSelectedShippingOption] = useState({} as ShippingOption);
 
-  let [completeOrder, setCompleteOrder] = useState({} as CompleteOrder);
+  let [orderOverview, setOrderOverview] = useState({} as OrderOverview);
 
-  let [paymentIscompleted, setPaymentIsCompleted] = useState(false);
+  let [paymentIsDone, setPaymentIsDone] = useState(false);
 
   let [isLoading, setIsLoading] = useState(false);
   let [serverIsBusy, setServerIsBusy] = useState(false);
 
 
   let [userOrders, setUserOrders] = useState([] as Order[]);
-  let [selectedUserOrder, setSelectedUserOrder] = useState({} as Order);
-
   let userIsLoggedIn = (Object.keys(user).length !== 0);
 
   useEffect(() => {
@@ -120,9 +118,15 @@ export default function App() {
     setIsLoading(false);
   }
 
-  const setPaymentIsCompletedAndGoToOrderCompleted = () => {
-    setPaymentIsCompleted(true);
-    history.push("/ordercomplete");
+  const setPaymentDoneAndGoToPage = async (orderOverview: OrderOverview) => {
+    let newCurrentOrder = orderService.setPaymentDone(currentOrder, orderOverview.addressUid);
+    setCurrentOrder(newCurrentOrder);
+
+    let shipmentCreated = await pakkeLabelsService.createShipment(orderOverview);
+    console.log(shipmentCreated);
+
+    setPaymentIsDone(true);
+    history.push("/checkout/ordercomplete");
   }
 
   let currentOrderLines = currentOrder.line_items;
@@ -205,42 +209,38 @@ export default function App() {
                       subTotal={subTotal}
                       setSelectedShippingOption={setSelectedShippingOption}
                       selectedShippingOption={selectedShippingOption}
-                      setCompleteOrderCallBack={(completeOrder: CompleteOrder) => {
-                        completeOrder.orderId = currentOrder.id;
-                        setCompleteOrder(completeOrder);
+                      setCompleteOrderCallBack={(orderOverview: OrderOverview) => {
+                        orderOverview.orderId = currentOrder.id;
+                        setOrderOverview(orderOverview);
+                        pakkeLabelsService.createShipment(orderOverview);
                       }}
                       addressIsLoading={isLoading}
+                      loggedInUser={user}
                       {...props} />
                   } />
 
 
                   <Route exact path="/checkout/payment" render={(props) =>
                     <Payment
-                      completedOrder={completeOrder}
-                      setPaymentIsCompletedCallback={setPaymentIsCompletedAndGoToOrderCompleted}
+                      orderOverview={orderOverview}
+                      setPaymentDoneCallback={setPaymentDoneAndGoToPage}
                       {...props} />
                   } />
 
-                  {paymentIscompleted &&
-                    <Route exact path="/ordercomplete" render={(props) =>
+                  {paymentIsDone &&
+                    <Route exact path="/checkout/ordercomplete" render={(props) =>
                       <OrderComplete
-                        completedOrder={completeOrder}
+                        orderOverview={orderOverview}
                         {...props} />
                     } />
                   }
 
                   {userIsLoggedIn &&
-                    <Route exact path="/orders" render={(props) =>
+                    <Route path="/orders" render={(props) =>
                       <UserOrders
                         userOrders={userOrders}
-                        setUserOrder={setSelectedUserOrder}
-                        {...props} />} />
-                  }
-
-                  {userIsLoggedIn &&
-                    <Route exact path="/orders/details" render={(props) =>
-                      <OrderDetails
-                        selectedUserOrder={selectedUserOrder}
+                        loggedInUser={user}
+                        allProds={allProducts}
                         {...props} />} />
                   }
 

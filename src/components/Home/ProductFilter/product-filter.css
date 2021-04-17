@@ -1,3 +1,12 @@
+.h4override {
+    font-weight: 900;
+    display: inline-block;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 67%;
+}
+
 .heading[_ngcontent-c9] {
     text-transform: uppercase;
     padding: 5px 22px 5px 2px;
@@ -115,7 +124,6 @@ body[_ngcontent-c9] {
 
 .search-terms[_ngcontent-c9] {
     display: table;
-    margin: 0 0 10px 0
 }
 
 .search-filters[_ngcontent-c9] {
@@ -177,7 +185,7 @@ body[_ngcontent-c9] {
     .search-terms[_ngcontent-c9] {
         display: table;
         width: 100%;
-        margin: 0
+        /* margin: 0 */
     }
 
     .search-terms[_ngcontent-c9]>div[_ngcontent-c9] {
@@ -197,10 +205,12 @@ body[_ngcontent-c9] {
     }
 
     .search-filters-title[_ngcontent-c9] {
-        color: #1d886d;
-        text-decoration: underline;
-        cursor: pointer;
-        margin: 0
+        font-weight: 900;
+        display: inline-block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 67%;
     }
 
     .search-filters.pinned[_ngcontent-c9] {
@@ -218,6 +228,15 @@ body[_ngcontent-c9] {
     .filters-open[_ngcontent-c9] .filter-explanation[_ngcontent-c9],
     .filters-open[_ngcontent-c9] .filter-group[_ngcontent-c9] {
         display: block
+    }
+
+    #search-filters-title {
+        font-weight: 900;
+        display: inline-block;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+        max-width: 67%;
     }
 
     .filters-open[_ngcontent-c9] .search-filters-title[_ngcontent-c9] {
