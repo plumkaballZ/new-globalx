@@ -1,8 +1,7 @@
-import { useState } from "react";
 import { IAddressProps } from "../../../models/IProps";
 import AddAddress from "./AddAddress/AddAddress";
 import { Address } from '../../../models/Address';
-import { useHistory } from "react-router-dom";
+import { Route, useHistory, useRouteMatch, useLocation } from "react-router-dom";
 import slectedLogo from './../../../assets/selected02.png';
 import { ShippingOption } from "../../../models/ShippingOption";
 import { ServicePoint } from "../../../models/ServicePoint";
@@ -13,20 +12,15 @@ import Loader from "../../Loader/Loader";
 
 export default function AddressTsx(props: IAddressProps) {
     const history = useHistory();
+    const match = useRouteMatch();
+    let location = useLocation();
 
-    let [doGoToCreatePage, setDoGoToCreatePage] = useState(false);
-
+    let isOnAddAddressPage = location.pathname.includes('address/add');
     let allAddrs = props.allAddresses;
 
     let selectedAddrs = props.selectedAddress;
     let selectedShippingOpt = props.selectedShippingOption;
     let shippingOptions = props.shippingOptions;
-
-    let showCreatePage = false;
-
-    if (doGoToCreatePage === true || allAddrs.length === 0) {
-        showCreatePage = true;
-    }
 
     let renderAddresses: any[] = [];
     let renderShippingOptions: any[] = [];
@@ -37,6 +31,7 @@ export default function AddressTsx(props: IAddressProps) {
     if (allAddrs != null) {
         allAddrs.map((value: Address, index: number) => {
             let isSelected = selectedAddrs && selectedAddrs.uid === value.uid
+
             renderAddresses.push(
                 <div key={"addr_" + index.toString()} _ngcontent-c22="" className={`address-row ${isSelected ? "addressIsSelected" : ""}`}>
                     <div className="clickDivAddr" onClick={() => {
@@ -78,9 +73,9 @@ export default function AddressTsx(props: IAddressProps) {
 
                     <div _ngcontent-c22="" className="remove-edit">
                         <span _ngcontent-c22="" className="remove">
-                            {/* <strong _ngcontent-c22="" onClick={() => {
+                            <strong _ngcontent-c22="" onClick={() => {
                                 props.deleteAddress(value);
-                            }}>Fjern</strong> */}
+                            }}>Fjern</strong>
                         </span>
                     </div>
 
@@ -166,15 +161,21 @@ export default function AddressTsx(props: IAddressProps) {
             <div _ngcontent-c21="" className="address-section">
 
 
-                {showCreatePage &&
+
+
+
+
+                <Route exact path={match.url + '/add'} render={() =>
                     <AddAddress createNewAddress={(address: Address) => {
                         props.createAddressCallBack(address);
                     }}
-                        setDoGoToCreatePage={setDoGoToCreatePage}
-                        {...props} />
-                }
+                        {...props} />}
+                />
 
-                {!showCreatePage &&
+
+
+
+                {!isOnAddAddressPage &&
                     <div _ngcontent-c21="">
 
                         <div>
@@ -184,7 +185,7 @@ export default function AddressTsx(props: IAddressProps) {
                                     <div _ngcontent-c21="" className="edit-address">
                                         <span _ngcontent-c21="" className="edit-label">
                                             Vælg en leveringsadresse
-                    </span>
+                                </span>
                                     </div>
 
 
@@ -196,7 +197,7 @@ export default function AddressTsx(props: IAddressProps) {
                                         <div _ngcontent-c21="" className="border-right-0">
                                             <div _ngcontent-c21="" className="add-address reviewlink pl-1">
                                                 <span _ngcontent-c21="" className="add-label" onClick={() => {
-                                                    setDoGoToCreatePage(true);
+                                                    history.push(match.url + '/add');
                                                 }}>+ Opret en ny leveringsadresse</span>
                                             </div>
                                         </div>
@@ -204,7 +205,7 @@ export default function AddressTsx(props: IAddressProps) {
                                         <div _ngcontent-c22="" className="edit-address">
                                             <span _ngcontent-c22="" className="edit-label">
                                                 Vælg en leveringsmetode
-                                            </span>
+                                                        </span>
                                         </div>
 
 
@@ -221,7 +222,7 @@ export default function AddressTsx(props: IAddressProps) {
 
                                         <div _ngcontent-c23="" className="del-lbl">
                                             ORDER OVERSIGT
-                                    </div>
+                                                </div>
 
                                         <div _ngcontent-c23="" className="mini-bag-summary">
                                             <span _ngcontent-c23="">Antal vare</span>
@@ -232,7 +233,7 @@ export default function AddressTsx(props: IAddressProps) {
                                                 <span _ngcontent-c23="">Subtotal</span>
                                                 <span _ngcontent-c23="" className="value">
                                                     {subTotal.toFixed(2)} DKK
-                                            </span>
+                                                        </span>
                                             </div>
                                             <div _ngcontent-c23="" className="shipping">
                                                 <span _ngcontent-c23="">Levering</span>
@@ -298,6 +299,7 @@ export default function AddressTsx(props: IAddressProps) {
                         </div>
                     </div >
                 }
+
 
             </div>
         </div>)

@@ -22,7 +22,6 @@ export interface IProductListProps {
 }
 export interface IAddAddressProps {
     createNewAddress(address: Address): void;
-    setDoGoToCreatePage: any;
     loggedInUser: User;
 }
 export interface IAddressProps {

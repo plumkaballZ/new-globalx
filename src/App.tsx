@@ -227,7 +227,7 @@ export default function App() {
                   }
                   />
 
-                  <Route exact path="/checkout/address" render={(props) =>
+                  <Route path="/checkout/address" render={(props) =>
                     <AddressTsx
                       allAddresses={allAddresses}
                       selectedAddress={selectedAddress}

@@ -3,6 +3,7 @@ import './add-address.css';
 import { useForm } from 'react-hook-form';
 import { IAddAddressProps } from '../../../../models/IProps';
 import { Address } from '../../../../models/Address';
+import { useRouteMatch, useHistory } from "react-router-dom";
 
 interface IAddAddressFormData {
     email: string;
@@ -17,6 +18,9 @@ interface IAddAddressFormData {
 }
 
 export default function AddAddress(props: IAddAddressProps) {
+    const history = useHistory();
+    const match = useRouteMatch();
+
     const { register, handleSubmit } = useForm<IAddAddressFormData>();
     const [showStates, setShowStates] = useState(false);
 
@@ -34,7 +38,7 @@ export default function AddAddress(props: IAddAddressProps) {
         newAddress.email = data.email;
 
         props.createNewAddress(newAddress);
-        props.setDoGoToCreatePage(false);
+        history.push('/checkout/address');
     };
 
     let userIsLoggedIn = (Object.keys(props.loggedInUser).length !== 0);
@@ -129,6 +133,7 @@ export default function AddAddress(props: IAddAddressProps) {
                                                             setShowStates(false);
                                                         }
                                                     }
+
                                                 }} _ngcontent-c25="" className="form-control ng-untouched ng-pristine ng-invalid">
                                                     <option value="AF">Afghanistan</option>
                                                     <option value="AX">Åland Islands</option>
