@@ -46,21 +46,20 @@ class UserService {
         let pw = LocalUser.getPw();
 
         if (email && pw && !serverIsBusy) {
-            console.log('do server call');
             setServerIsBusy(true);
             let res = await userService.loginUser(email, pw);
 
             if (res != null && res.resString === "ok") {
                 let user = res.user as User;
+                setUser(user);
 
                 if (user.lvl === 99) {
-                    orderService.fetchAllOrders99(setUserOrders);
+                    await orderService.fetchAllOrders99(setUserOrders);
                 }
                 else {
-                    orderService.fetchAllOrders(user.email, user.uid, setUserOrders);
+                    await orderService.fetchAllOrders(user.email, user.uid, setUserOrders);
                 }
 
-                setUser(user);
             }
 
             setServerIsBusy(false);

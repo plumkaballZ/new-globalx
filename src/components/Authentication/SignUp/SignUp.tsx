@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
+import { ILoginProps } from '../../../models/IProps';
 import { LocalUser } from '../../../models/LocalUser';
 import { userService } from '../../../services/UserService';
 import './signup.css';
@@ -12,7 +13,7 @@ export interface ISignUpFromData {
     newsLetter: string;
 }
 
-export default function SignUp() {
+export default function SignUp(props: ILoginProps) {
     const history = useHistory();
     const { register, handleSubmit } = useForm<ISignUpFromData>();
 
@@ -51,13 +52,10 @@ export default function SignUp() {
                                                 return;
                                             }
                                             if (res.resString === "ok") {
-
                                                 let user = res.user;
                                                 LocalUser.setEmail(user.email)
                                                 LocalUser.setPw(user.password);
-                                                // LocalUser.setIp(user.ip);
-                                                // history.go(0);
-                                                history.push('/');
+                                                props.loginUserAndGoToFrontpage();
                                             }
                                         }
 

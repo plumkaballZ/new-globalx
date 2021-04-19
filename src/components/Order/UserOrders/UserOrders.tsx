@@ -1,8 +1,9 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { Route, useHistory, useLocation, useRouteMatch } from "react-router-dom";
 import { IUserOrderProps } from "../../../models/IProps";
 import { LineItem } from "../../../models/LineItem";
 import { Order } from "../../../models/Order";
+import Loader from "../../Loader/Loader";
 import OrderDetails from "../OrderDetails/OrderDetails";
 import './user-orders.css';
 
@@ -21,8 +22,6 @@ export default function UserOrders(props: IUserOrderProps) {
 
   let loggedInUser = props.loggedInUser;
   let allProds = props.allProds;
-
-
 
   if (userOrders != null) {
     userOrders.map((value: Order, index: number) => {
@@ -52,10 +51,20 @@ export default function UserOrders(props: IUserOrderProps) {
                   </small>
 
                   <hr _ngcontent-c19="" />
-                  <h5 _ngcontent-c19="" className="strong">
-                    Orderstatus:
-                <div _ngcontent-c19="">
-                      {value.shipment_State = 1 ? "Order afventer bekræftelse" : "Order er afsendt:"}
+                  <h4 _ngcontent-c19="" className="strong">
+                    {/* Orderstatus: */}
+                    <div _ngcontent-c19="">
+
+                      {value.shipment_State === "1" &&
+
+                        <div style={{ color: "#e29b10" }}>Afventer bekræftelse</div>
+
+                      }
+                      {value.shipment_State === "0" &&
+
+                        <div className="orderIsSent" style={{ color: "#1d886d" }}>Er afsendt</div>
+
+                      }
                     </div>
 
                     <div _ngcontent-c19="" className="pull-right">
@@ -64,7 +73,7 @@ export default function UserOrders(props: IUserOrderProps) {
                         history.push(match.url + '/details');
                       }}> Detaljer</a>
                     </div>
-                  </h5>
+                  </h4>
                 </div>
               </div>
             </div>
@@ -76,6 +85,7 @@ export default function UserOrders(props: IUserOrderProps) {
 
   return (
     <div _nghost-c16="">
+      <Loader isLoading={props.ordersAreLoding} />
       <div _ngcontent-c16="" className="container-fluid user_fluid">
         <div _ngcontent-c16="" className="col-md-12">
 
@@ -100,6 +110,7 @@ export default function UserOrders(props: IUserOrderProps) {
             <Route exact path={match.url + '/details'} render={(props) =>
               <OrderDetails
                 selectedUserOrder={orderDetail}
+                loggedInUser={loggedInUser}
                 {...props} />} />
 
 

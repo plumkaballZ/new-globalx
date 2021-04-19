@@ -14,11 +14,7 @@ export interface ICheckoutBagProps {
     removeOrderLineCallBack(lineItem: LineItem): void;
     allProducts: Product[];
 }
-export interface IHeaderProps {
-    totalQuantity: number;
-    userIsLoggedIn: boolean;
-    setUser: any;
-}
+
 export interface IProductListProps {
     addOrderLineCallback(lineItem: LineItem): void;
     allProducts: Product[];
@@ -68,18 +64,26 @@ export interface IOrderCompletedProps {
     orderOverview: OrderOverview;
 }
 export interface ILoginProps {
+    loginUserAndGoToFrontpage(): void;
+}
+export interface IHeaderProps {
+    totalQuantity: number;
+    userIsLoggedIn: boolean;
+    logOffUserAndGoToFrontpage(): void;
 }
 export interface IAvatarDropDownProps {
     userIsLoggedIn: boolean;
-    setUser: any;
+    logOffUserAndGoToFrontpage(): void;
 }
 export interface IUserOrderProps {
     userOrders: Order[];
     loggedInUser: User;
     allProds: Product[];
+    ordersAreLoding: boolean;
 }
 export interface IOrderDetailsProps {
     selectedUserOrder: Order;
+    loggedInUser: User;
 }
 export interface IProductFilterProps {
     prodFilterArray: string[];

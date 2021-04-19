@@ -11,7 +11,6 @@
 
 .address-section[_ngcontent-c21] .left[_ngcontent-c21] .add-address[_ngcontent-c21] {
     padding: 20px 10px 20px 20px;
-    border-bottom: 2px solid #94969f;
     margin-bottom: 14px
 }
 
@@ -30,7 +29,7 @@
 }
 
 .address-section[_ngcontent-c21] .left[_ngcontent-c21] .edit-address[_ngcontent-c21] .edit-label[_ngcontent-c21] {
-    font-size: 17px;
+    font-size: 24px;
     color: #596062;
     font-weight: 600;
     font-family: Whitney-semi-bold
@@ -91,8 +90,10 @@
     border-radius: 4px;
     position: relative;
     cursor: pointer;
-    
-    
+}
+
+.items[_ngcontent-c22] .address-row[_ngcontent-c22].addressIsSelected {
+    border: 3px solid #1d886d !important;
 }
 
 /* .sticky{
@@ -156,6 +157,10 @@
     }
 }
 
+/* .del-options[_ngcontent-c22].delOptionsSelected {
+    border: 2px solid #1d886d;
+} */
+
 .del-options[_ngcontent-c22] {
     border: 1px solid #b9f0e5;
     background-color: #f4fdfb;
@@ -168,8 +173,8 @@
     margin-top: 28px;
     position: relative;
     padding-left: 45px;
-
 }
+
 
 .del-options[_ngcontent-c22] .option[_ngcontent-c22] .option-name[_ngcontent-c22] {
     font-family: Whitney-semi-bold;
@@ -184,7 +189,7 @@
     color: #535766
 }
 
-.del-options[_ngcontent-c22] .select[_ngcontent-c22] {
+/* .del-options[_ngcontent-c22] .select[_ngcontent-c22] {
     cursor: pointer;
     position: absolute;
     left: 14px;
@@ -199,7 +204,7 @@
     background-size: 4250px 153px;
     vertical-align: middle;
     background-image: url(../../../assets/checkout_sprite.png);
-}
+} */
 
 .edit-address[_ngcontent-c22] {
     padding-top: 30px;
@@ -207,7 +212,7 @@
 }
 
 .edit-address[_ngcontent-c22] .edit-label[_ngcontent-c22] {
-    font-size: 17px;
+    font-size: 24px;
     color: #596062;
     font-weight: 600;
     font-family: Whitney-semi-bold
@@ -347,4 +352,24 @@
     word-break: break-word;
     font-size: 13px;
     padding-left: 25px;
+}
+
+.save-button[_ngcontent-c21] {
+    padding: 10px;
+    height: 68px
+}
+
+.save-button[_ngcontent-c21] button[_ngcontent-c21] {
+    margin-left: 10px;
+    width: 190px;
+    color: #fff;
+    border-radius: 4px;
+    font-size: 14px;
+    height: 48px;
+    background: #1d886d;
+    font-weight: 600;
+    font-family: Whitney-semi-bold;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none
 }

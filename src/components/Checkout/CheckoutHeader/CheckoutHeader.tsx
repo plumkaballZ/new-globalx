@@ -9,7 +9,6 @@ export default function CheckoutHeader() {
     let isOnBagPage = location.pathname.includes('bag');
     let isOnAddressPage = location.pathname.includes('address');
     let isOnPaymentPage = location.pathname.includes('payment');
-    let IsOnOrderCompletePage = location.pathname.includes('ordercomplete');
 
     return (
         <div _ngcontent-c0="" _nghost-c2="">
@@ -47,10 +46,10 @@ export default function CheckoutHeader() {
                                     BETALING</a>
                             </li>
                             <li _ngcontent-c2="" className="divider"></li>
-                            <li _ngcontent-c2="" className="step step3">
+                            {/* <li _ngcontent-c2="" className="step step3">
                                 <a _ngcontent-c2="" className={`${IsOnOrderCompletePage ? "active" : "can-click"}`}>
                                     GENNEMFØRT</a>
-                            </li>
+                            </li> */}
 
                         </ol>
                     </div>

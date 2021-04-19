@@ -11,7 +11,7 @@ interface ILoginFromData {
     password: string;
 }
 
-export default function Login() {
+export default function Login(props: ILoginProps) {
     const history = useHistory();
     const { register, handleSubmit } = useForm<ILoginFromData>();
 
@@ -46,10 +46,12 @@ export default function Login() {
                                             return;
                                         }
                                         if (res.resString === "ok") {
+
                                             LocalUser.setEmail(res.email)
                                             LocalUser.setPw(res.password);
-                                            history.push('/');
-                                            history.go(0);
+                                            props.loginUserAndGoToFrontpage();
+                                            // history.push('/');
+                                            // history.go(0);
                                         }
 
                                     }

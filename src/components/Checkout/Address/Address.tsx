@@ -36,8 +36,9 @@ export default function AddressTsx(props: IAddressProps) {
 
     if (allAddrs != null) {
         allAddrs.map((value: Address, index: number) => {
+            let isSelected = selectedAddrs && selectedAddrs.uid === value.uid
             renderAddresses.push(
-                <div key={"addr_" + index.toString()} _ngcontent-c22="" className="address-row">
+                <div key={"addr_" + index.toString()} _ngcontent-c22="" className={`address-row ${isSelected ? "addressIsSelected" : ""}`}>
                     <div className="clickDivAddr" onClick={() => {
                         if (selectedAddrs.uid !== value.uid) {
                             props.selectAddressCallBack(value);
@@ -54,15 +55,21 @@ export default function AddressTsx(props: IAddressProps) {
                                 </div>
 
                                 <div _ngcontent-c22="" className="address-field">
+                                    <span _ngcontent-c22="" className="mob-lbl">Email: </span>
+                                    <span _ngcontent-c22="" className="mob-no">{value.email}</span>
+                                </div>
+
+                                <div _ngcontent-c22="" className="address-field">
                                     <span _ngcontent-c22="" className="mob-lbl">Mobile: </span>
                                     <span _ngcontent-c22="" className="mob-no">{value.phone}</span>
                                 </div>
+
 
                             </div>
                         </div>
                         <br _ngcontent-c22="" />
                         {
-                            (selectedAddrs && selectedAddrs.uid === value.uid) &&
+                            isSelected &&
                             <div className="selectedLogoContainer">
                                 <img src={slectedLogo} />
                             </div>
@@ -85,17 +92,17 @@ export default function AddressTsx(props: IAddressProps) {
     if (shippingOptions != null) {
         shippingOptions.map((ship: ShippingOption, index: number) => {
 
-            let isSlected = selectedShippingOpt.product_code === ship.product_code;
+            let isSelected = selectedShippingOpt.product_code === ship.product_code;
 
             renderShippingOptions.push(
-                <div key={"shipment_" + index.toString()} _ngcontent-c22="" className="del-options" onClick={() => {
+                <div key={"shipment_" + index.toString()} _ngcontent-c22="" className={`del-options ${isSelected ? "delOptionsSelected" : ""}`} onClick={() => {
                     if (selectedShippingOpt.product_code !== ship.product_code) {
                         props.setSelectedShippingOption(ship);
                     }
                 }}>
                     <div _ngcontent-c22="" className="option" >
                         {
-                            isSlected &&
+                            isSelected &&
                             <div className="selectedLogoContainer">
                                 <img src={slectedLogo} />
                             </div>
@@ -107,7 +114,7 @@ export default function AddressTsx(props: IAddressProps) {
                                 {ship.price} DKK
                                 </span>
                         </div>
-                        {isSlected &&
+                        {isSelected &&
 
                             <div className="col-md-12 card-content">
                                 <hr className="thickHr"></hr>
@@ -179,17 +186,19 @@ export default function AddressTsx(props: IAddressProps) {
                                             Vælg en leveringsadresse
                     </span>
                                     </div>
-                                    <div _ngcontent-c21="" className="border-right-0">
-                                        <div _ngcontent-c21="" className="add-address reviewlink pl-1">
-                                            <span _ngcontent-c21="" className="add-label" onClick={() => {
-                                                setDoGoToCreatePage(true);
-                                            }}>+ Opret en ny leveringsadresse</span>
-                                        </div>
-                                    </div>
+
 
                                     <div _ngcontent-c21="" _nghost-c22="">
                                         <div _ngcontent-c22="" className="items">
                                             {renderAddresses}
+                                        </div>
+
+                                        <div _ngcontent-c21="" className="border-right-0">
+                                            <div _ngcontent-c21="" className="add-address reviewlink pl-1">
+                                                <span _ngcontent-c21="" className="add-label" onClick={() => {
+                                                    setDoGoToCreatePage(true);
+                                                }}>+ Opret en ny leveringsadresse</span>
+                                            </div>
                                         </div>
 
                                         <div _ngcontent-c22="" className="edit-address">

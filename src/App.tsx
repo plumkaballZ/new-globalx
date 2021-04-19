@@ -122,12 +122,36 @@ export default function App() {
     let newCurrentOrder = orderService.setPaymentDone(currentOrder, orderOverview.addressUid);
     setCurrentOrder(newCurrentOrder);
 
-    let shipmentCreated = await pakkeLabelsService.createShipment(orderOverview);
-    console.log(shipmentCreated);
-
     setPaymentIsDone(true);
     history.push("/checkout/ordercomplete");
   }
+
+  const loginAndReload = () => {
+    userService.tryLoginForLocalUser(serverIsBusy, setServerIsBusy, setUser, setUserOrders);
+    orderService.fetchCurrentOrder(setCurrentOrder);
+
+    const awaitAndGetAddresses = async () => {
+      setIsLoading(true);
+      await addressService.fetchAllAddresses(setAllAddresses, setSelectedAddress, setShippingOptions);
+      setIsLoading(false);
+    };
+
+    awaitAndGetAddresses();
+    history.push('/');
+  };
+  // const logOffAndReload = () => {
+  //   userService.tryLoginForLocalUser(serverIsBusy, setServerIsBusy, setUser, setUserOrders);
+  //   orderService.fetchCurrentOrder(setCurrentOrder);
+
+  //   const awaitAndGetAddresses = async () => {
+  //     setIsLoading(true);
+  //     await addressService.fetchAllAddresses(setAllAddresses, setSelectedAddress, setShippingOptions);
+  //     setIsLoading(false);
+  //   };
+
+  //   awaitAndGetAddresses();
+  //   history.push('/');
+  // };
 
   let currentOrderLines = currentOrder.line_items;
   let orderTotals = orderService.getCurrentOrderTotals(currentOrder, currentOrderLines);
@@ -144,7 +168,7 @@ export default function App() {
           <div _ngcontent-c0="" className="default">
             <section _ngcontent-c0="">
 
-              {!isCheckoutFlow ? <Header totalQuantity={totalQuantity} userIsLoggedIn={userIsLoggedIn} setUser={setUser} /> : <CheckoutHeader />}
+              {!isCheckoutFlow ? <Header totalQuantity={totalQuantity} userIsLoggedIn={userIsLoggedIn} logOffUserAndGoToFrontpage={loginAndReload} /> : <CheckoutHeader />}
               <main _ngcontent-c0="" className="body container content">
 
                 <ScrollToTop />
@@ -178,12 +202,18 @@ export default function App() {
 
                   {
                     (!userIsLoggedIn) &&
-                    <Route exact path='/auth/login' component={Login} />
+
+                    <Route exact path="/auth/login" render={(props) =>
+                      <Login
+                        loginUserAndGoToFrontpage={loginAndReload}
+                        {...props} />} />
                   }
                   {
                     (!userIsLoggedIn) &&
-                    <Route exact path='/auth/signup' component={SignUp}
-                    />
+                    <Route exact path="/auth/signup" render={(props) =>
+                      <SignUp
+                        loginUserAndGoToFrontpage={loginAndReload}
+                        {...props} />} />
                   }
 
                   <Route exact path="/checkout/bag" render={(props) =>
@@ -241,6 +271,7 @@ export default function App() {
                         userOrders={userOrders}
                         loggedInUser={user}
                         allProds={allProducts}
+                        ordersAreLoding={serverIsBusy}
                         {...props} />} />
                   }
 

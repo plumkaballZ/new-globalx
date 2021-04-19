@@ -27,8 +27,6 @@ export default function Footer() {
                     CVR nr. 38 95 98 24 |
                   <Link _ngcontent-c6="" className="linkz" to="/info">Info</Link>
                   |
-                  <Link _ngcontent-c6="" className="linkz" to="/contact">Kontak</Link>
-                  |
                   <Link _ngcontent-c6="" className="linkz" to="/terms">Handelsbetingelser</Link>
                   |
                   <Link _ngcontent-c6="" className="linkz" to="/cookiepolicy">Privatlivspolitik</Link>

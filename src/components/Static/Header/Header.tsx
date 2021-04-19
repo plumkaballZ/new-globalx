@@ -1,5 +1,5 @@
 import './header.css';
-import shevlin_logo from './../../../assets/logo/shevlin_logo.png';
+import shevlin_logo from './../../../assets/logo/shevlin_logo002.svg';
 import shopping_bag_logo from './../../../assets/shopping-bag.png';
 import { Link, useHistory, useLocation } from "react-router-dom";
 import AvatarDropdown from './AvatarDropdown/AvatarDropdown';
@@ -68,7 +68,9 @@ export default function Header(props: IHeaderProps) {
                                             <span _ngcontent-c13="" className="badge badge-danger">{props.totalQuantity}</span></a>
                                     </li>
 
-                                    <AvatarDropdown userIsLoggedIn={props.userIsLoggedIn} setUser={props.setUser} />
+                                    <AvatarDropdown
+                                        userIsLoggedIn={props.userIsLoggedIn}
+                                        logOffUserAndGoToFrontpage={props.logOffUserAndGoToFrontpage} />
                                 </ul>
                             </div>
                         </div>

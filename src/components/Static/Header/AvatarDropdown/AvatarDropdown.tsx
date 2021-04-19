@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { IAvatarDropDownProps } from '../../../../models/IProps';
 import { LocalUser } from '../../../../models/LocalUser';
-import { User } from '../../../../models/User';
 import avatar_logo from './../../../../assets/avatar.png';
 
 export default function AvatarDropdown(props: IAvatarDropDownProps) {

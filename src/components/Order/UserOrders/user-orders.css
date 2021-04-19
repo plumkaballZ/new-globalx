@@ -24,7 +24,7 @@ p[_ngcontent-c16] a.active[_ngcontent-c16] {
 
 @media screen and (max-width:768px) {
     .user_fluid[_ngcontent-c16] {
-        margin: 90px auto
+        margin: 110px auto
     }
 }
 
@@ -97,7 +97,8 @@ ul.bread_crumb[_ngcontent-c17]:before {
 }
 
 .view-details-link[_ngcontent-c19] {
-    color: #1d886d
+    color: #1d886d;
+    cursor: pointer;
 }
 
 .status[_ngcontent-c15] {

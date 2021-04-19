@@ -10,4 +10,5 @@ export class User {
   // ship_address: [Address];
   lvl: number;
   uid: string;
+  mobile: string;
 }

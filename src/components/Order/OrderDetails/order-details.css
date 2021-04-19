@@ -151,3 +151,18 @@
         width: 100%
     }
 }
+
+.order-btn[_ngcontent-c15] {
+    border: none;
+    border-radius: 3px;
+    height: 45px;
+    background-color: #1d886d !important;
+    font-weight: 600 !important;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    width: 100%;
+    color: #fff;
+    font-family: Whitney-semi-bold;
+    font-size: 14px;
+    margin: 10px auto
+}

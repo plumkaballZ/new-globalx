@@ -71,7 +71,7 @@ export default function AddAddress(props: IAddAddressProps) {
                                                 <label _ngcontent-c25="">Mobil
                                                 <span _ngcontent-c25="" className="required">*</span>
                                                 </label>
-                                                <input required={true} name="phone" type="tel" ref={register}
+                                                <input required={true} name="phone" type="tel" ref={register} defaultValue={userIsLoggedIn ? props.loggedInUser.mobile : ''}
                                                     _ngcontent-c25="" className="form-control ng-untouched ng-pristine ng-invalid" />
                                             </div>
 
