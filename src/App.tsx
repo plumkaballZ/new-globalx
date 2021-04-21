@@ -65,6 +65,12 @@ export default function App() {
   let [userOrders, setUserOrders] = useState([] as Order[]);
   let userIsLoggedIn = (Object.keys(user).length !== 0);
 
+  const awaitAndGetAddresses = async () => {
+    setIsLoading(true);
+    await addressService.fetchAllAddresses(setAllAddresses, setSelectedAddress, setShippingOptions);
+    setIsLoading(false);
+  };
+
   useEffect(() => {
     if (!userIsLoggedIn) {
       userService.tryLoginForLocalUser(serverIsBusy, setServerIsBusy, setUser, setUserOrders);
@@ -72,12 +78,6 @@ export default function App() {
 
     productService.fetchAllProducts(setAllProducts);
     orderService.fetchCurrentOrder(setCurrentOrder);
-
-    const awaitAndGetAddresses = async () => {
-      setIsLoading(true);
-      await addressService.fetchAllAddresses(setAllAddresses, setSelectedAddress, setShippingOptions);
-      setIsLoading(false);
-    };
 
     awaitAndGetAddresses();
 
@@ -118,46 +118,35 @@ export default function App() {
     setIsLoading(false);
   }
 
-  const setPaymentDoneAndGoToPage = async (orderOverview: OrderOverview) => {
-    let newCurrentOrder = orderService.setPaymentDone(currentOrder, orderOverview.addressUid);
-    setCurrentOrder(newCurrentOrder);
+  const setPaymentDoneAndRefresh = async (orderOverview: OrderOverview) => {
+
+    await orderService.setPaymentDone(currentOrder, orderOverview.addressUid);
+    pakkeLabelsService.createShipment(orderOverview);
 
     setPaymentIsDone(true);
     history.push("/checkout/ordercomplete");
+
+    orderService.fetchCurrentOrder(setCurrentOrder);
   }
 
   const loginAndReload = () => {
     userService.tryLoginForLocalUser(serverIsBusy, setServerIsBusy, setUser, setUserOrders);
     orderService.fetchCurrentOrder(setCurrentOrder);
-
-    const awaitAndGetAddresses = async () => {
-      setIsLoading(true);
-      await addressService.fetchAllAddresses(setAllAddresses, setSelectedAddress, setShippingOptions);
-      setIsLoading(false);
-    };
-
     awaitAndGetAddresses();
     history.push('/');
   };
-  // const logOffAndReload = () => {
-  //   userService.tryLoginForLocalUser(serverIsBusy, setServerIsBusy, setUser, setUserOrders);
-  //   orderService.fetchCurrentOrder(setCurrentOrder);
 
-  //   const awaitAndGetAddresses = async () => {
-  //     setIsLoading(true);
-  //     await addressService.fetchAllAddresses(setAllAddresses, setSelectedAddress, setShippingOptions);
-  //     setIsLoading(false);
-  //   };
-
-  //   awaitAndGetAddresses();
-  //   history.push('/');
-  // };
+  const logOffAndReload = () => {
+    setUser({} as User);
+    orderService.fetchCurrentOrder(setCurrentOrder);
+    awaitAndGetAddresses();
+    history.push('/');
+  };
 
   let currentOrderLines = currentOrder.line_items;
   let orderTotals = orderService.getCurrentOrderTotals(currentOrder, currentOrderLines);
   let subTotal: number = orderTotals.subTotal;
   let totalQuantity: number = orderTotals.totalQuantity;
-
   let hasProds = allProducts.length === 0 ? false : true;
 
   return (
@@ -168,7 +157,7 @@ export default function App() {
           <div _ngcontent-c0="" className="default">
             <section _ngcontent-c0="">
 
-              {!isCheckoutFlow ? <Header totalQuantity={totalQuantity} userIsLoggedIn={userIsLoggedIn} logOffUserAndGoToFrontpage={loginAndReload} /> : <CheckoutHeader />}
+              {!isCheckoutFlow ? <Header totalQuantity={totalQuantity} userIsLoggedIn={userIsLoggedIn} logOffUserAndGoToFrontpage={logOffAndReload} /> : <CheckoutHeader />}
               <main _ngcontent-c0="" className="body container content">
 
                 <ScrollToTop />
@@ -216,6 +205,9 @@ export default function App() {
                         {...props} />} />
                   }
 
+
+                  {/* consider moving checkout to separate component */}
+
                   <Route exact path="/checkout/bag" render={(props) =>
                     <CheckoutBag
                       OrderLines={currentOrderLines}
@@ -242,28 +234,28 @@ export default function App() {
                       setCompleteOrderCallBack={(orderOverview: OrderOverview) => {
                         orderOverview.orderId = currentOrder.id;
                         setOrderOverview(orderOverview);
-                        pakkeLabelsService.createShipment(orderOverview);
                       }}
                       addressIsLoading={isLoading}
                       loggedInUser={user}
                       {...props} />
                   } />
 
-
                   <Route exact path="/checkout/payment" render={(props) =>
                     <Payment
                       orderOverview={orderOverview}
-                      setPaymentDoneCallback={setPaymentDoneAndGoToPage}
+                      setPaymentDoneCallback={setPaymentDoneAndRefresh}
+                      setIsLoading={setIsLoading}
                       {...props} />
                   } />
 
-                  {paymentIsDone &&
-                    <Route exact path="/checkout/ordercomplete" render={(props) =>
-                      <OrderComplete
-                        orderOverview={orderOverview}
-                        {...props} />
-                    } />
-                  }
+
+                  <Route exact path="/checkout/ordercomplete" render={(props) =>
+                    <OrderComplete
+                      orderOverview={orderOverview}
+                      paymentIsDone={paymentIsDone}
+                      setPaymentDone={setPaymentIsDone}
+                      {...props} />
+                  } />
 
                   {userIsLoggedIn &&
                     <Route path="/orders" render={(props) =>

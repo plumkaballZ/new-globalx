@@ -63,7 +63,9 @@ class OrderService {
         }
     }
 
+
     public fetchCurrentOrder = async (setCurrentOrder: any) => {
+
         const currentOrder = await this.getCurrent()
             .catch((err: any) => {
                 console.log(err);
@@ -112,11 +114,17 @@ class OrderService {
 
         return { ...currentOrder };
     }
-    public setPaymentDone(currentOrder: Order, addressUid: string): Order {
+    public async setPaymentDone(currentOrder: Order, addressUid: string): Promise<Order> {
         currentOrder.addressUid = addressUid;
         currentOrder.special_instructions = 'updatePayment';
-        currentOrder.canBeUpdated = true;
-        return { ...currentOrder };
+        
+        let res = await this
+            .updateOrder(currentOrder)
+            .catch((err: any) => {
+                console.log(err);
+            });
+
+        return currentOrder;
     }
 
     public createNewOrderLine(prod: Product, quantity: number, variant: Variant): LineItem {

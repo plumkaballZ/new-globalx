@@ -6,7 +6,6 @@ class PakkeLabelsService {
     private apiUrl = `${apiEndpoint}/api/pakkelabels`;
 
     public async createShipment(orderOverview: OrderOverview): Promise<boolean> {
-        console.log(orderOverview);
         const res = await httpRequestService
             .post(this.apiUrl, orderOverview);
 

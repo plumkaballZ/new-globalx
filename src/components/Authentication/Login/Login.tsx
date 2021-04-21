@@ -1,4 +1,3 @@
-import { propTypes } from 'react-bootstrap/esm/Image';
 import { useForm } from 'react-hook-form';
 import { useHistory } from 'react-router-dom';
 import { ILoginProps } from '../../../models/IProps';

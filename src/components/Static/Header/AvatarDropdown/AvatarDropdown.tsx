@@ -73,8 +73,7 @@ export default function AvatarDropdown(props: IAvatarDropDownProps) {
                     <li _ngcontent-c13="" className="divider" role="separator"></li>
                     <li _ngcontent-c13=""><a _ngcontent-c13="" style={{ cursor: "pointer" }} onClick={() => {
                         LocalUser.logOff();
-                        history.push('/');
-                        history.go(0);
+                        props.logOffUserAndGoToFrontpage();
                     }}>Log af</a>
                     </li>
                 </ul>

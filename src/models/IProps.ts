@@ -58,9 +58,12 @@ export interface ILoaderProps {
 export interface IPaymentProps {
     orderOverview: OrderOverview;
     setPaymentDoneCallback(orderOverview: OrderOverview): void;
+    setIsLoading: any;
 }
 export interface IOrderCompletedProps {
     orderOverview: OrderOverview;
+    paymentIsDone: boolean;
+    setPaymentDone: any;
 }
 export interface ILoginProps {
     loginUserAndGoToFrontpage(): void;

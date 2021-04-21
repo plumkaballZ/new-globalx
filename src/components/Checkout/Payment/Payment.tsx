@@ -34,15 +34,11 @@ export default function Payment(props: IPaymentProps) {
     const onSuccessPayPal = (details: any, data: any) => {
         if (details.status === "COMPLETED") {
             props.setPaymentDoneCallback(orderOverview);
-            return fetch("/paypal-transaction-complete", {
-                method: "post",
-                body: JSON.stringify({
-                    orderId: data.orderID
-                })
-            });
         }
     }
-
+    const onApprovedPayPal = (data: any, actions: any) => {
+        console.log('paypal:approved');
+    }
     return (
         <div _nghost-c26="">
             {!hasOrderOverview && <Redirect to="/checkout/address" />}
@@ -125,10 +121,16 @@ export default function Payment(props: IPaymentProps) {
                                                         <PayPalButton
                                                             createOrder={createPayPalOrder}
                                                             onSuccess={onSuccessPayPal}
-                                                            onApprove={() => {
+                                                            onApprove={onApprovedPayPal}
+                                                            onError={(err: any) => {
+                                                                console.log('paypal:error');
+                                                                console.log(err);
+                                                            }}
+                                                            onButtonReady={() => {
+                                                                console.log('paypal:buttonready');
                                                             }}
                                                             options={{
-                                                                clientId: "sb",
+                                                                clientId: credentials.sandbox,
                                                                 currency: "DKK"
                                                             }}
                                                         />

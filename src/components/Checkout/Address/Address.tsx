@@ -1,7 +1,7 @@
 import { IAddressProps } from "../../../models/IProps";
 import AddAddress from "./AddAddress/AddAddress";
 import { Address } from '../../../models/Address';
-import { Route, useHistory, useRouteMatch, useLocation } from "react-router-dom";
+import { Route, useHistory, useRouteMatch, useLocation, Redirect } from "react-router-dom";
 import slectedLogo from './../../../assets/selected02.png';
 import { ShippingOption } from "../../../models/ShippingOption";
 import { ServicePoint } from "../../../models/ServicePoint";
@@ -17,6 +17,12 @@ export default function AddressTsx(props: IAddressProps) {
 
     let isOnAddAddressPage = location.pathname.includes('address/add');
     let allAddrs = props.allAddresses;
+
+    let showCreatePage = false;
+
+    if (allAddrs.length === 0) {
+        showCreatePage = true;
+    }
 
     let selectedAddrs = props.selectedAddress;
     let selectedShippingOpt = props.selectedShippingOption;
@@ -157,13 +163,12 @@ export default function AddressTsx(props: IAddressProps) {
 
     return (
         <div _nghost-c21="">
+            {showCreatePage && <Redirect to={match.url + '/add'} />}
+            {!showCreatePage && <Redirect to={match.url} />}
+
             <Loader isLoading={props.addressIsLoading} />
+
             <div _ngcontent-c21="" className="address-section">
-
-
-
-
-
 
                 <Route exact path={match.url + '/add'} render={() =>
                     <AddAddress createNewAddress={(address: Address) => {
@@ -171,9 +176,6 @@ export default function AddressTsx(props: IAddressProps) {
                     }}
                         {...props} />}
                 />
-
-
-
 
                 {!isOnAddAddressPage &&
                     <div _ngcontent-c21="">
@@ -215,7 +217,6 @@ export default function AddressTsx(props: IAddressProps) {
                                     </div>
                                 </div>
                             </div>
-
                             <div _ngcontent-c21="" className="col-xs-12 col-sm-4">
                                 <div _ngcontent-c21="" className="right sticky">
                                     <div _ngcontent-c21="" _nghost-c23="">
