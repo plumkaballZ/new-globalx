@@ -127,6 +127,15 @@ export default function App() {
     history.push("/checkout/ordercomplete");
 
     orderService.fetchCurrentOrder(setCurrentOrder);
+
+    if (userIsLoggedIn) {
+      if (user.lvl === 99) {
+        await orderService.fetchAllOrders99(setUserOrders);
+      }
+      else {
+        await orderService.fetchAllOrders(user.email, user.uid, setUserOrders);
+      }
+    }
   }
 
   const loginAndReload = () => {

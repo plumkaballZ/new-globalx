@@ -39,13 +39,13 @@ export default function ProductDetail(props: IProductDetailProps) {
     }
 
     const renderImageItem = (item: any) => <span> <img _ngcontent-c12="" className="thumbnails-selected-image article-img2" itemProp="image"
-        src={item.original} alt="null" /></span>
+        src={`${process.env.PUBLIC_URL}/${item.original}`} alt="null" /></span>
 
     const renderCustomThumbnails = (item: any) => <section _ngcontent-c12="" className="cards img002">
         <article _ngcontent-c12="">
             <div _ngcontent-c12="" className="thumbnails-thumbnail-button">
                 <img _ngcontent-c12="" className="thumbnails-thumbnail article-img"
-                    src={item.original} alt="null" />
+                    src={`${process.env.PUBLIC_URL}/${item.original}`} alt="null" />
             </div>
         </article>
     </section>

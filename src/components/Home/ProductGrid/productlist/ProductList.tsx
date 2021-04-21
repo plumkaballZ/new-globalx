@@ -19,7 +19,7 @@ export default function ProductList(props: IProductListProps) {
                     <a _ngcontent-c12="" itemProp="url" onClick={() => {
                         props.goToIndex(index);
                     }}>
-                        <img _ngcontent-c12="" className="product-thumb" itemProp="image" alt="Belt" src={value.smallImage} />
+                        <img _ngcontent-c12="" className="product-thumb" itemProp="image" alt="Belt" src={`${process.env.PUBLIC_URL}/${value.smallImage}`} />
                         <div _ngcontent-c12="" className="product-productMetaInfo">
                             <div _ngcontent-c12="" className="product-brand" itemProp="name">{value.shortName}</div>
                             <h2 _ngcontent-c12="" className="product-product prodName">By Shevlin</h2>

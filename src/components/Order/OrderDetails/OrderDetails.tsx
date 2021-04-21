@@ -19,11 +19,12 @@ export default function OrderDetails(props: IOrderDetailsProps) {
     if (hasOrder) {
         order.line_items.forEach(x => totalQuantity += x.quantity);
         order.line_items.map((value: LineItem, index: Number) => {
+            console.log(value);
             renderLineItems.push(
                 <div _ngcontent-c8="" _nghost-c12="" key={"lineItem" + index.toString()}>
                     <div _ngcontent-c12="" className="prod-item">
                         <div _ngcontent-c12="" className="col1">
-                            <img _ngcontent-c12="" alt="" src={value.prod.smallImage} />
+                            <img _ngcontent-c12="" alt="" src={`${process.env.PUBLIC_URL}/${value.prod.smallImage}`} />
                         </div>
                         <div _ngcontent-c12="" className="col2">
                             <div _ngcontent-c12="" className="prod-name">

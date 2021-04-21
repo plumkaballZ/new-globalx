@@ -48,7 +48,7 @@ export default function OrderComplete(props: IOrderCompletedProps) {
                         <div>
                             <h2>Order Detaljer</h2>
                             <p>
-                                <span className="info-title">Order nummer</span>
+                                <span className="info-title">Order ID.</span>
 
                                 <span className="pull-right info-title">
                                     {completedOrder.orderId}
@@ -73,7 +73,7 @@ export default function OrderComplete(props: IOrderCompletedProps) {
                     </div>
 
                     <div>
-                        <a className="goToFrontPage" onClick={() => {
+                        <a style={{ cursor: "pointer" }} className="goToFrontPage" onClick={() => {
                             props.setPaymentDone(false);
                             history.push('/');
                         }}>GÅ TIL FORSIDE</a>

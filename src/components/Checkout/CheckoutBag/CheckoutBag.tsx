@@ -22,7 +22,7 @@ export default function CheckoutBag(props: ICheckoutBagProps) {
                     <div _ngcontent-c8="" _nghost-c12="">
                         <div _ngcontent-c12="" className="prod-item">
                             <div _ngcontent-c12="" className="col1">
-                                <img _ngcontent-c12="" alt="" src={prod?.smallImage} />
+                                <img _ngcontent-c12="" alt="" src={`${process.env.PUBLIC_URL}/${prod?.smallImage}`} />
                             </div>
                             <div _ngcontent-c12="" className="col2">
                                 <div _ngcontent-c12="" className="prod-name">

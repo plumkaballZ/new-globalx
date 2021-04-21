@@ -2,6 +2,7 @@ import { Address } from "./Address";
 import { LineItem } from "./LineItem";
 
 export class Order {
+    uid: string;
     addressUid: string;
     id: string;
     number: string;

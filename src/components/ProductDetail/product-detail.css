@@ -402,7 +402,6 @@ article[_ngcontent-c12] {
 
 .article-img[_ngcontent-c12] {
     height: 55px;
-    margin-top: 10px
 }
 
 .article-img[_ngcontent-c12],
@@ -416,9 +415,9 @@ article[_ngcontent-c12] {
     height: 77vh;
 }
 
-@media screen and (max-width:768px) {
+@media screen and (max-width:480px) {
     .article-img2[_ngcontent-c12] {
-        /* margin-top: 133px */
+        margin-top: 180px
     }
 }
 
