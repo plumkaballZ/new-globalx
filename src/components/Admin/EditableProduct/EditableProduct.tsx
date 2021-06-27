@@ -48,9 +48,7 @@ export default function EditableProduct(props: IEditableProductProps) {
         prod.liArray[2] = li03 ? li03 : oldLi03;
         prod.price = price ? price : oldPrice;
         prod.displayPrice = displayPrice ? displayPrice : oldPrice;
-
-        console.log(prod);
-
+        
         return prod;
     };
 

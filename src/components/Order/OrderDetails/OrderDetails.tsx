@@ -12,6 +12,15 @@ export default function OrderDetails(props: IOrderDetailsProps) {
     let loggedInUser = props.loggedInUser;
 
     let addrs = order.ship_Address;
+    let pickedServicePoint = order.picked_ServicePoint;
+
+    let hasCompanyName = false;
+    if (pickedServicePoint) {
+        if (pickedServicePoint.companyName) {
+            hasCompanyName = true;
+        }
+    }
+
     let totalQuantity: number = 0;
 
     const renderLineItems: any[] = [];
@@ -19,7 +28,6 @@ export default function OrderDetails(props: IOrderDetailsProps) {
     if (hasOrder) {
         order.line_items.forEach(x => totalQuantity += x.quantity);
         order.line_items.map((value: LineItem, index: Number) => {
-            console.log(value);
             renderLineItems.push(
                 <div _ngcontent-c8="" _nghost-c12="" key={"lineItem" + index.toString()}>
                     <div _ngcontent-c12="" className="prod-item">
@@ -135,13 +143,15 @@ export default function OrderDetails(props: IOrderDetailsProps) {
                                     <strong _ngcontent-c15="">{addrs.firstname} {addrs.lastname}</strong><br _ngcontent-c15="" />
                                     <span _ngcontent-c15="">{addrs.email}</span><br _ngcontent-c15="" />
                                     <span _ngcontent-c15="">{addrs.phone}</span><br _ngcontent-c15="" />
-                                    {/* <strong _ngcontent-c15="">{addrs.phone}</strong><br _ngcontent-c15="" />
-                                    <div _ngcontent-c15="" title="Phone"></div> {addrs.phone}
-                                    <div _ngcontent-c15="" title="Phone"></div> {addrs.email} */}
 
                                     <br _ngcontent-c15="" />
-                                    {addrs.address1}<br _ngcontent-c15="" />
-                                    {addrs.zipcode} {addrs.city}<br _ngcontent-c15="" />
+                                    <strong _ngcontent-c15="">{pickedServicePoint.carrierCode}</strong>
+                                    <br _ngcontent-c15="" />
+                                    {hasCompanyName && <div> {pickedServicePoint.companyName}<br _ngcontent-c15="" /></div>}
+
+                                    {pickedServicePoint.address}<br _ngcontent-c15="" />
+                                    {pickedServicePoint.zipcode} {pickedServicePoint.city}<br _ngcontent-c15="" />
+
 
                                 </address>
                             </div>

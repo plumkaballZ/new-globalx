@@ -259,6 +259,7 @@ export default function AddressTsx(props: IAddressProps) {
                                             return;
                                         }
 
+                                        //simplify this please, maybe some kind of class factory 
                                         let orderOverview = new OrderOverview();
 
                                         orderOverview.addressUid = selectedAddrs.uid;
@@ -267,13 +268,14 @@ export default function AddressTsx(props: IAddressProps) {
                                         orderOverview.totalQuantity = props.totalQuantity;
                                         orderOverview.totalPrice = (subTotal + shippingPrice).toFixed(2);
 
+
                                         if (selectedShippingOpt.has_service_points && selectedShippingOpt.selected_service_point) {
                                             let servicePoint = selectedShippingOpt.selected_service_point;
 
                                             orderOverview.address = servicePoint.address;
                                             orderOverview.city = servicePoint.city;
                                             orderOverview.zipcode = servicePoint.zipcode;
-                                            orderOverview.hasServicePoint = true;
+                                            orderOverview.isPickupService = true;
                                             orderOverview.servicePointName = servicePoint.company_name;
                                             orderOverview.servicePointId = servicePoint.id;
                                         }
@@ -289,6 +291,7 @@ export default function AddressTsx(props: IAddressProps) {
                                         orderOverview.phone = selectedAddrs.phone;
                                         orderOverview.email = selectedAddrs.email;
                                         orderOverview.product_code = selectedShippingOpt.product_code;
+                                        orderOverview.product_name = selectedShippingOpt.dispaly_string;
 
                                         props.setCompleteOrderCallBack(orderOverview);
 

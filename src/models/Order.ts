@@ -1,5 +1,6 @@
 import { Address } from "./Address";
 import { LineItem } from "./LineItem";
+import { PickedServicePoint } from "./PickedServicePoint";
 
 export class Order {
     uid: string;
@@ -31,6 +32,7 @@ export class Order {
     total_quantity: string;
     bill_address: Address;
     ship_Address: Address;
+    picked_ServicePoint: PickedServicePoint;
     public line_items: LineItem[];
 
 

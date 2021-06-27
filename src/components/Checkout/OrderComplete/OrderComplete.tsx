@@ -26,12 +26,12 @@ export default function OrderComplete(props: IOrderCompletedProps) {
                                 </span>
 
                             </p>
-                            {completedOrder.hasServicePoint &&
+                            {/* {completedOrder.hasServicePoint &&
                                 <p>
                                     <span className="info-title">Udleveringssted:</span>
                                     <span className="pull-right info-title">{completedOrder.servicePointName}
                                     </span>
-                                </p>}
+                                </p>} */}
                             <p>
                                 <span className="info-title">Adresse</span>
                                 <span className="pull-right info-title">{completedOrder.address}, {completedOrder.zipcode}  {completedOrder.city}

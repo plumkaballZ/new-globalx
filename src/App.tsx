@@ -30,6 +30,7 @@ import { User } from './models/User';
 import { userService } from './services/UserService';
 import UserOrders from './components/Order/UserOrders/UserOrders';
 import { pakkeLabelsService } from './services/PakkeLabelsService';
+import { PickedServicePoint } from './models/PickedServicePoint';
 
 
 const addOrderLine = (orderLine: LineItem, currentOrder: Order, setCurrentOrder: any) => {
@@ -119,6 +120,15 @@ export default function App() {
   }
 
   const setPaymentDoneAndRefresh = async (orderOverview: OrderOverview) => {
+
+    let pickedServicePoint = new PickedServicePoint();
+    pickedServicePoint.carrierCode = orderOverview.product_code;
+    pickedServicePoint.address = orderOverview.address;
+    pickedServicePoint.city = orderOverview.city;
+    pickedServicePoint.zipcode = orderOverview.zipcode;
+    pickedServicePoint.companyName = orderOverview.servicePointName;
+    pickedServicePoint.productName = orderOverview.product_name;
+    currentOrder.picked_ServicePoint = pickedServicePoint;
 
     await orderService.setPaymentDone(currentOrder, orderOverview.addressUid);
     pakkeLabelsService.createShipment(orderOverview);

@@ -10,7 +10,7 @@ export class OrderOverview {
 
     public servicePointId: number;
     public servicePointName: string;
-    public hasServicePoint: boolean;
+    public isPickupService: boolean;
 
     public firstName: string;
     public lastName: string;
@@ -23,4 +23,5 @@ export class OrderOverview {
     public countryId: string;
 
     public product_code: string;
+    public product_name: string;
 }

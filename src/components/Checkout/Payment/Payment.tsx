@@ -14,7 +14,7 @@ export default function Payment(props: IPaymentProps) {
     let hasOrderOverview = (Object.keys(orderOverview).length !== 0);
     let totalPrice = orderOverview.totalPrice;
     let totalQuantity = orderOverview.totalQuantity
-    let hasServicePoints = orderOverview.hasServicePoint;
+    let isPickUpService = orderOverview.isPickupService;
 
     const createPayPalOrder = (data: any, actions: any) => {
         let order = actions.order.create({
@@ -37,7 +37,6 @@ export default function Payment(props: IPaymentProps) {
         }
     }
     const onApprovedPayPal = (data: any, actions: any) => {
-        console.log('paypal:approved');
     }
     return (
         <div _nghost-c26="">
@@ -67,18 +66,17 @@ export default function Payment(props: IPaymentProps) {
 
                                 <div _ngcontent-c26="" className="address-summary">
 
-                                    {hasServicePoints &&
+                                    {isPickUpService &&
                                         <div _ngcontent-c26="" className="address-lbl">LEVERES TIL UDLEVERINGSSTED</div>
                                     }
-                                    {!hasServicePoints &&
+                                    {!isPickUpService &&
                                         <div _ngcontent-c26="" className="address-lbl">LEVERES TIL PRIVAT ADRESSE</div>
                                     }
                                     <div _ngcontent-c26="" className="name"></div>
 
-                                    {hasServicePoints &&
+                                    {isPickUpService &&
                                         <div>
                                             <div _ngcontent-c26="" className="add-info">{orderOverview.servicePointName}</div>
-
                                         </div>
                                     }
                                     <div>
