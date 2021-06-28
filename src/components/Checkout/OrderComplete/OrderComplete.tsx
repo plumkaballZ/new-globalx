@@ -15,8 +15,8 @@ export default function OrderComplete(props: IOrderCompletedProps) {
                     <div id="top-image"></div>
                     <h1 style={{ paddingTop: "15px" }}>TAK FOR DIT KØB</h1>
                     <p>
-                        Din order bliver nu behandlet og afsendt hurtigst muligt
-                  </p>
+                        Vi pakker din order og sender den hurtigst muligt
+                    </p>
                     <div id="summary">
                         <div>
                             <h2>Leverings Detaljer</h2>

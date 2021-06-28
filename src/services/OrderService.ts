@@ -117,7 +117,7 @@ class OrderService {
     public async setPaymentDone(currentOrder: Order, addressUid: string): Promise<Order> {
         currentOrder.addressUid = addressUid;
         currentOrder.special_instructions = 'updatePayment';
-        
+
         let res = await this
             .updateOrder(currentOrder)
             .catch((err: any) => {
@@ -125,6 +125,13 @@ class OrderService {
             });
 
         return currentOrder;
+    }
+
+    public setOrderIsShipped = async (orderId: string, addressUid: string) => {
+        let res = await this.getRequest(`${this.apiUrl}/setordersent/${orderId}/${addressUid}`)
+            .catch((err: any) => {
+                console.log(err);
+            });
     }
 
     public createNewOrderLine(prod: Product, quantity: number, variant: Variant): LineItem {

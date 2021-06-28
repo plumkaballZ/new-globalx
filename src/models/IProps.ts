@@ -82,10 +82,12 @@ export interface IUserOrderProps {
     loggedInUser: User;
     allProds: Product[];
     ordersAreLoding: boolean;
+    setOrderShipped(orderId: string, addressUid: string): void;
 }
 export interface IOrderDetailsProps {
     selectedUserOrder: Order;
     loggedInUser: User;
+    setOrderShipped(orderId: string, addressUid: string): void;
 }
 export interface IProductFilterProps {
     prodFilterArray: string[];

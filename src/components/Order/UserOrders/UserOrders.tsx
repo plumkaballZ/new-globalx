@@ -11,6 +11,7 @@ export default function UserOrders(props: IUserOrderProps) {
   const history = useHistory();
   const match = useRouteMatch();
 
+  let setOrderShipped = props.setOrderShipped;
   let location = useLocation();
   let isOnDetailsPage = location.pathname.includes('details');
 
@@ -111,6 +112,7 @@ export default function UserOrders(props: IUserOrderProps) {
               <OrderDetails
                 selectedUserOrder={orderDetail}
                 loggedInUser={loggedInUser}
+                setOrderShipped={setOrderShipped}
                 {...props} />} />
 
 
@@ -125,7 +127,7 @@ export default function UserOrders(props: IUserOrderProps) {
                 <div _ngcontent-c18="" className="empty-cart-icon"></div>
                 <div _ngcontent-c18="" className="empty-cart-message">
                   Du har ikke bestilt noget endnu
-               </div>
+                </div>
                 <a _ngcontent-c18="" className="empty-wishlist-link"
                   href="https://shevlin.co/home">Køb noget</a>
               </div>

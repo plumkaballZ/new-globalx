@@ -1,12 +1,9 @@
-import React from "react";
-import { Redirect, useHistory } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 import { IOrderDetailsProps } from "../../../models/IProps";
 import { LineItem } from "../../../models/LineItem";
 import './order-details.css';
 
 export default function OrderDetails(props: IOrderDetailsProps) {
-    const history = useHistory();
-
     let order = props.selectedUserOrder;
     let hasOrder = (Object.keys(order).length !== 0);
     let loggedInUser = props.loggedInUser;
@@ -24,6 +21,8 @@ export default function OrderDetails(props: IOrderDetailsProps) {
     let totalQuantity: number = 0;
 
     const renderLineItems: any[] = [];
+
+    console.log(order);
 
     if (hasOrder) {
         order.line_items.forEach(x => totalQuantity += x.quantity);
@@ -71,7 +70,7 @@ export default function OrderDetails(props: IOrderDetailsProps) {
                             </div>
                             <div _ngcontent-c12="" className="prod-amount">
                                 Samlet beløb: {(value.price * value.quantity).toFixed(2)} DKK
-                        </div>
+                            </div>
                         </div>
                     </div>
 
@@ -158,9 +157,10 @@ export default function OrderDetails(props: IOrderDetailsProps) {
                         </div>
                     </div>
 
-                    {loggedInUser.lvl === 99 &&
+                    {loggedInUser.lvl === 99 && order.shipment_State === '1' &&
                         <div className="col-md-4 pull-right">
                             <button _ngcontent-c15="" className="order-btn" onClick={() => {
+                                props.setOrderShipped(order.id, addrs.uid);
                             }}>BEKRÆFT ORDER</button>
                         </div>
                     }

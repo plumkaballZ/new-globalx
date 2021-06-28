@@ -148,6 +148,24 @@ export default function App() {
     }
   }
 
+
+  const setOrderShippedAndGoToOrdersOverview = async (orderId: string, addressUid: string) => {
+
+    await orderService.setOrderIsShipped(orderId, addressUid);
+    history.push("/orders");
+
+    orderService.fetchCurrentOrder(setCurrentOrder);
+
+    if (userIsLoggedIn) {
+      if (user.lvl === 99) {
+        await orderService.fetchAllOrders99(setUserOrders);
+      }
+      else {
+        await orderService.fetchAllOrders(user.email, user.uid, setUserOrders);
+      }
+    }
+  }
+
   const loginAndReload = () => {
     userService.tryLoginForLocalUser(serverIsBusy, setServerIsBusy, setUser, setUserOrders);
     orderService.fetchCurrentOrder(setCurrentOrder);
@@ -283,6 +301,7 @@ export default function App() {
                         loggedInUser={user}
                         allProds={allProducts}
                         ordersAreLoding={serverIsBusy}
+                        setOrderShipped={setOrderShippedAndGoToOrdersOverview}
                         {...props} />} />
                   }
 
@@ -330,7 +349,7 @@ export default function App() {
           <div _ngcontent-c0="" className="cookie_container">
             <p _ngcontent-c0="">
               This website is using cookies to keep track of your settings, for more info please read or
-          <a _ngcontent-c0="" className="pp">Privacy Policy</a>
+              <a _ngcontent-c0="" className="pp">Privacy Policy</a>
             </p>
             <button _ngcontent-c0="" className="btn btn-success accept-cookie" type="button">Ok</button>
           </div>
