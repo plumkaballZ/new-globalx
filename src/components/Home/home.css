@@ -63,13 +63,15 @@
 
 .ui.inverted.segment[_ngcontent-c7],
 .ui.primary.inverted.segment[_ngcontent-c7] {
-    background-size: 100% 100%;
     background-color: #fff;
-    background-image: url(https://shevlin.co/assets/api/pics/byShevlinNatureBanner001.png);
+    background: url("./../../assets/byShevlinNatureBanner001.png");
     height: 400px;
     margin-top: -60px;
-    margin-bottom: -30px
+    margin-bottom: -30px;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
 }
+
 
 .masthead[_ngcontent-c7] h1.ui.header[_ngcontent-c7] {
     margin-top: 2em;
