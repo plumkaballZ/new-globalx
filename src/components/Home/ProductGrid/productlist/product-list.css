@@ -6,8 +6,10 @@ ul[_ngcontent-c12] {
     margin-left: -36px
 }
 
+
+
 ul[_ngcontent-c12] li.product-base[_ngcontent-c12] {
-    width: 250px;
+    width: 31%;
     height: 400px;
     text-align: center;
     position: relative;
@@ -16,6 +18,19 @@ ul[_ngcontent-c12] li.product-base[_ngcontent-c12] {
     display: inline-block;
     -webkit-transition: all .5s;
     transition: all .5s
+}
+
+@media screen and (max-width:991px) {
+    ul[_ngcontent-c12] li.product-base[_ngcontent-c12] {
+        width: 46%;
+    }
+}
+
+@media screen and (max-width:620px) {
+    ul[_ngcontent-c12] li.product-base[_ngcontent-c12] {
+        width: 100%;
+        display: block;
+    }
 }
 
 ul[_ngcontent-c12] li.product-base[_ngcontent-c12] a[_ngcontent-c12] {
