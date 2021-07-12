@@ -27,7 +27,7 @@ export default function Home(props: IProductListProps) {
 
             <div _ngcontent-c7="" className="ui inverted vertical masthead center aligned segment">
                 <div _ngcontent-c7="" className="ui text container">
-                    <h1 _ngcontent-c7="" className="ui inverted header">autumn</h1>
+                    <h1 _ngcontent-c7="" className="ui inverted header">SUMMER COLLECTION</h1>
                 </div>
             </div>
 

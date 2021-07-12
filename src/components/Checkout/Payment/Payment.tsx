@@ -103,14 +103,14 @@ export default function Payment(props: IPaymentProps) {
                                                     <div _ngcontent-c29="" className="section-help">
                                                         <span _ngcontent-c29="" className="lbl">
                                                             PayPal
-                                    </span>
+                                                        </span>
                                                         <span _ngcontent-c29="" className="sub-lbl">
                                                             Betal med PayPal
-                                    </span>
+                                                        </span>
                                                     </div>
                                                     <div _ngcontent-c29="" className="cod-info">
                                                         NOTE: Flere betalingsmetoder er på vej :)
-                                  </div>
+                                                    </div>
                                                 </div>
 
                                                 <div _ngcontent-c29="" className="pay-btn-wrap">
@@ -128,7 +128,7 @@ export default function Payment(props: IPaymentProps) {
                                                                 console.log('paypal:buttonready');
                                                             }}
                                                             options={{
-                                                                clientId: credentials.sandbox,
+                                                                clientId: credentials.production,
                                                                 currency: "DKK"
                                                             }}
                                                         />

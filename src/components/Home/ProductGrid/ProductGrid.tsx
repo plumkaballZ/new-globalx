@@ -18,9 +18,9 @@ export default function ProductGrid(props: IProductListProps) {
 
             <div _nghost-c11="">
                 <div _ngcontent-c11="" className="customize">
-                    <ul _ngcontent-c11="" className="properties">
-                        <li _ngcontent-c11="" className="selected" data-filter="size_facet" data-order="0">Autumn collection</li>
-                    </ul>
+                    {/* <ul _ngcontent-c11="" className="properties">
+                        <li _ngcontent-c11="" className="selected" data-filter="size_facet" data-order="0">Summer collection</li>
+                    </ul> */}
                     <div _ngcontent-c11="" className="allOptions">
                     </div>
                 </div>
