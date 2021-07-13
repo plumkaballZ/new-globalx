@@ -97,10 +97,6 @@ img[_ngcontent-c1] {
     }
 }
 
-@media screen and (max-width:768px) {
-    padding-left: 35px
-}
-
 .navbar-toggle[_ngcontent-c1] {
     margin-left: 27px;
     margin-top: 26px;
@@ -355,5 +351,25 @@ img[_ngcontent-c1] {
     #topMenuLang[_ngcontent-c13] {
         left: -100%;
         top: -100%
+    }
+}
+
+.shevlin-header-logo {
+    text-align: center;
+    font-family: Poiret One;
+    font-size: 4em;
+    margin-bottom: 60px;
+    position: absolute;
+    top: 0px;
+    z-index: 2;
+    width: 400px;
+    margin-left: -200px;
+    left: 50%;
+}
+
+@media screen and (max-width:700px) {
+    .shevlin-header-logo {
+        font-size: 3.5em;
+        width: 200px;
     }
 }

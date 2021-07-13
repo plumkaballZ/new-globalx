@@ -1,6 +1,5 @@
 import ProductFilter from './ProductFilter/ProductFilter';
 import ProductGrid from './ProductGrid/ProductGrid';
-import sticky_logo_2 from './../../assets/logo/shevlin_logo.png';
 import './home.css'
 import { IProductListProps } from '../../models/IProps';
 import { useState } from 'react';
@@ -21,10 +20,11 @@ export default function Home(props: IProductListProps) {
 
     return (
         <div _nghost-c7="">
-            <a _ngcontent-c7="" className="navbar-brand">
-                <img _ngcontent-c7="" alt="" className="stickyLogo2" src={sticky_logo_2} />
-            </a>
-
+            <div _ngcontent-c7="" className="shevlin-logo-pusher">
+            </div>
+            <div className="shevlin-logo">
+                Shevlin
+            </div>
             <div _ngcontent-c7="" className="ui inverted vertical masthead center aligned segment">
                 <div _ngcontent-c7="" className="ui text container">
                     <h1 _ngcontent-c7="" className="ui inverted header">SUMMER COLLECTION</h1>

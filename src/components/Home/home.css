@@ -73,13 +73,27 @@
 }
 
 
+.shevlin-logo-pusher {
+    height: 90px;
+}
+
+.shevlin-logo {
+    height: 150px;
+    line-height: 100px;
+    text-align: center;
+    font-family: Poiret One;
+    font-size: 6em;
+    margin-bottom: 60px;
+}
+
+
 .masthead[_ngcontent-c7] h1.ui.header[_ngcontent-c7] {
     margin-top: 2em;
     margin-bottom: 0;
     font-size: 4em;
     font-weight: 400;
     color: #f2f2f2;
-    font-family: Poiret One
+    font-family: Poiret One;
 }
 
 @media screen and (max-width:768px) {
