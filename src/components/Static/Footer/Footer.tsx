@@ -10,11 +10,11 @@ export default function Footer() {
         <div _ngcontent-c6="" className="row">
           <div _ngcontent-c6="" className="col-md-12">
             <div _ngcontent-c6="" className="rightBottom">
-              <a _ngcontent-c6="" className="navbar_brand_footer">
-
-                <img _ngcontent-c6="" alt="" style={{ cursor: "pointer" }} src={shevlin_logo}
-                  onClick={() => { history.push('/'); }} />
-              </a>
+              <div className="shevlin-footer-logo" style={{ cursor: "pointer" }} onClick={() => {
+                history.push('/');
+              }}>
+                Shevlin
+              </div>
             </div>
             <div _ngcontent-c6="" className="leftBottom">
               <div className="text-center">
@@ -25,11 +25,11 @@ export default function Footer() {
                   </li>
                   <span _ngcontent-c6="" className="txt-color-white ng-binding" style={{ marginRight: '15px' }}>
                     CVR nr. 38 95 98 24 |
-                  <Link _ngcontent-c6="" className="linkz" to="/info">Info</Link>
-                  |
-                  <Link _ngcontent-c6="" className="linkz" to="/terms">Handelsbetingelser</Link>
-                  |
-                  <Link _ngcontent-c6="" className="linkz" to="/cookiepolicy">Privatlivspolitik</Link>
+                    <Link _ngcontent-c6="" className="linkz" to="/info">Info</Link>
+                    |
+                    <Link _ngcontent-c6="" className="linkz" to="/terms">Handelsbetingelser</Link>
+                    |
+                    <Link _ngcontent-c6="" className="linkz" to="/cookiepolicy">Privatlivspolitik</Link>
                   </span>
                 </ul>
 

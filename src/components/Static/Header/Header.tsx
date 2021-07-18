@@ -78,8 +78,6 @@ export default function Header(props: IHeaderProps) {
                                         <i _ngcontent-c1="" aria-hidden="true" className="fa"></i><span _ngcontent-c1="" className="badge badge-danger"></span>
                                     </a>
                                 </li>
-
-                                {/* <FlagDropdown /> */}
                             </ul>
                         </div>
 

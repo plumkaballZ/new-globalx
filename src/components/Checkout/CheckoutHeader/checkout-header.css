@@ -82,11 +82,10 @@ ol[_ngcontent-c2] {
 }
 
 @media screen and (max-width:768px) {
-
     .checkout-steps[_ngcontent-c2] ul[_ngcontent-c2],
     ol[_ngcontent-c2] {
         margin-top: 30px;
-        padding-left: 36%
+        padding-left: 42%
     }
 }
 
@@ -130,5 +129,26 @@ ol[_ngcontent-c2] {
 @media screen and (max-width:768px) {
     .checkout-steps[_ngcontent-c2] .step[_ngcontent-c2] a[_ngcontent-c2] {
         font-size: 9px
+    }
+}
+
+.shevlin-checkout-header-logo {
+    text-align: center;
+    font-family: Poiret One;
+    font-size: 4em;
+    margin-bottom: 60px;
+    position: absolute;
+    top: 0px;
+    z-index: 2;
+    width: 200px;
+    margin-left: -200px;
+    left: 33%;
+}
+
+@media screen and (max-width:500px) {
+    .shevlin-checkout-header-logo {
+        font-size: 3.1em;
+        width: 200px;
+        left: 47%;
     }
 }

@@ -16,11 +16,11 @@ export default function CheckoutHeader() {
                 <div _ngcontent-c2="" className="row">
                     <div _ngcontent-c2="" className="container">
 
-
-                        <a _ngcontent-c2="" className="navbar-brand" >
-                            <img _ngcontent-c2="" alt="" style={{ cursor: "pointer" }} src={shevlin_logo}
-                                onClick={() => { history.push('/'); }} />
-                        </a>
+                        <div className="shevlin-checkout-header-logo" style={{ cursor: "pointer" }} onClick={() => {
+                            history.push('/');
+                        }}>
+                            Shevlin
+                        </div>
 
                         <ol _ngcontent-c2="" className="checkout-steps">
                             <li _ngcontent-c2="" className="step step1">
