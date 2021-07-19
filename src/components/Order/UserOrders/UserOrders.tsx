@@ -52,9 +52,10 @@ export default function UserOrders(props: IUserOrderProps) {
                   </small>
 
                   <hr _ngcontent-c19="" />
+
                   <h4 _ngcontent-c19="" className="strong">
                     {/* Orderstatus: */}
-                    <div _ngcontent-c19="">
+                    <div _ngcontent-c19="" className="col-md-6">
 
                       {value.shipment_State === "1" &&
 
@@ -68,7 +69,7 @@ export default function UserOrders(props: IUserOrderProps) {
                       }
                     </div>
 
-                    <div _ngcontent-c19="" className="pull-right">
+                    <div _ngcontent-c19="" className="col-md-6" style={{ textAlign: "end" }}>
                       <a _ngcontent-c19="" className="view-details-link strong" onClick={() => {
                         setOrderDetail(value);
                         history.push(match.url + '/details');

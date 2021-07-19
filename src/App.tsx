@@ -194,7 +194,10 @@ export default function App() {
           <div _ngcontent-c0="" className="default">
             <section _ngcontent-c0="">
 
-              {!isCheckoutFlow ? <Header totalQuantity={totalQuantity} userIsLoggedIn={userIsLoggedIn} logOffUserAndGoToFrontpage={logOffAndReload} /> : <CheckoutHeader />}
+              {!isCheckoutFlow ? <Header
+                totalQuantity={totalQuantity}
+                logOffUserAndGoToFrontpage={logOffAndReload}
+                user={user} /> : <CheckoutHeader />}
               <main _ngcontent-c0="" className="body container content">
 
                 <ScrollToTop />

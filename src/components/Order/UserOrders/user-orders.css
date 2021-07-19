@@ -97,8 +97,10 @@ ul.bread_crumb[_ngcontent-c17]:before {
 }
 
 .view-details-link[_ngcontent-c19] {
-    color: #1d886d;
-    cursor: pointer;
+    color: #526cd0;
+    text-transform: uppercase;
+    display: inline-block;
+    cursor: pointer
 }
 
 .status[_ngcontent-c15] {

@@ -9,7 +9,8 @@ export default function AvatarDropdown(props: IAvatarDropDownProps) {
     const [dropdownClass, setDropdownClass] = useState("dropdown");
     const wrapperRef = useRef<HTMLLIElement>(null);
 
-    let isLoggedIn = props.userIsLoggedIn;
+    let userIsLoggedIn = (Object.keys(props.user).length !== 0);
+    let userLvl = userIsLoggedIn ? props.user.lvl : 0;
 
     useEffect(() => {
         function handleClickOutside(event: any) {
@@ -45,14 +46,14 @@ export default function AvatarDropdown(props: IAvatarDropDownProps) {
                 <span _ngcontent-c13="" className="caret"></span>
             </a>
 
-            {!isLoggedIn &&
+            {!userIsLoggedIn &&
                 <ul _ngcontent-c13="" className="dropdown-menu">
                     <li _ngcontent-c13="" className="divider" role="separator"></li>
                     <li _ngcontent-c13=""><a _ngcontent-c13="" style={{ cursor: "pointer" }} onClick={() => {
                         history.push('/auth/signup');
                     }}>
                         Bliv vores ven
-                </a>
+                    </a>
                     </li>
                     <li _ngcontent-c13="" className="divider" role="separator"></li>
                     <li _ngcontent-c13=""><a _ngcontent-c13="" style={{ cursor: "pointer" }} onClick={() => {
@@ -61,14 +62,15 @@ export default function AvatarDropdown(props: IAvatarDropDownProps) {
                     </li>
                 </ul>
             }
-            {isLoggedIn &&
+            {userIsLoggedIn &&
                 <ul _ngcontent-c13="" className="dropdown-menu">
                     <li _ngcontent-c13="" className="divider" role="separator"></li>
-                    <li _ngcontent-c13=""><a _ngcontent-c13="" style={{ cursor: "pointer" }} onClick={() => {
-                        history.push('/orders');
-                    }}>
-                        Mine Ordre
-                </a>
+                    <li _ngcontent-c13="">
+                        <a _ngcontent-c13="" style={{ cursor: "pointer" }} onClick={() => {
+                            history.push('/orders');
+                        }}>
+                            {userLvl === 99 ? 'Alle Ordre' : 'Mine Ordre'}
+                        </a>
                     </li>
                     <li _ngcontent-c13="" className="divider" role="separator"></li>
                     <li _ngcontent-c13=""><a _ngcontent-c13="" style={{ cursor: "pointer" }} onClick={() => {

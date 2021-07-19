@@ -70,11 +70,11 @@ export interface ILoginProps {
 }
 export interface IHeaderProps {
     totalQuantity: number;
-    userIsLoggedIn: boolean;
+    user: User;
     logOffUserAndGoToFrontpage(): void;
 }
 export interface IAvatarDropDownProps {
-    userIsLoggedIn: boolean;
+    user: User;
     logOffUserAndGoToFrontpage(): void;
 }
 export interface IUserOrderProps {

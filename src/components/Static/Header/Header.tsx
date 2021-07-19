@@ -1,6 +1,6 @@
 import './header.css';
 import shopping_bag_logo from './../../../assets/shopping-bag.png';
-import { Link, useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation } from "react-router-dom";
 import AvatarDropdown from './AvatarDropdown/AvatarDropdown';
 import { IHeaderProps } from '../../../models/IProps';
 import { useEffect, useState } from 'react';
@@ -11,6 +11,8 @@ export default function Header(props: IHeaderProps) {
 
     let isFrontPage = location.pathname === '/';
     let [showLogo, setShowLogo] = useState(!isFrontPage);
+
+
 
     useEffect(() => {
         if (isFrontPage) {
@@ -65,7 +67,7 @@ export default function Header(props: IHeaderProps) {
                                     </li>
 
                                     <AvatarDropdown
-                                        userIsLoggedIn={props.userIsLoggedIn}
+                                        user={props.user}
                                         logOffUserAndGoToFrontpage={props.logOffUserAndGoToFrontpage} />
                                 </ul>
                             </div>
