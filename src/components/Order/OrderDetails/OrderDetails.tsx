@@ -22,8 +22,6 @@ export default function OrderDetails(props: IOrderDetailsProps) {
 
     const renderLineItems: any[] = [];
 
-    console.log(order);
-
     if (hasOrder) {
         order.line_items.forEach(x => totalQuantity += x.quantity);
         order.line_items.map((value: LineItem, index: Number) => {
@@ -87,7 +85,7 @@ export default function OrderDetails(props: IOrderDetailsProps) {
                     <div _ngcontent-c15="">
                         <div _ngcontent-c15="" className="panel panel-default">
                             <div _ngcontent-c15="" className="panel-body">
-                                <div _ngcontent-c15="" className="row">
+                                <div _ngcontent-c15="" className="row" style={{ marginBottom: "10px" }}>
                                     <div _ngcontent-c15="" className="active col-md-12">
                                         <div _ngcontent-c15="" className="row">
 
@@ -126,7 +124,6 @@ export default function OrderDetails(props: IOrderDetailsProps) {
                                         </div>
                                     </div>
                                 </div>
-                                <hr _ngcontent-c15="" />
                                 {renderLineItems}
                             </div>
 

@@ -46,7 +46,7 @@
 }
 
 .ui.vertical.stripe[_ngcontent-c16] p[_ngcontent-c16] {
-  font-size: 1.33em
+  font-size: 1.35em
 }
 
 .ui.vertical.stripe[_ngcontent-c16] .horizontal.divider[_ngcontent-c16] {
@@ -105,7 +105,8 @@
 }
 
 .read-more[_ngcontent-c16] {
-  cursor: pointer
+  cursor: pointer;
+  font-size: 1.35em;
 }
 
 [data-collapse][_ngcontent-c16] {
@@ -314,7 +315,7 @@ h2[_ngcontent-c16] {
 }
 
 .contentHead[_ngcontent-c16] {
-  font-size: 1.33em
+  font-size: 1.35em
 }
 
 sup[_ngcontent-c16] {
