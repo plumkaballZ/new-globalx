@@ -31,12 +31,7 @@ import { userService } from './services/UserService';
 import UserOrders from './components/Order/UserOrders/UserOrders';
 import { pakkeLabelsService } from './services/PakkeLabelsService';
 import { PickedServicePoint } from './models/PickedServicePoint';
-
-
-const addOrderLine = (orderLine: LineItem, currentOrder: Order, setCurrentOrder: any) => {
-  let newCurrentOrder = orderService.addOrderLine(orderLine, currentOrder);
-  setCurrentOrder(newCurrentOrder);
-};
+import { appLogic } from './logic/AppLogic';
 
 export default function App() {
   const history = useHistory();
@@ -62,15 +57,8 @@ export default function App() {
   let [isLoading, setIsLoading] = useState(false);
   let [serverIsBusy, setServerIsBusy] = useState(false);
 
-
   let [userOrders, setUserOrders] = useState([] as Order[]);
   let userIsLoggedIn = (Object.keys(user).length !== 0);
-
-  const awaitAndGetAddresses = async () => {
-    setIsLoading(true);
-    await addressService.fetchAllAddresses(setAllAddresses, setSelectedAddress, setShippingOptions);
-    setIsLoading(false);
-  };
 
   useEffect(() => {
     if (!userIsLoggedIn) {
@@ -80,14 +68,9 @@ export default function App() {
     productService.fetchAllProducts(setAllProducts);
     orderService.fetchCurrentOrder(setCurrentOrder);
 
-    awaitAndGetAddresses();
+    appLogic.fetchAllAddresses(setIsLoading, setAllAddresses, setSelectedAddress, setShippingOptions);
 
   }, []);
-
-  const removeOrderLine = (orderLine: LineItem) => {
-    let newCurrentOrder = orderService.removeOrderLine(orderLine, currentOrder);
-    setCurrentOrder(newCurrentOrder);
-  };
 
   const createNewAddress = async (address: Address) => {
     setIsLoading(true);
@@ -139,12 +122,7 @@ export default function App() {
     orderService.fetchCurrentOrder(setCurrentOrder);
 
     if (userIsLoggedIn) {
-      if (user.lvl === 99) {
-        await orderService.fetchAllOrders99(setUserOrders);
-      }
-      else {
-        await orderService.fetchAllOrders(user.email, user.uid, setUserOrders);
-      }
+      await appLogic.fetchAllOrders(user, setUserOrders);
     }
   }
 
@@ -157,26 +135,21 @@ export default function App() {
     orderService.fetchCurrentOrder(setCurrentOrder);
 
     if (userIsLoggedIn) {
-      if (user.lvl === 99) {
-        await orderService.fetchAllOrders99(setUserOrders);
-      }
-      else {
-        await orderService.fetchAllOrders(user.email, user.uid, setUserOrders);
-      }
+      await appLogic.fetchAllOrders(user, setUserOrders);
     }
   }
 
   const loginAndReload = () => {
     userService.tryLoginForLocalUser(serverIsBusy, setServerIsBusy, setUser, setUserOrders);
     orderService.fetchCurrentOrder(setCurrentOrder);
-    awaitAndGetAddresses();
+    appLogic.fetchAllAddresses(setIsLoading, setAllAddresses, setSelectedAddress, setShippingOptions);
     history.push('/');
   };
 
   const logOffAndReload = () => {
     setUser({} as User);
     orderService.fetchCurrentOrder(setCurrentOrder);
-    awaitAndGetAddresses();
+    appLogic.fetchAllAddresses(setIsLoading, setAllAddresses, setSelectedAddress, setShippingOptions);
     history.push('/');
   };
 
@@ -206,7 +179,7 @@ export default function App() {
                   <Route exact path="/" render={(props) =>
                     <Home
                       addOrderLineCallback={(orderLine: LineItem) => {
-                        addOrderLine(orderLine, currentOrder, setCurrentOrder);
+                        appLogic.addOrderLine(orderLine, currentOrder, setCurrentOrder);
                       }}
                       allProducts={allProducts}
                       goToIndex={(index: number) => {
@@ -224,7 +197,7 @@ export default function App() {
                       <ProductDetail
                         allProducts={allProducts}
                         addOrderLineCallback={(orderLine: LineItem) => {
-                          addOrderLine(orderLine, currentOrder, setCurrentOrder);
+                          appLogic.addOrderLine(orderLine, currentOrder, setCurrentOrder);
                         }}
                         {...props} />} />
                   }
@@ -253,7 +226,9 @@ export default function App() {
                       OrderLines={currentOrderLines}
                       totalQuantity={totalQuantity}
                       subTotal={subTotal}
-                      removeOrderLineCallBack={removeOrderLine}
+                      removeOrderLineCallBack={(lineItem: LineItem) => {
+                        appLogic.removeOrderLine(lineItem, currentOrder, setCurrentOrder);
+                      }}
                       allProducts={allProducts}
                       {...props} />
                   }
